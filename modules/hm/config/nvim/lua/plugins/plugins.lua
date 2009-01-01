@@ -41,6 +41,15 @@ return {
   --     require("tylsp").setup()
   --   end,
   -- },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  --   build = "cd app && yarn install",
+  --   init = function()
+  --     vim.g.mkdp_filetypes = { "markdown" }
+  --   end,
+  --   ft = { "markdown" },
+  -- },
   {
     "saghen/blink.cmp",
     dependencies = {
@@ -71,15 +80,6 @@ return {
       },
     },
   },
-  -- {
-  --   "iamcco/markdown-preview.nvim",
-  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  --   build = "cd app && yarn install",
-  --   init = function()
-  --     vim.g.mkdp_filetypes = { "markdown" }
-  --   end,
-  --   ft = { "markdown" },
-  -- },
   {
     "coder/claudecode.nvim",
     opts = {
@@ -223,5 +223,22 @@ return {
       end
       require("ufo").setup()
     end,
+  },
+  -- LazyVim default explorer: install_version 7 keeps the neo-tree extra enabled
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      -- One trash backend for trash and restore instead of the gio/XDG fallbacks
+      trash = { command = { "trash-put", "--" } },
+      filesystem = {
+        window = {
+          mappings = {
+            -- Trash instead of permanent delete, scoped to the file tree only;
+            -- the buffers and git_status sources keep their own `d`
+            ["d"] = "trash",
+          },
+        },
+      },
+    },
   },
 }

@@ -49,7 +49,6 @@
       pkgs.scc
 
       # github release
-      github-bin.rtk
       github-bin.uv
 
       # python

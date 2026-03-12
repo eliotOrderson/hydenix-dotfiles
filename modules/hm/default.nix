@@ -32,6 +32,7 @@
     pkgs.clang
     pkgs.mold
     pkgs.sccache
+    (pkgs.callPackage ./rtk-bin.nix { })
   ];
 
   # hydenix home-manager options go here

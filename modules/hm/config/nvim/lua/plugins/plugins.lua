@@ -17,6 +17,12 @@ return {
 
   -- { "mg979/vim-visual-multi" },
   {
+    "aekasitt/tylsp.nvim",
+    config = function()
+      require("tylsp").setup()
+    end,
+  },
+  {
     "saghen/blink.cmp",
     dependencies = {
       {
@@ -89,9 +95,8 @@ return {
         mc.lineSkipCursor(1)
       end)
 
-
       set("x", "M", mc.matchCursors)
-      set({"n", "x"}, "<a-a>", mc.matchAllAddCursors)
+      set({ "n", "x" }, "<a-a>", mc.matchAllAddCursors)
       -- Add or skip adding a new cursor by matching word/selection
       set({ "n", "x" }, "<a-n>", function()
         mc.matchAddCursor(1)

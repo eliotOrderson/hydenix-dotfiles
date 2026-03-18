@@ -16,24 +16,30 @@
   ];
 
   # home-manager options go here
-  home.packages = [
-    pkgs.google-chrome
-    pkgs.yazi
-    pkgs.trash-cli
-    pkgs.uv
-    pkgs.bun
-    pkgs.nodejs
-    pkgs.unstable.claude-code-router
-    pkgs.zoxide
+  home.packages =
+    let
+      github-bin = import ./github-bin.nix { inherit pkgs; };
+    in
+    [
+      pkgs.google-chrome
+      pkgs.yazi
+      pkgs.trash-cli
+      pkgs.uv
+      pkgs.bun
+      pkgs.nodejs
+      pkgs.unstable.claude-code-router
+      pkgs.zoxide
 
-    # rust dev tools
-    # pkgs.cargo
-    pkgs.rustup
-    pkgs.clang
-    pkgs.mold
-    pkgs.sccache
-    (pkgs.callPackage ./rtk-bin.nix { })
-  ];
+      github-bin.rtk
+      # github-bin.openlink # extend ai web chat scaffold
+
+      # rust dev tools
+      # pkgs.cargo
+      pkgs.rustup
+      pkgs.clang
+      pkgs.mold
+      pkgs.sccache
+    ];
 
   # hydenix home-manager options go here
   hydenix.hm.enable = true;

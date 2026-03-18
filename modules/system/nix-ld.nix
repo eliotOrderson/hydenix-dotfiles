@@ -5,6 +5,7 @@
 
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
+    stdenv.cc.cc.lib  # libstdc++ for numpy/chroma-mcp
     zlib
     fuse3
     icu
@@ -12,7 +13,6 @@
     openssl
     curl
     expat
-    #数据科学或深度学习
     libglvnd
     glib
   ];

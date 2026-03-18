@@ -3,6 +3,7 @@
 
   hydenix.hm.shell.zsh.plugins = [ "sudo" ];
   hydenix.hm.shell.zsh.configText = ''
+    export PATH=$PATH:~/.npm-global/bin
     eval "$(zoxide init zsh)"
     function lf() {
       local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

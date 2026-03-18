@@ -30,7 +30,7 @@
         };
         modules = [
           ./configuration.nix
-          #  using pkg.unsatable.xxx on home manger or system
+          #  using pkg.unsatable on home manger or system
           {
             nixpkgs.overlays = [
               (final: prev: {

@@ -1,17 +1,18 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  # 1. 启用 Docker 服务
-  virtualisation.docker.enable = true;
-  # virtualisation.docker.enableNvidia = true;
-
-  # 2. (可选) 如果需要 rootless 模式 (无需 sudo 运行 docker)
-  virtualisation.docker.rootless = {
+  virtualisation.docker = {
     enable = true;
-    setSocketVariable = true;
+    rootless.enable = false;
+    daemon.settings = {
+      runtimes = {
+        nvidia = {
+          path = "${pkgs.nvidia-container-toolkit}/bin/nvidia-container-runtime";
+        };
+      };
+    };
   };
 
-  # 3. 将你的用户添加到 docker 用户组 (重要：否则每次都要 sudo)
-  # 请将 "your-username" 替换为你的实际用户名
+  hardware.nvidia-container-toolkit.enable = true;
   users.users.hydenix.extraGroups = [ "docker" ];
 }

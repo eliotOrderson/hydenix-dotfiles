@@ -28,7 +28,9 @@
       pkgs.bun
       pkgs.nodejs
       pkgs.unstable.claude-code-router
+      pkgs.unstable.opencode
       pkgs.zoxide
+      pkgs.direnv
 
       github-bin.rtk
       # github-bin.openlink # extend ai web chat scaffold

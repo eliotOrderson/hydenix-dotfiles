@@ -20,9 +20,7 @@ in
     viAlias = true;
     vimAlias = true;
 
-    # 安装 LazyVim 必须的依赖
     extraPackages = with pkgs; [
-      # 基础工具
       git
       gcc
       gnumake
@@ -30,7 +28,6 @@ in
       wget
       curl
 
-      # 搜索与过滤 (LazyVim 强依赖)
       ripgrep
       fd
     ];

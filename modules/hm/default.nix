@@ -31,6 +31,7 @@
       pkgs.unstable.opencode
       pkgs.zoxide
       pkgs.direnv
+      pkgs.antigravity-fhs
 
       github-bin.rtk
       # github-bin.openlink # extend ai web chat scaffold

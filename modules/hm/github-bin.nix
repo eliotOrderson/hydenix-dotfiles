@@ -19,20 +19,41 @@ let
       nativeBuildInputs = [ pkgs.installShellFiles ];
 
       installPhase = ''
+        runHook preInstall
+
         mkdir -p $out/bin
-        install -D -m755 ${binName} $out/bin/${pname}
+
+        if [ ! -f "${binName}" ]; then
+          echo "===================================================="
+          echo "ERROR: Binary '${binName}' not found in the source tree."
+          echo "Current directory contents (recursive):"
+          ls -R .
+          echo "===================================================="
+          exit 1
+        fi
+
+        install -D -m755 "${binName}" "$out/bin/${pname}"
+
         ${postInstall}
+
         runHook postInstall
       '';
     };
 
 in
 {
-  rtk = mkGitHubBin {
+  rtk = mkGitHubBin rec {
     pname = "rtk";
     version = "v0.28.2";
-    url = "https://github.com/rtk-ai/rtk/releases/download/v0.28.2/rtk-x86_64-unknown-linux-musl.tar.gz";
+    url = "https://github.com/rtk-ai/rtk/releases/download/${version}/rtk-x86_64-unknown-linux-musl.tar.gz";
     sha256 = "c7b61e87b8430e42b04ab84fbe1b3b41b563454b0181247fd04844b8e9194371";
+  };
+
+  cc-switch-cli = mkGitHubBin rec {
+    pname = "cc-switch";
+    version = "v5.1.1";
+    url = "https://github.com/SaladDay/cc-switch-cli/releases/download/${version}/cc-switch-cli-linux-x64-musl.tar.gz";
+    sha256 = "e2389e8cd9bda494f646d1ddf6fc5d2703094750c796ad412f0e36cae00c5440";
   };
 
   # cli-proxy-api = mkGitHubBin {

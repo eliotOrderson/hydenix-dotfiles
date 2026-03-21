@@ -27,13 +27,17 @@
       pkgs.uv
       pkgs.bun
       pkgs.nodejs
-      pkgs.unstable.claude-code-router
-      pkgs.unstable.opencode
       pkgs.zoxide
       pkgs.direnv
       pkgs.antigravity-fhs
+      pkgs.nix-init
+
+      pkgs.unstable.claude-code-router
+      pkgs.unstable.opencode
+      pkgs.nix-search-cli
 
       github-bin.rtk
+
       # github-bin.openlink # extend ai web chat scaffold
 
       # rust dev tools

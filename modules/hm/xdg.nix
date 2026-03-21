@@ -3,6 +3,7 @@
 {
   hydenix.hm.xdg.enable = false;
 
+  xdg.enable = true;
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
@@ -17,7 +18,5 @@
     templates = null;
     videos = null;
   };
-
-  # 3. 禁用自动更新
   xdg.configFile."user-dirs.conf".text = "enabled=False";
 }

@@ -23,8 +23,8 @@
       ...
     }@inputs:
     let
+      system = "x86_64-linux";
       hydenixConfig = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
         };
@@ -51,6 +51,6 @@
     {
       nixosConfigurations.hydenix = hydenixConfig;
       nixosConfigurations.default = hydenixConfig;
-      packages."x86_64-linux".vm = vmConfig.config.system.build.vm;
+      packages."${system}".vm = vmConfig.config.system.build.vm;
     };
 }

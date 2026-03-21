@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 {
 
   hydenix.hm.hyprland.extraConfig = ''
-
+    $BROWSER = google-chrome-stable
     $scrPath = ~/.local/share/bin
 
     # windowrule
@@ -24,12 +24,10 @@
     unbind = $mainMod, L
     unbind = ind = Alt, Return
 
-    # Assign apps
-    $browser = google-chrome-stable
 
     bind = $mainMod, Return, exec, kitty # launch terminal emulator
     bind = $mainMod, D, exec, pkill -x rofi || rofilaunch.sh d # launch application launcher
-    bind = $mainMod, C, exec, windows-control -c google-chrome -e $browser -w 8 -m "goto" # launch web browser
+    bind = $mainMod, C, exec, windows-control -c google-chrome -e $BROWSER -w 8 -m "goto" # launch web browser
     bind = $mainMod, F, fullscreen
 
 

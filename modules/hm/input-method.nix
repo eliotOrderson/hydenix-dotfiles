@@ -12,7 +12,6 @@
 
       (fcitx5-rime.override {
         rimeDataPkgs = [
-          #pkgs.rime-ice
           rime-wanxiang
         ];
       })

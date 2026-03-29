@@ -3,7 +3,7 @@
   imports = [
     ./openrgb-gigabyteb850m.nix
     ./services.nix
-    ./sops.nix
+    # ./sops.nix
     ./nix-ld.nix
     ./docker.nix
   ];

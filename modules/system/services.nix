@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   services.flatpak.enable = true;
 
   services.displayManager.autoLogin = {

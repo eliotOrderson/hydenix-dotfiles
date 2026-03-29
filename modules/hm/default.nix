@@ -29,12 +29,12 @@
       pkgs.nodejs
       pkgs.zoxide
       pkgs.direnv
-      pkgs.antigravity-fhs
       pkgs.nix-init
 
       pkgs.unstable.claude-code-router
       pkgs.unstable.opencode
       pkgs.nix-search-cli
+      pkgs.obsidian
 
       github-bin.rtk
 

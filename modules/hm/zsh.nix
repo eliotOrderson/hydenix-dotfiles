@@ -53,7 +53,7 @@
           echo "⚠️ Remote operation detected. Mem Key is being automatically unlocked..."
           export SOPS_AGE_KEY=$(sudo nix run nixpkgs#ssh-to-age -- -private-key -i /etc/ssh/ssh_host_ed25519_key)
           [ -z "$SSH_AUTH_SOCK" ] && eval $(ssh-agent -s) > /dev/null
-          nix run nixpkgs#sops -- -d --get '["github_private_key"]' ~/hydenix/modules/system/config/secrets.yaml | ssh-add - 2>/dev/null
+          nix run nixpkgs#sops -- -d --extract '["github_private_key"]' ~/hydenix/modules/system/config/secrets.yaml | ssh-add - 2>/dev/null
           unset SOPS_AGE_KEY
      }
 

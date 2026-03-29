@@ -48,14 +48,19 @@
       pkgs.sccache
     ];
 
-  # hydenix home-manager options go here
-  hydenix.hm.enable = true;
-  hydenix.hm.hyprland.hypridle.enable = false;
-  hydenix.hm.lockscreen = {
-    enable = false; # enable lockscreen module
-    hyprlock = false; # enable hyprlock lockscreen
-    swaylock = false; # enable swaylock lockscreen
-  };
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
+  hydenix = {
+    hm = {
+
+      # hydenix home-manager options go here
+      enable = true;
+      hyprland.hypridle.enable = false;
+      lockscreen = {
+        enable = false; # enable lockscreen module
+        hyprlock = false; # enable hyprlock lockscreen
+        swaylock = false; # enable swaylock lockscreen
+      };
+    };
+  };
 
 }

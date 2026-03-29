@@ -30,6 +30,10 @@ in
 
       ripgrep
       fd
+
+      # nix Related
+      statix
+      nixfmt
     ];
 
   };

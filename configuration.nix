@@ -87,19 +87,21 @@
   #networking.nameservers = [ "198.18.0.1" ];
   #networking.dhcpcd.extraConfig = "nohook resolv.conf";
   #networking.networkmanager.dns = "none";
+  nix = {
 
-  nix.settings.auto-optimise-store = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 5d";
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 5d";
+    };
+
+    settings.substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+    ];
   };
-
-  nix.settings.substituters = [
-    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-    "https://cache.nixos.org"
-  ];
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   # System Version - Don't change unless you know what you're doing (helps with system upgrades and compatibility)
   system.stateVersion = "25.05";

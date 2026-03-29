@@ -1,4 +1,3 @@
-{ ... }:
 {
 
   hydenix.hm.hyprland.extraConfig = ''

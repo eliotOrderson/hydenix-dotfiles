@@ -1,4 +1,3 @@
-{ ... }:
 {
   hydenix.hm.terminals.kitty = {
     enable = true;

@@ -1,12 +1,14 @@
 { pkgs, ... }:
 {
-  services.flatpak.enable = true;
+  services = {
+    flatpak.enable = true;
 
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "hydenix";
+    displayManager.autoLogin = {
+      enable = true;
+      user = "hydenix";
+    };
+    displayManager.defaultSession = "hyprland-uwsm";
   };
-  services.displayManager.defaultSession = "hyprland-uwsm";
 
   systemd.services.clash-verge-service = {
     description = "Auto start service ...";

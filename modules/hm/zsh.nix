@@ -35,39 +35,38 @@
     ];
 
     configText = ''
-      setopt CORRECT
-      eval "$(direnv hook zsh)"
-      eval "$(zoxide init zsh)"
-      export PATH=$PATH:~/.npm-global/bin
+       setopt CORRECT
+       eval "$(direnv hook zsh)"
+       eval "$(zoxide init zsh)"
+       export PATH=$PATH:~/.npm-global/bin
 
-      function lf() {
-          local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-          yazi "$@" --cwd-file="$tmp"
-          if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-          builtin cd -- "$cwd"
-          fi
-          rm -f -- "$tmp"
+       function lf() {
+           local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+           yazi "$@" --cwd-file="$tmp"
+           if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+           builtin cd -- "$cwd"
+           fi
+           rm -f -- "$tmp"
+       }
+
+       unlock-git() {
+           echo "⚠️ Remote operation detected. Mem Key is being automatically unlocked..."
+           export SOPS_AGE_KEY=$(sudo nix run nixpkgs#ssh-to-age -- -private-key -i /etc/ssh/ssh_host_ed25519_key)
+           [ -z "$SSH_AUTH_SOCK" ] && eval $(ssh-agent -s) > /dev/null
+           nix run nixpkgs#sops -- -d --extract '["github_private_key"]' ~/hydenix/modules/system/config/secrets.yaml | ssh-add - 2>/dev/null
+           unset SOPS_AGE_KEY
       }
 
-      unlock-git() {
-          echo "⚠️ Remote operation detected. Mem Key is being automatically unlocked..."
-          export SOPS_AGE_KEY=$(sudo nix run nixpkgs#ssh-to-age -- -private-key -i /etc/ssh/ssh_host_ed25519_key)
-          [ -z "$SSH_AUTH_SOCK" ] && eval $(ssh-agent -s) > /dev/null
-          nix run nixpkgs#sops -- -d --extract '["github_private_key"]' ~/hydenix/modules/system/config/secrets.yaml | ssh-add - 2>/dev/null
-          unset SOPS_AGE_KEY
-     }
-
-      git() {
-          if [[ " push pull fetch clone " =~ " $1 " ]]; then
-          ssh-add -l >/dev/null 2>&1 || unlock-git || return 1
-          fi
-          command git "$@"
-      }
-
-      alias tar-zstd="tar -I 'zstd -T0' -cvf"
-      alias untar-zstd="tar -I 'zstd -T0' -vxf"
-      alias encrypt="age -e -p"
-      alias decrypt="age -d"
+       git() {
+           if [[ " push pull fetch clone " =~ " $1 " ]]; then
+           ssh-add -l >/dev/null 2>&1 || unlock-git || return 1
+           fi
+           command git "$@"
+       }
+       # list top10 memory usage
+       alias top10="ps auxww --sort=-rss | head -n 11 | awk 'NR==1{printf \"%-8s %-10s %-10s %-15s %s\n\", \"USER\", \"PID\", \"%CPU\", \"MEM_USED\", \"COMMAND\"} NR>1{printf \"%-8s %-10s %-10s %-15.2f MB  %s\n\", \$1, \$2, \$3, \$6/1024, \$11}'"
+       alias tar-zstd="tar -I 'zstd -T0' -cvf"
+       alias untar-zstd="tar -I 'zstd -T0' -vxf"
     '';
 
   };

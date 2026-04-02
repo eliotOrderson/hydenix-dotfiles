@@ -57,12 +57,13 @@
            unset SOPS_AGE_KEY
       }
 
-       git() {
+       cgit() {
            if [[ " push pull fetch clone " =~ " $1 " ]]; then
            ssh-add -l >/dev/null 2>&1 || unlock-git || return 1
            fi
            command git "$@"
        }
+
        # list top10 memory usage
        alias top10="ps auxww --sort=-rss | head -n 11 | awk 'NR==1{printf \"%-8s %-10s %-10s %-15s %s\n\", \"USER\", \"PID\", \"%CPU\", \"MEM_USED\", \"COMMAND\"} NR>1{printf \"%-8s %-10s %-10s %-15.2f MB  %s\n\", \$1, \$2, \$3, \$6/1024, \$11}'"
        alias tar-zstd="tar -I 'zstd -T0' -cvf"

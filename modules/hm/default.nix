@@ -13,6 +13,7 @@
     ./script.nix
     ./xdg.nix
     ./path.nix # manage config file hard link
+    ./git.nix
   ];
 
   # home-manager options go here
@@ -36,6 +37,7 @@
       pkgs.nix-search-cli
       pkgs.obsidian
 
+      pkgs.gh # github cli
       github-bin.rtk
 
       # github-bin.openlink # extend ai web chat scaffold

@@ -1,15 +1,10 @@
 {
 
-  hydenix.hm.git.enable = false;
-  programs.git = {
-    enable = true;
-    userName = "eliot";
-    userEmail = "eliotorderson@gmail.com";
-
-    extraConfig = {
-      init.defaultBranch = "main";
-      pull.rebase = false;
-    };
+  hydenix.hm.git.name = "eliot";
+  hydenix.hm.git.email = "eliotorderson@gmail.com";
+  programs.git.settings = {
+    init.defaultBranch = "main";
+    pull.rebase = false;
   };
 
 }

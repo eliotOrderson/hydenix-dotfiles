@@ -44,9 +44,9 @@ in
 {
   rtk = mkGitHubBin rec {
     pname = "rtk";
-    version = "v0.28.2";
+    version = "v0.34.3";
     url = "https://github.com/rtk-ai/rtk/releases/download/${version}/rtk-x86_64-unknown-linux-musl.tar.gz";
-    sha256 = "c7b61e87b8430e42b04ab84fbe1b3b41b563454b0181247fd04844b8e9194371";
+    sha256 = "a607c17bfdccc1d48dc94ca81cd3a545523329df6a378368fd175d8023425ea5";
   };
 
   cc-switch-cli = mkGitHubBin rec {

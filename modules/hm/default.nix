@@ -26,7 +26,7 @@
       pkgs.yazi
       pkgs.trash-cli
       pkgs.uv
-      pkgs.bun
+      pkgs.unstable.bun
       pkgs.nodejs
       pkgs.zoxide
       pkgs.direnv

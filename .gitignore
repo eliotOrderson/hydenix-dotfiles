@@ -1,8 +1,10 @@
 .direnv
 *.qcow2
-result
 .git-hooks
-todo.md
 .cluade
 .serena
 .gitnexus
+
+
+result
+*.md

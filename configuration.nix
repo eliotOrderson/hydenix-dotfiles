@@ -102,6 +102,16 @@
     ];
   };
   boot.loader.systemd-boot.configurationLimit = 10;
+  fonts = {
+    fontconfig = {
+      enable = true;
+      antialias = true;
+      hinting.enable = true;
+      hinting.style = "slight";
+      subpixel.lcdfilter = "default";
+      subpixel.rgba = "rgb";
+    };
+  };
 
   # System Version - Don't change unless you know what you're doing (helps with system upgrades and compatibility)
   system.stateVersion = "25.05";

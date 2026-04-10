@@ -1,6 +1,46 @@
 {
 
   hydenix.hm.hyprland.extraConfig = ''
+    opengl {
+        # 某些情况下开启这个能提升渲染效率
+        nvidia_anti_flicker = true
+    }
+
+    decoration {
+        # 屏幕着色器路径 
+        screen_shader = ~/.config/hypr/shaders/self_vibrance.frag
+
+        rounding = 10
+
+        # --- 透明度控制 ---
+        active_opacity = 1.0
+        inactive_opacity = 0.85
+        fullscreen_opacity = 1.0
+
+        # --- 模糊设置 (新版本中 blur 块依然保留) ---
+        blur {
+            enabled = true
+            size = 5
+            passes = 3
+            new_optimizations = true
+            xray = true
+
+            contrast = 1.0
+            brightness = 1.0
+            vibrancy = 0.1
+            vibrancy_darkness = 0.0
+        }
+
+        # --- 阴影设置
+        shadow {
+            enabled = true
+            range = 10
+            render_power = 2        # 阴影扩散的强度 (建议设为 3)
+            color = rgba(00000044)
+        }
+    }
+
+
     $BROWSER = google-chrome-stable
     $scrPath = ~/.local/share/bin
 

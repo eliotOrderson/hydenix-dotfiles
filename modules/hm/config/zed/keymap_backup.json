@@ -1,0 +1,149 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+
+// While unusual, but usefull
+// ctrl-*   search text under mouse words
+// shift-c  cut current position to end words
+// cs"'     change " to '
+// ds"      delete "
+// zz       align the line to center
+// gl/L     create next/prev cousor
+// gs       open symbol window
+// g.       code action
+// vii       selecting indent-text-object
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "ctrl-x": "editor::Cut",
+      "ctrl-v": "editor::Paste",
+      "ctrl-o": "workspace::Open",
+      "ctrl-a": "editor::SelectAll",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      // "] d": "editor::GoToDiagnostic",
+      // "[ d": "editor::GoToPrevDiagnostic",
+      // "enter": "editor::NewlineBelow",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+
+      "alt-l": ["workspace::SendKeystrokes", "$"],
+      "alt-h": ["workspace::SendKeystrokes", "^"],
+      "alt-=": ["workspace::SendKeystrokes", "% l v % % h"],
+
+      "ctrl-[": "editor::Outdent",
+      "ctrl-]": "editor::Indent",
+      "ctrl-e": "editor::GoToDefinition",
+      "ctrl-q": "pane::GoBack",
+      "ctrl-n": ["editor::SelectNext", { "replace_newest": false }],
+
+      "space d s": "editor::GoToDefinitionSplit",
+      "space I": "editor::GoToImplementation",
+      "space f f ": "file_finder::Toggle",
+      "space -": "pane::SplitDown",
+      "space \\": "pane::SplitRight",
+      "space c a": "editor::ToggleCodeActions",
+      "space h": "buffer_search::Dismiss"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "alt-l": ["workspace::SendKeystrokes", "escape $ a"],
+      "alt-h": ["workspace::SendKeystrokes", "escape ^ i"]
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "ctrl-[": "editor::Outdent",
+      "ctrl-]": "editor::Indent",
+      "ctrl-/": "vim::ToggleComments",
+      "ctrl-n": ["editor::SelectNext", { "replace_newest": false }],
+      "ctrl-alt-a": "editor::SelectAllMatches",
+
+      "alt-l": ["workspace::SendKeystrokes", "$ h"],
+      "alt-h": ["workspace::SendKeystrokes", "^"]
+    }
+  },
+
+  //terminal  show/hide
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-\\": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleBottomDock"
+    }
+  },
+
+  // project tree show/hide
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-e": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "alt-e": "workspace::ToggleLeftDock"
+    }
+  },
+
+  // project tree basic operation
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "r": "project_panel::Rename",
+      "y": "project_panel::Copy",
+      "x": "project_panel::Cut",
+      "p": "project_panel::Paste",
+      "a": "project_panel::NewFile",
+      "d": ["project_panel::Trash", { "skip_prompt": false }]
+    }
+  },
+  // global: remap keybindings
+  {
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-shift-e": "project_panel::ToggleFocus",
+      "alt-q": "pane::CloseActiveItem",
+      "shift-alt-h": "pane::SwapItemLeft",
+      "shift-alt-l": "pane::SwapItemRight",
+      "ctrl-enter": "repl::Run"
+    }
+  }
+]

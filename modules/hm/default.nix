@@ -25,22 +25,22 @@
       pkgs.google-chrome
       pkgs.yazi
       pkgs.trash-cli
-      pkgs.unstable.uv
-      pkgs.unstable.bun
       pkgs.nodejs
       pkgs.zoxide
       pkgs.direnv
       pkgs.nix-init
-
-      pkgs.unstable.claude-code-router
-      pkgs.unstable.opencode
       pkgs.nix-search-cli
       pkgs.obsidian
-
       pkgs.gh # github cli
+
       github-bin.rtk
 
-      # github-bin.openlink # extend ai web chat scaffold
+      # unstable
+      pkgs.unstable.uv
+      pkgs.unstable.zed-editor-fhs
+      pkgs.unstable.bun
+      pkgs.unstable.claude-code-router
+      pkgs.unstable.opencode
 
       # rust dev tools
       # pkgs.cargo

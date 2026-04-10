@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # autostart on boot start
+  # autostart on boot start clash ui
   systemd.user.services.clash-verge = {
     Unit = {
       Description = "Clash Verge Rev Service";

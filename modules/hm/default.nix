@@ -25,7 +25,7 @@
       pkgs.google-chrome
       pkgs.yazi
       pkgs.trash-cli
-      pkgs.uv
+      pkgs.unstable.uv
       pkgs.unstable.bun
       pkgs.nodejs
       pkgs.zoxide

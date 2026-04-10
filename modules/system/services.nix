@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
+  programs.mosh.enable = true;
+  programs.mosh.openFirewall = true;
   services = {
     flatpak.enable = true;
-
     displayManager.autoLogin = {
       enable = true;
       user = "hydenix";

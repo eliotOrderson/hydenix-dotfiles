@@ -1,7 +1,7 @@
 .direnv
 *.qcow2
 .git-hooks
-.cluade
+.claude
 .serena
 .gitnexus
 

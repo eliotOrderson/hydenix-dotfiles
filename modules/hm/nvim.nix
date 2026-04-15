@@ -24,12 +24,6 @@ in
       git
       gcc
       gnumake
-      unzip
-      wget
-      curl
-
-      ripgrep
-      fd
 
       # nix Related
       statix

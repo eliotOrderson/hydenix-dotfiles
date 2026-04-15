@@ -33,6 +33,11 @@
       pkgs.obsidian
       pkgs.gh # github cli
 
+      pkgs.unzip
+      pkgs.wget
+      pkgs.ripgrep
+      pkgs.fd
+
       github-bin.rtk
 
       # unstable

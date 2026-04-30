@@ -37,11 +37,15 @@
       pkgs.wget
       pkgs.ripgrep
       pkgs.fd
+      pkgs.tree
 
       github-bin.rtk
+      github-bin.uv
+
+      # python
+      # pkgs.python313Packages.mempalace
 
       # unstable
-      pkgs.unstable.uv
       pkgs.unstable.zed-editor-fhs
       pkgs.unstable.bun
       pkgs.unstable.claude-code-router

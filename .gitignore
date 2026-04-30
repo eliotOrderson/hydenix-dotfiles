@@ -8,4 +8,5 @@
 
 result
 *.md
+*.sh
 graphify-out/

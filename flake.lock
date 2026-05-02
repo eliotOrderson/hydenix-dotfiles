@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "fcitx5-vinput": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "sherpa-onnx": "sherpa-onnx"
+      },
+      "locked": {
+        "lastModified": 1776580299,
+        "narHash": "sha256-a6mWFCnxip9UaAGvogEsRfK9PqnKVVAL6s6uC+mSx7s=",
+        "owner": "xifan2333",
+        "repo": "fcitx5-vinput",
+        "rev": "4cde8dd65cc58d3df26f7a12fab9d6c97f17b351",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xifan2333",
+        "repo": "fcitx5-vinput",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -265,6 +286,7 @@
     },
     "root": {
       "inputs": {
+        "fcitx5-vinput": "fcitx5-vinput",
         "hydenix": "hydenix",
         "nixos-hardware": "nixos-hardware_2",
         "nixpkgs": [
@@ -290,6 +312,27 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "sherpa-onnx": {
+      "inputs": {
+        "nixpkgs": [
+          "fcitx5-vinput",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776411991,
+        "narHash": "sha256-CVGeX6mK0+mwj+34iY7nEvlJl8vdit3DLbVDrgfDZj0=",
+        "owner": "xifan2333",
+        "repo": "sherpa-onnx-flake",
+        "rev": "9a34dc1fca27432deb1eea84be500d63385efb14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xifan2333",
+        "repo": "sherpa-onnx-flake",
         "type": "github"
       }
     },

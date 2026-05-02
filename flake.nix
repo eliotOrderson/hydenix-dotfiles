@@ -13,6 +13,9 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    fcitx5-vinput.url = "github:xifan2333/fcitx5-vinput";
+    fcitx5-vinput.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

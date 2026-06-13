@@ -8,11 +8,11 @@
         "sherpa-onnx": "sherpa-onnx"
       },
       "locked": {
-        "lastModified": 1776580299,
-        "narHash": "sha256-a6mWFCnxip9UaAGvogEsRfK9PqnKVVAL6s6uC+mSx7s=",
+        "lastModified": 1779788308,
+        "narHash": "sha256-gMLnDoDGX0rwjR0EQySat8/0ia1KTvwc7qMpPnW69F0=",
         "owner": "xifan2333",
         "repo": "fcitx5-vinput",
-        "rev": "4cde8dd65cc58d3df26f7a12fab9d6c97f17b351",
+        "rev": "42a84bec87a83263b7f9d9370db5df09190d32c4",
         "type": "github"
       },
       "original": {
@@ -205,12 +205,15 @@
       }
     },
     "nixos-hardware_2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
       "locked": {
-        "lastModified": 1775490113,
-        "narHash": "sha256-2ZBhDNZZwYkRmefK5XLOusCJHnoeKkoN95hoSGgMxWM=",
+        "lastModified": 1781168557,
+        "narHash": "sha256-LOnLQ2tpYF9gqIDDr3+j3DbpJJr/QCH6zPRT2GzEUOE=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "c775c2772ba56e906cbeb4e0b2db19079ef11ff7",
+        "rev": "6358ff76821101c178e3ab4919a62799bfe3652e",
         "type": "github"
       },
       "original": {
@@ -238,11 +241,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1775423009,
-        "narHash": "sha256-vPKLpjhIVWdDrfiUM8atW6YkIggCEKdSAlJPzzhkQlw=",
+        "lastModified": 1781074563,
+        "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
+        "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
         "type": "github"
       },
       "original": {
@@ -284,6 +287,19 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1767892417,
+        "narHash": "sha256-8bW3q88CEg2u4hSP66Vf4lpbLonHz7hqDNBMcCY7E9U=",
+        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre924538.3497aa5c9457/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
+      }
+    },
     "root": {
       "inputs": {
         "fcitx5-vinput": "fcitx5-vinput",
@@ -323,11 +339,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776411991,
-        "narHash": "sha256-CVGeX6mK0+mwj+34iY7nEvlJl8vdit3DLbVDrgfDZj0=",
+        "lastModified": 1778079884,
+        "narHash": "sha256-zbjpbZcd1/HZoGevEq+f+lJVPeotD0e23byTOVX+Yrw=",
         "owner": "xifan2333",
         "repo": "sherpa-onnx-flake",
-        "rev": "9a34dc1fca27432deb1eea84be500d63385efb14",
+        "rev": "c9497aba77df43a7359a3e3b63bfb666fac4c88f",
         "type": "github"
       },
       "original": {
@@ -343,11 +359,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775619836,
-        "narHash": "sha256-VcC/+MMMldwQKcST2y/QTndGLusSxjeUvYwFwzZKKko=",
+        "lastModified": 1780547341,
+        "narHash": "sha256-Gq8KNx5A7hBB3uGJaj6eQfLDIz5YdLu92gqBcvHvoUo=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "de5f2d596eb896a5728afcd15f823f59cb9ecfdb",
+        "rev": "9ed65852b6257fbeae4355bc24ecfea307ca759a",
         "type": "github"
       },
       "original": {

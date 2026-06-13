@@ -88,7 +88,6 @@
   #networking.dhcpcd.extraConfig = "nohook resolv.conf";
   #networking.networkmanager.dns = "none";
   nix = {
-
     settings.auto-optimise-store = true;
     gc = {
       automatic = true;

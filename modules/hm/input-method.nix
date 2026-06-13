@@ -15,6 +15,7 @@
           rime-wanxiang
         ];
       })
+      # voices input
       inputs.fcitx5-vinput.packages.${pkgs.system}.default
     ];
   };

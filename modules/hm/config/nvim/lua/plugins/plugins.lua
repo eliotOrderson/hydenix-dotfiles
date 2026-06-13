@@ -16,6 +16,19 @@ return {
   -- },
 
   -- { "mg979/vim-visual-multi" },
+  -- {
+  --   "ggml-org/llama.vim",
+  --   init = function()
+  --     vim.g.llama_config = {
+  --       endpoint_fim = "http://127.0.0.1:8080/infill",
+  --       endpoint_inst = "http://127.0.0.1:8080/v1/chat/completions",
+  --       -- 4. 交互与界面体验优化
+  --       -- ==========================================
+  --       show_info = 1, -- 1=极简模式 (推荐)，2=详细模式 (状态栏会疯狂闪动)
+  --       auto_fim = true, -- 保持开启，边打字边补全
+  --     }
+  --   end,
+  -- },
   {
     "aekasitt/tylsp.nvim",
     config = function()

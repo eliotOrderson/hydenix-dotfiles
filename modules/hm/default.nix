@@ -33,12 +33,17 @@
       pkgs.obsidian
       pkgs.gh # github cli
 
+      # base cli
       pkgs.unzip
       pkgs.wget
       pkgs.ripgrep
       pkgs.fd
       pkgs.tree
+      pkgs.mdcat
+      pkgs.defuddle-cli
+      pkgs.act # local run github workflow
 
+      # github release
       github-bin.rtk
       github-bin.uv
 
@@ -47,8 +52,6 @@
 
       # unstable
       pkgs.unstable.zed-editor-fhs
-      pkgs.unstable.bun
-      pkgs.unstable.claude-code-router
       pkgs.unstable.opencode
 
       # rust dev tools

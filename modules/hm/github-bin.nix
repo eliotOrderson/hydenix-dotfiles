@@ -10,9 +10,43 @@ let
       binName ? pname,
       postInstall ? "",
     }:
-    pkgs.stdenv.mkDerivation {
+    let
+      # Evaluate whether it's an archive at Nix evaluation time.
+      # This is much safer than relying on Bash to check the Nix store path later.
+      isArchive =
+        pkgs.lib.hasSuffix ".tar.gz" url
+        || pkgs.lib.hasSuffix ".tgz" url
+        || pkgs.lib.hasSuffix ".zip" url
+        || pkgs.lib.hasSuffix ".tar.xz" url;
+    in
+    pkgs.stdenvNoCC.mkDerivation {
       inherit pname version;
-      src = pkgs.fetchurl { inherit url sha256; };
+
+      # Only set the 'name' attribute if it's NOT an archive.
+      # If it is an archive, we let fetchurl handle the name naturally.
+      src = pkgs.fetchurl (
+        { inherit url sha256; } // pkgs.lib.optionalAttrs (!isArchive) { name = binName; }
+      );
+
+      # Use the Nix boolean to dictate the Bash logic directly
+      unpackPhase = ''
+        runHook preUnpack
+
+        ${
+          if isArchive then
+            ''
+              # Archive: use the standard Nix unpacker
+              unpackFile "$src"
+            ''
+          else
+            ''
+              # Single binary file: copy it to the build directory
+              cp "$src" "./${binName}"
+            ''
+        }
+
+        runHook postUnpack
+      '';
 
       sourceRoot = ".";
       dontBuild = true;
@@ -21,26 +55,30 @@ let
       installPhase = ''
         runHook preInstall
 
-        mkdir -p $out/bin
+        mkdir -p "$out/bin"
 
-        if [ ! -f "${binName}" ]; then
+        # Locate the binary file by its basename.
+        BIN_PATH=$(find . -type f -name "${binName}" -print -quit)
+
+        if [ -z "$BIN_PATH" ]; then
           echo "===================================================="
-          echo "ERROR: Binary '${binName}' not found in the source tree."
-          echo "Current directory contents (recursive):"
+          echo "ERROR: Binary '${binName}' not found."
+          echo "Current directory contents:"
           ls -R .
           echo "===================================================="
           exit 1
         fi
 
-        install -D -m755 "${binName}" "$out/bin/${pname}"
+        # Install the binary, making it executable (755) and renaming it to $pname
+        install -D -m755 "$BIN_PATH" "$out/bin/${pname}"
 
         ${postInstall}
 
         runHook postInstall
       '';
     };
-
 in
+
 {
   # musl replace glibc
   rtk = mkGitHubBin rec {
@@ -52,10 +90,14 @@ in
 
   uv = mkGitHubBin rec {
     pname = "uv";
-    version = "0.11.7";
+    version = "0.11.18";
     url = "https://releases.astral.sh/github/uv/releases/download/${version}/uv-x86_64-unknown-linux-musl.tar.gz";
-    sha256 = "64ddb5f1087649e3f75aa50d139aa4f36ddde728a5295a141e0fa9697bfb7b0f";
-    binName = "uv-x86_64-unknown-linux-musl/uv";
+    sha256 = "a095a969fc8357f42e35652e0554525a47a29010ddb814bd82650c2ffa7d6d62";
+
+    # CHANGED: 'find -name' searches by basename, so it just needs to be "uv".
+    # It will successfully find it inside the extracted uv-x86_64... directory.
+    binName = "uv";
+
     postInstall = ''
       install -m755 uv-x86_64-unknown-linux-musl/uvx $out/bin/uvx
 

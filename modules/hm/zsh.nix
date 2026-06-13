@@ -38,7 +38,7 @@
        setopt CORRECT
        eval "$(direnv hook zsh)"
        eval "$(zoxide init zsh)"
-       export PATH=$PATH:~/.npm-global/bin
+       export PATH=$PATH:~/.npm-global/bin:~/.bun/bin:~/.cache/.bun/bin
 
        function lf() {
            local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

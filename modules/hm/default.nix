@@ -32,6 +32,7 @@
       pkgs.nix-search-cli
       pkgs.obsidian
       pkgs.gh # github cli
+      pkgs.wireguard-tools
 
       # base cli
       pkgs.unzip

@@ -3,8 +3,8 @@
 }:
 
 pkgs.mkShell {
-  nativeBuildInputs = [ 
-    pkgs.ssh-to-age 
+  nativeBuildInputs = [
+    pkgs.ssh-to-age
     pkgs.sops
   ];
 

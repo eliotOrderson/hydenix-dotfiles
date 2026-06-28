@@ -11,7 +11,7 @@
     package = pkgs.clash-verge-rev;
     serviceMode = true;
     tunMode = true;
-    autoStart = true;
+    autoStart = false;
   };
 
   services = {

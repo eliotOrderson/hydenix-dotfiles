@@ -5,6 +5,7 @@
     nixpkgs = {
       # url = "github:nixos/nixpkgs/nixos-unstable"; # uncomment this if you know what you're doing
       follows = "hydenix/nixpkgs"; # then comment this
+      # url = "github:nixos/nixpkgs/nixos-26.05"; unlock hydenix software
     };
 
     hydenix.url = "github:richen604/hydenix";
@@ -38,7 +39,7 @@
             nixpkgs.overlays = [
               (final: prev: {
                 unstable = import nixpkgs-unstable {
-                  inherit (prev) system;
+                  inherit (prev.stdenv.hostPlatform) system;
                   config.allowUnfree = true;
                 };
               })

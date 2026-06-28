@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   services.gammastep = {
     enable = true;
@@ -17,23 +16,4 @@
     };
   };
 
-  # autostart on boot start clash ui
-  systemd.user.services.clash-verge = {
-    Unit = {
-      Description = "Clash Verge Rev Service";
-      After = [ "graphical-session.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-
-    Service = {
-      Environment = "GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1";
-      ExecStartPre = "${pkgs.coreutils}/bin/sleep 3";
-      ExecStart = "${pkgs.clash-verge-rev}/bin/clash-verge --minimized";
-      Restart = "on-failure";
-    };
-
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
 }

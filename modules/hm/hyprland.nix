@@ -134,6 +134,8 @@
     # 快速将当前窗口或所有窗口调整至适合屏幕
     bind = $mainMod, Equal, layoutmsg, fit active
 
+    # autostart on boot start clash ui
+    exec-once = sleep 5 && env GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
   '';
 
 }

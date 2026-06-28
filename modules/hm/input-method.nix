@@ -16,7 +16,7 @@
         ];
       })
       # voices input
-      inputs.fcitx5-vinput.packages.${pkgs.system}.default
+      inputs.fcitx5-vinput.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
 
@@ -27,7 +27,9 @@
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${inputs.fcitx5-vinput.packages.${pkgs.system}.default}/bin/vinput-daemon";
+      ExecStart = "${
+        inputs.fcitx5-vinput.packages.${pkgs.stdenv.hostPlatform.system}.default
+      }/bin/vinput-daemon";
       Restart = "on-failure";
     };
     Install = {

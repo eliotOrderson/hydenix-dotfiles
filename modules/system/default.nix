@@ -10,7 +10,6 @@
   hydenix.hardware.openrgb.GigbyteB850.enable = false;
 
   environment.systemPackages = [
-    pkgs.clash-verge-rev
     pkgs.librime-lua
     pkgs.librime-octagram
     pkgs.sops

@@ -706,7 +706,6 @@
 : 1773398216:0;sudo //
 : 1773398313:0;uv run test_strategy/local_mock.py
 : 1773399670:0;uv add diskcache
-: 1773407611:0;nix-shell -p ipython
 : 1773414167:0;uv add hmmlearn
 : 1773467325:0;nvim qfenv
 : 1773467742:0;nvim ~/qfenv
@@ -1606,7 +1605,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774252168:0;cat .claude/CLAUDE.md > notes/CLAUDE.md
 : 1774252965:0;uv install pyright
 : 1774252978:0;pyright
-: 1774252998:0;pyright --help
 : 1774253010:0;pyright test_strategy/local_mock.py
 : 1774256027:0;google-chrome-stable bookmarks_3_23_26.html
 : 1774331046:0;git rev-list --all -- modules/hm/config/claude/CLAUDE.md | xargs -I {} sh -c 'echo "Commit: {}"; git show {}:modules/hm/config/claude/CLAUDE.md'
@@ -2252,7 +2250,6 @@ git pull --all
 : 1775473227:0;obsidian help
 : 1775480030:0;obsidian files 
 : 1775480773:0;obsidian 
-: 1775482799:0;mkdir temp
 : 1775482822:0;uv run scripts/download_binance_data.py -s btc -t 5m -m forward -c temp
 : 1775482829:0;uv run scripts/download_binance_data.py -s btc -t 5m -m full -c temp
 : 1775482845:0;cd temp
@@ -2436,7 +2433,6 @@ cp autoresearch/claude-plugin/commands/autoresearch.md ~/.claude/commands/autore
 : 1775732721:0;git checkout test 
 : 1775742226:0;git log | echo
 : 1775742229:0;git log 
-: 1775742261:0;history  | grep "git"
 : 1775742277:0;git commit --amend
 : 1775794148:0;nix-shell -p sunshine
 : 1775794168:0;sunshine
@@ -2516,7 +2512,6 @@ cp autoresearch/claude-plugin/commands/autoresearch.md ~/.claude/commands/autore
 : 1775822661:0;cp ~/.config/zed ~/hydenix/modules/hm/config/
 : 1775822664:0;cp ~/.config/zed ~/hydenix/modules/hm/config/ -r
 : 1775822830:0;git commit -m "add zeditor config"
-: 1775822916:0;ls -la
 : 1775822920:0;ls -ls
 : 1775822935:0;rm -rf ~/.config/zed
 : 1775823064:0;cd modules/hm/config/zed
@@ -2583,7 +2578,6 @@ wnload/continuous/nautilus_trader-1.225.0-cp314-cp314-manylinux_2_39_x86_64.whl
 : 1776311601:0;ps -ef | grep  uv
 : 1776313003:0;uv uninstall nautilus-trader
 : 1776313009:0;uv remove nautilus-trader
-: 1776313023:0;uv add nautilus-trader
 : 1776313100:0;uv add dotenv
 : 1776325088:0;nvim env/cpamc_env
 : 1776326729:0;cd ~/env
@@ -2674,7 +2668,6 @@ awk '{print $3}'
 : 1776443184:0;git checkout scripts/cargo-tool-version.sh
 : 1776445353:0;cd python/tests/unit/
 : 1776485293:0;git diff 63ee69f59d05102bd78311e032929c65ae92d94c
-: 1776490100:0;nvim  nautilus_trader/common/factories.pyx
 : 1776490349:0;nvim  tests/unit_tests/execution/test_emulator.py
 : 1776490817:0;git checkout tests/unit_tests/execution/test_emulator_list.py
 : 1776490840:0;nvim ~/.claude/se
@@ -2689,7 +2682,6 @@ awk '{print $3}'
 : 1776500383:0;lf examples
 : 1776519255:0;git diff nautilus_trader/execution/emulator.pyx
 : 1776571768:0;ssh eliot@192.168.31.245
-: 1776571855:0;git diff
 : 1776573923:0;git diff tests/unit_tests/execution/test_emulator_list.py
 : 1776578068:0;rsync -avh tyrell@192.168.31.245:/home/tyrell/.cache/modelscope/hub/models/unsloth ./
 : 1776579431:0;ls tests
@@ -2823,7 +2815,6 @@ $3}'
 : 1776677501:0;cat run.log | grep -E -A 10 "SELL|BUY|'STOP_LOSS'" > run2.log
 : 1776677973:0;uv run python run_backtest.py -s strategies.momentum_trading -lco 
 : 1776678152:0;uv run python run_backtest.py -s strategies.momentum_trading -lco > run.log
-: 1776678709:0;nvim .gitignore
 : 1776679679:0;cd Workspace/python
 : 1776679701:0;git clone https://github.com/uditgoenka/autoresearch.git --depth 1
 : 1776679830:0;cd autoresearch
@@ -2881,7 +2872,6 @@ $3}'
 : 1776765469:0;git commit -m "win: 0.673%, pnl: 3994.61%, improve run live architecture"
 : 1776765668:0;history  | grep "test_"
 : 1776765751:0;nvim tests/unit_tests/execution/test_emulator_list.py
-: 1776766173:0;cat smart_sync.sh
 : 1776767072:0;uv --help
 : 1776767467:0;uv sync --config-file uv.live.toml
 : 1776768058:0;uv
@@ -2930,7 +2920,6 @@ $3}'
 : 1776843177:0;git checkout  nautilus_trader/execution/manager.pyx
 : 1776843186:0;git checkout HEAD --  nautilus_trader/execution/manager.pyx
 : 1776843202:0;uv run python -m pytest tests/unit_tests/trading/test_strategy.py
-: 1776843881:0;git checkout test
 : 1776843883:0;nvim nautilus_trader/execution/manager.pyx
 : 1776844438:0;make build-debug
 : 1776844893:0;make build-debug && uv run python -m pytest tests/unit_tests/trading/test_strategy.py -x
@@ -2943,7 +2932,6 @@ $3}'
 : 1776846491:0;make clean &
 : 1776846508:0;rm dict -rf
 : 1776846844:0;uv run --no-sync pre-commit run --all-files
-: 1776849127:0;ls dist -lh
 : 1776849816:0;ls ~/.cache/act
 : 1776850043:0;uv python uninstall 3.13
 : 1776850062:0;uv python uninstall 3.13*
@@ -3042,7 +3030,6 @@ $3}'
 : 1777011513:0;trash-rm --help
 : 1777011521:0;trash-empty --help
 : 1777011733:0;claude mcp remove gitnexus
-: 1777013236:0;lf 
 : 1777013277:0;mempalace instructions init
 : 1777013548:0;mempalace instructions search
 : 1777013947:0;python --version
@@ -3103,7 +3090,6 @@ $3}'
 : 1777047271:0;sudo fdisk -
 : 1777047273:0;sudo fdisk -l
 : 1777047308:0;cd ~/.mempalace
-: 1777047313:0;du -lh
 : 1777047391:0;trash 
 : 1777047397:0;trash --help
 : 1777047506:0;mempalace mine ~/.claude/projects/ --mode convos --extract general
@@ -3116,7 +3102,6 @@ $3}'
 : 1777048040:0;mempalace search "BUG"
 : 1777099313:0;cd .config/zed
 : 1777099317:0;cd open
-: 1777099320:0;cd opencode
 : 1777099863:0;nix-search llamfit
 : 1777100141:0;docker run ghcr.io/alexsjones/llmfit
 : 1777100498:0;nix-search llmfit
@@ -3492,14 +3477,12 @@ $3}'
 : 1777709991:0;cp -r /home/hydenix/Workspace/Archon/packages/cli/.claude/skills/archon ~/.claude/hooks
 : 1777710018:0;cp ../hooks/archon ./ -r
 : 1777710151:0;uv run run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json
-: 1777710474:0;i
 : 1777711503:0;top10
 : 1777711508:0;top
 : 1777711830:0;git commit -m "remove constraints feat\
 - fix sampler optimizer comment regression \
 "
 : 1777711923:0;uv run run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -bl
-: 1777713565:0;zeditor .
 : 1777715620:0;uv run run_backtest.py -s strategies.momentum_trading -bl 
 : 1777715813:0;uv run run_backtest.py -s strategies.momentum_trading -bl --config-json\
   optimizer/momentum_trading/active.full.json
@@ -3507,7 +3490,6 @@ $3}'
 : 1777717273:0;git commit -m "move strategy <-> dict fn to utils\
 - live suuport from file load config"
 : 1777718047:0;git commit -m "fix sampler use old strategy <-> dict, fix typing"
-: 1777718685:0;source /home/hydenix/Workspace/python/strategy_research/.venv/bin/activate
 : 1777720319:0;uv run base/percentage.py
 : 1777720367:0;uv run oat_sampler.py -s strategies.momentum_trading -n 2 -p 6
 : 1777720648:0;git commit -m "fix Percentage serialization to str"
@@ -3669,8 +3651,6 @@ $3}'
 : 1778171510:0;uv run run_backtest.py -s strategies.momentum_trading -bl --config-json ./optimizer/momentum_trading/active.fullv3.json
 : 1778172342:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.fullv3.json -bl 
 : 1778219911:0;ipython
-: 1778220191:0;lf catalog
-: 1778221462:0;uv run run_backtest.py -s strategies.break5m_1mscalping -bl
 : 1778222593:0;git commit -m "fix qqe indicator\
 - add AndeanOscillator indicator\
 - reduce strategy  redundant code \
@@ -3723,8 +3703,6 @@ $3}'
 : 1778485112:0;rsync -aI ../nautilus-trader-cython-stubs/stubs/* ./.venv/lib/python3.14/site-packages/nautilus_trader
 : 1778485321:0;ty check test_strategy/test_strategy.py
 : 1778486279:0;uv sync --no-sources
-: 1778486284:0;uv sync
-: 1778486288:0;uv sync --extra opt
 : 1778491432:0;\docker images
 : 1778512062:0;uv run run_backtest.py -s test_strategy.test_strategy
 : 1778573669:0;uv run run_backtest.py -s test_strategy.test_strategy -lco | tail -n 200
@@ -3740,8 +3718,6 @@ $3}'
 : 1778670638:0;lf /home/hydenix/.cache/modelscope/hub/models/mudler/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled-APEX-GGUF
 : 1778670663:0;cd Qwen3___6-35B-A3B-Claude-4___7-Opus-Reasoning-Distilled-APEX-GGUF
 : 1778677698:0;journalctl --user -u sunshine -f
-: 1778747351:0;nvim ~/.claude/CLAUDE.md
-: 1778749814:0;google-chrome-stable snake.html
 : 1778754848:0;nvim python-vim.code-profile
 : 1778756040:0;code .
 : 1778927284:0;gsd
@@ -3779,17 +3755,14 @@ $3}'
 : 1780565260:0;git checkout -l
 : 1780565266:0;git branch -l
 : 1780565274:0;git 
-: 1780565295:0;ls .github/workflows/
 : 1780565534:0;git commit -m "keep old plan.sh"
 : 1780565571:0;git reset --hard 21bf18d1
 : 1780565885:0;nix profile 
 : 1780565892:0;nix profile list
 : 1780566132:0;nix profile install github:sadjow/claude-code-nix
 : 1780566532:0;export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
-: 1780566870:0;nvim ~/env/xl.env
 : 1780567470:0;git reset --hard HEAD
 : 1780567917:0;act -j pre-commit -P ubuntu-latest=catthehacker/ubuntu:act-latest --container-options "--volume $HOME/.cache/act:/root/.cache"
-: 1780568243:0;./smart_sync.sh
 : 1780568270:0;git checkout develop -- scripts/ci/plan.sh
 : 1780568273:0;nvim scripts/ci/plan.sh
 : 1780568297:0;git commit -m "update plan.sh for origin"
@@ -3810,9 +3783,7 @@ $3}'
 : 1780569444:0;act -j pre-commit -P ubuntu-latest=catthehacker/ubuntu:act-latest
 : 1780569490:0;act --help
 : 1780569523:0;cd /home/hydenix/.cache/actcache
-: 1780569533:0;ls -lh
 : 1780569681:0;act -j pre-commit -P ubuntu-latest=catthehacker/ubuntu:act-latest --reuse
-: 1780570145:0;git push -u origin test --force
 : 1780571155:0;nvim ~/.claude/settings.json
 : 1780571368:0;nix profile remove claude-code-nix
 : 1780571442:0;npm install -g @anthropic-ai/claude-code@v2.1.140
@@ -3821,19 +3792,16 @@ $3}'
 : 1780682315:0;sh
 : 1780728228:0;cd HauhauCS
 : 1780728433:0;npm install -g @anthropic-ai/claude-code@v2.1.129
-: 1780729123:0;bun install -g @oh-my-pi/pi-coding-agent
 : 1780731984:0;bun install -g @oh-my-pi/pi-coding-agent --registry https://registry.npmmirror.com
 : 1780732047:0;cd /home/hydenix/.cache/.bun/bin
 : 1780732093:0;cd ~/.bun/bin
 : 1780734326:0;nix flake show github:oven-sh/bun
-: 1780735739:0;uv --version
 : 1780735743:0;bun
 : 1780736159:0;npm install -g bun
 : 1780736183:0;bun --version
 : 1780736497:0;rm ~/.omp
 : 1780736699:0;claude mcp remove mempalace
 : 1780736924:0;nvim ~/.omp/
-: 1780810440:0;git rebase -i HEAD~10
 : 1780810485:0;make build
 : 1780810897:0;rustup toolchain install 1.96.0
 : 1780811050:0;git checkout rust-toolchain.toml
@@ -3841,8 +3809,6 @@ $3}'
 : 1780811145:0;rustup update
 : 1780812136:0;ls target
 : 1780812139:0;lf target
-: 1780812150:0;make build-wheel
-: 1780812439:0;cd dist
 : 1780812446:0;rm -rf nautilus_trader-1.226.0-cp314-cp314-manylinux_2_40_x86_64.whl
 : 1780812813:0;nvim ~/.omp/config.yml
 : 1780813263:0;nvim ~/.claude/hooks
@@ -3853,7 +3819,6 @@ $3}'
 : 1780813517:0;rm -rf .omp
 : 1780813557:0;mv xl.env
 : 1780813560:0;nvim xl.env
-: 1780813857:0;pi
 : 1780814168:0;mv .claude.json.bk .claude.json
 : 1780814189:0;rm -rf .claude
 : 1780814194:0;mv .claude.bk .claude
@@ -3893,22 +3858,16 @@ $3}'
 : 1781081054:0;uv run run_optimizer.py -s strategies.momentum_trading
 : 1781086900:0;uv run run_live.py -m testnet
 : 1781089964:0;git log --oneline
-: 1781089971:0;nvim smart_sync.sh
-: 1781089989:0;git checkout local_dev
-: 1781089996:0;git reset --hard test
 : 1781090360:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/btc_winrate/active.best.json -bl
 : 1781102666:0;uv run run_backtest.py -s strategies.momentum_trading --get-config-json
-: 1781102946:0;make upload
 : 1781104685:0;nvim 337cf2db-9b94-4611-b4c7-69cb6f9993fd.conf
 : 1781105854:0;npm
 : 1781107753:0;cd .cache/modelscope/hub/models/
 : 1781152169:0;ðƒ¿ƒ¸®
-: 1781152257:0;cat ~/env/xl.env
 : 1781152692:0;rm ~/.omp -rf
 : 1781153887:0;cat docker-compose.yml | wl-copy
 : 1781157997:0;cat ~/Downloads/337cf2db-9b94-4611-b4c7-69cb6f9993fd.conf
 : 1781162727:0;clash-verge
-: 1781162800:0;GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
 : 1781163831:0;claude --dangerously-skip-permissions
 : 1781164517:0;wg-quick
 : 1781164570:0;sudo wg-quick up ~/Downloads/8e3794da-8fe6-4ff2-9495-4b9c0bd0c7a2.conf
@@ -3925,7 +3884,6 @@ $3}'
 : 1781248385:0;cat ~/Downloads/8e3794da-8fe6-4ff2-9495-4b9c0bd0c7a2.conf
 : 1781248501:0;cat ~/Downloads/0295ffab-b00e-4c49-8335-e6b616ecf657.conf
 : 1781250116:0;cd docker/wg-easy
-: 1781250125:0;claude --dangerously-skip-permissions --continue 
 : 1781250495:0;sudo rm -rf wg-easy/
 : 1781250646:0;docker compose restart
 : 1781250685:0;rm -rf  wg-easy
@@ -4024,8 +3982,6 @@ $3}'
 : 1781337792:0;ps -ef | grep  clash
 : 1781338307:0;git reset --soft HEAD~1
 : 1781338385:0;git commit -m "upgrade to 26.x, optimizer code"
-: 1781338395:0;cgit push -u origin 
-: 1781338408:0;git push -u origin 
 : 1781338977:0;docker exec -it wg-easy ss -ulpn
 : 1781338993:0;cd wg-easyv2
 : 1781339003:0;cd docker
@@ -4034,7 +3990,6 @@ $3}'
 : 1781339014:0;cd wg-easy
 : 1781339016:0;docker compose down
 : 1781339706:0;nix-search  wireguard-tools
-: 1781339771:0;cd hy
 : 1781339895:0;wg
 : 1781339911:0;wg-quick 
 : 1781340154:0;cat ~/.omp/agent/settings.json
@@ -4071,19 +4026,13 @@ $3}'
 : 1781345242:0;omp update
 : 1781345423:0;nvim ~/env/deepseekv4.env
 : 1781345486:0;nvim ~/env/
-: 1781345512:0;source ~/env/xl.env
-: 1781345513:0;omp
 : 1781345526:0;omp --help
 : 1781348222:0;uv run run_optimizer.py -s strategies.momentum_trading -n 5
 : 1781349276:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/btc_winrate/active.full.json -bl
 : 1781351106:0;uv run scripts/download_binance_data.py -s bnb -t 1m -m forward 
 : 1781354402:0;uv run scripts/download_binance_data.py -s sol -t 1m -m full -d 210
-: 1781354523:0;uv run scripts/download_binance_data.py -s sol -t 1m -m full -d 180
 : 1781354574:0;uv run scripts/download_binance_data.py -s bch -t 1m -m full -d 180
 : 1781358305:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json 
-: 1781359564:0;python
-: 1781360542:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -lco
-: 1781360595:0;uv run run_optimizer.py -s strategies.momentum_trading 
 : 1781365441:0;cat a
 : 1781365445:0;rm a
 : 1781365450:0;cat a.yml
@@ -4100,7 +4049,6 @@ $3}'
 : 1781420595:0;uv run run_backtest.py -s strategies.testing_dev -bl
 : 1781420753:0;uv run run_backtest.py -s strategies.testing_dev --config-json ./optimizer/testing_dev/active.full.json -lco
 : 1781423376:0;nvim ~/cmd
-: 1781423510:0;cd .config/opencode
 : 1781423737:0;cd -
 : 1781423741:0;cd skills
 : 1781423741:0;;s
@@ -4121,10 +4069,7 @@ $3}'
 : 1781509511:0;lean-ctx uninstall
 : 1781509752:0;cd ~/.config/opencode
 : 1781510042:0;omp 
-: 1781512377:0;cat cmd
-: 1781512731:0;cd 
 : 1781512737:0;nvim CLAUDE.md
-: 1781514907:0;nvidia-smi 
 : 1781522665:0;uv run python run_backtest.py -s strategies.testing_dev --config-json optimizer/testing_dev/active.full.json -i -bl\
 
 : 1781523270:0;uv run python run_backtest.py -s strategies.testing_dev -i \
@@ -4134,17 +4079,13 @@ $3}'
 : 1781523286:0;uv run python run_backtest.py -i
 : 1781524298:0;uv run python run_backtest.py -s strategies.testing_dev --config-json optimizer/testing_dev/active.full.json -bl -i\
 
-: 1781524378:0;git log
 : 1781537933:0;æƒ©ƒ­å¯¹
-: 1781537964:0;opencode 
 : 1781538365:0;cd .config/zsh
 : 1781538372:0;nvim .zsh_history
 : 1781538610:0;wc 
 : 1781538619:0;wc .zsh_history -l
 : 1781539208:0;cat .zsh_history > ~/hydenix/modules/hm/config/zsh/zsh_history
 : 1781585410:0;reboot
-: 1781627752:0;claude mcp list
-: 1781627760:0;cd .claude
 : 1781628596:0;cat clash-config.yaml
 : 1781628688:0;sudo wg show
 : 1781628703:0;cat clash-config.yaml 
@@ -4157,22 +4098,16 @@ $3}'
 : 1781679182:0;defuddle https://github.com/Loyalsoldier/clash-rules/blob/master/README.md
 : 1781679204:0;defuddle --help
 : 1781679214:0;defuddle parse https://github.com/Loyalsoldier/clash-rules/blob/master/README.md
-: 1781679407:0;docker start ktransformers
-: 1781679409:0;docker exec -it ktransformers bash
-: 1781679416:0;nvim cmd
 : 1781679861:0;cat ~/Downloads/Linux.conf
 : 1781679891:0;cat ~/Downloads/Linux\ \(1\).conf
 : 1781682278:0;cd hydenix/
-: 1781682296:0;cd hydenix/modules/system/config
 : 1781682305:0;direnv
-: 1781682330:0;./shell.nix
 : 1781682352:0;cat secrets.yaml
 : 1781682383:0;nvim shell.nix
 : 1781682401:0;cd config
 : 1781682439:0;cat anything/clash-config.yaml| wl-copy
 : 1781682449:0;sops clash-config.yml
 : 1781682454:0;nvim clash-config.yaml
-: 1781682514:0;sops secrets.yaml
 : 1781682646:0;cat shell.nix
 : 1781682705:0;sops --encrypt clash-config.yaml 
 : 1781682735:0;ls -a
@@ -4182,7 +4117,6 @@ $3}'
 : 1781682884:0;sops clash-config.yaml
 : 1781682887:0;sops modules/system/config/clash-config.yaml
 : 1781683087:0;sops modules/system/config/secrets.12.yaml
-: 1781683112:0;cat .sops.yaml
 : 1781683194:0;nvim .sops.yaml
 : 1781683205:0;sops modules/system/config/secrets.clash-config.yaml
 : 1781683238:0;cat clash-config.yaml | wl-copy
@@ -4190,15 +4124,8 @@ $3}'
 : 1781683263:0;rm -rf clash-config.yaml
 : 1781683267:0;nix-shell ./shell.nix
 : 1781683284:0;sops secrets.clash-config.yaml
-: 1781683403:0;cd ../
-: 1781683406:0;git status
-: 1781683498:0;git add .
-: 1781685370:0;cd anything
-: 1781685625:0;npm install -g @anthropic-ai/claude-code
 : 1781685644:0;claude --version
-: 1781685664:0;opencode
 : 1781685854:0;uv run python run_backtest.py -s strategies.momentum_trading -bl --config-json optimizer/momentum_trading/btcarchive/active.fullv3.json -i
-: 1781686151:0;rm /dev/shm/backtest_bars_BTCUSDT-PERP_BINANCE_FUTURES.pkl
 : 1781686162:0;uv run scripts/download_binance_data.py -s btc -t 1m -m forward 
 : 1781686185:0;uv run python run_backtest.py -s strategies.momentum_trading -bl --config-json optimizer/momentum_trading/btcarchive/active.fullv3.json 
 : 1781686201:0;uv run python run_backtest.py -s strategies.momentum_trading -bl --config-json optimizer/momentum_trading/btcarchive/active.fullv3.json -lco
@@ -4212,16 +4139,12 @@ $3}'
 : 1781688348:0;uv run python run_backtest.py -s strategies.break5m_1mscalping
 : 1781688350:0;uv run python run_backtest.py -s strategies.break5m_1mscalping -bl
 : 1781688485:0;uv run oat_sampler.py -s strategies. -n 15 -j 6
-: 1781688507:0;cd ../../
 : 1781688509:0;uv run oat_sampler.py -s strategies.break5m_1mscalping -n 15 -j 12
 : 1781689208:0;uv run python run_optimizer.py -s strategies.break5m_1mscalping --config optimizer/break5m_1mscalping/active.full\
 .json\
 
 : 1781689212:0;uv run python run_optimizer.py -s strategies.break5m_1mscalping --config optimizer/break5m_1mscalping/active.full.json\
 
-: 1781769954:0;sudo nixos-rebuild switch --flake .#hydenix
-: 1781790879:0;export TERM=xterm-256color
-: 1781800086:0;shutdown now
 : 1781849490:0;uv run python run_backtest.py -s strategies.break5m_1mscalping --config optimizer/break5m_1mscalping/active.full.json -lco | tail -n 100\
 
 : 1781861260:0;uv run python run_optimizer.py -s strategies.break5m_1mscalping --config optimizer/break5m_1mscalping/btcarchive/active.full.json -bl
@@ -4233,7 +4156,6 @@ $3}'
 : 1781861398:0;uv run python run_backtest.py -s strategies.break5m_1mscalping --config optimizer/break5m_1mscalping/active.full.json -bl\
 
 : 1781861417:0;rm /dev/shm/backtest_bars_BCHUSDT-PERP_BINANCE_FUTURES.pkl
-: 1781862286:0;ssh eliot@64.83.32.240
 : 1781862420:0;uv run python run_backtest.py -s strategies.break5m_1mscalping \
 
 : 1781862435:0;uv run python run_optimizer.py -s strategies.break5m_1mscalping
@@ -4247,127 +4169,275 @@ $3}'
 : 1781888809:0;uv run python run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -lco 
 : 1781889286:0;uv run python run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -bl
 : 1781890287:0;zi 
-: 1781934064:0;nvim .
-: 1781934176:0;cd hydenix
-: 1781934178:0;./fix-audio.sh
-: 1781935228:0;lf
 : 1781935949:0;nix-search  qmd
-: 1781939672:0;cd
 : 1781939673:0;cd Downloads
-: 1781939673:0;ls
 : 1781939676:0;nix-shell -p appimage-run
 : 1781939698:0;appimage-run LLM.Wiki_0.4.25_amd64.AppImage
 : 1781939915:0;uv run run_backtest.py -s strategies.testing_dev --config-json ./optimizer/testing_dev/active.full.json -bl
-: 1781941638:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -bl
-: 1781941694:0;clear
-: 1781941838:0;zi
-: 1781941842:0;source ~/env/deepseekv4.env
-: 1781941846:0;claude --dangerously-skip-permissions 
 : 1781942426:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json --get-config-json
-: 1781943938:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1781944716:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
-: 1781944754:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/btc/active.full.json -bl
 : 1781966873:0;uv tool install obsidian-wiki
 : 1781966890:0;obsidian-wiki --help
 : 1781966897:0;obsidian-wiki list
 : 1781966922:0;obsidian-wiki info
 : 1781967542:0;uv run scripts/download_binance_data.py -s sol -t 1m -m full -d 180
-: 1781967685:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1781969869:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/btc/active.full.json -bl
-: 1781969883:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
-: 1781970006:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1781970346:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
-: 1781970398:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1781971076:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
-: 1781971116:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1781975988:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
-: 1781976029:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -lco
-: 1781977970:0;shutdown now
-: 1782023937:0;cd hydenix
-: 1782023939:0;sudo nixos-rebuild switch --flake .#hydenix
-: 1782024035:0;clear
-: 1782024036:0;zi
-: 1782024038:0;nvim .
-: 1782024265:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -lco
-: 1782024300:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco
-: 1782024460:0;source ~/env/deepseekv4.env
-: 1782024461:0;zi
-: 1782024463:0;claude --dangerously-skip-permissions 
-: 1782025679:0;cd
-: 1782025679:0;ls
-: 1782025686:0;cd hydenix
-: 1782025689:0;./fix-audio.sh
-: 1782026690:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco
-: 1782027637:0;clear
-: 1782027640:0;source ~/env/deepseekv4.env
-: 1782027641:0;claude --dangerously-skip-permissions 
-: 1782028379:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco
 : 1782031164:0;uv add nautilus-trader
 : 1782031862:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco
 : 1782033695:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco | grep "2026-06-18"
 : 1782033914:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco | grep "2026-06-18.*?"
 : 1782033919:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco | grep -E "2026-06-18.*?"
 : 1782034441:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -lco 
-: 1782036266:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -bl
-: 1782036674:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/bnb/active.full.json -bl
-: 1782036745:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/bch/active.full.json -bl
-: 1782036895:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/btc/active.full.json -bl
 : 1782036963:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/bnb/active.full.json -bl
-: 1782037203:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1782049217:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/bch/active.full.json -bl
-: 1782049277:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -lco
-: 1782049282:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
 : 1782049353:0;uv run python run_optimizer.py -s strategies.momentum_trading 
-: 1782049992:0;clear
-: 1782049994:0;ls
-: 1782049995:0;cd 
-: 1782049996:0;clear
-: 1782049997:0;zi
 : 1782049999:0;npx @colbymchenry/codegraph
 : 1782050069:0;npm install -g @colbymchenry/codegraph
 : 1782050081:0;codegraph --help
-: 1782050132:0;zi
 : 1782050139:0;codegraph install --target=claude --yes  
-: 1782050164:0;cd
-: 1782050167:0;cd .claude
-: 1782050168:0;nvim .
 : 1782050215:0;claude mcp list
-: 1782050226:0;codegraph init -i
 : 1782050244:0;cat .codegraph/errors.log
-: 1782050262:0;nvim .
-: 1782050276:0;clear
-: 1782050280:0;source ~/env/deepseekv4.env
-: 1782050284:0;claude --dangerously-skip-permissions 
-: 1782050507:0;clear
-: 1782050507:0;ls
-: 1782050511:0;nvim .
-: 1782051641:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
-: 1782051772:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -lco
-: 1782051896:0;uv run run_optimizer.py -s strategies.momentum_trading 
-: 1782052817:0;clear
-: 1782052828:0;cd
-: 1782052830:0;cd hydenix
 : 1782052833:0;git diff
-: 1782052836:0;nvim .
-: 1782052849:0;git status
-: 1782052851:0;git log
 : 1782052863:0;git push -u origin 
 : 1782052872:0;cgit push -u origin 
-: 1782053051:0;codegraph init -i
-: 1782053056:0;source ~/env/deepseekv4.env
-: 1782053059:0;claude --dangerously-skip-permissions 
-: 1782053279:0;git status
-: 1782053296:0;nvim .gitignore
-: 1782053594:0;git log
-: 1782053596:0;git status
 : 1782053604:0;nvim .gitignore
-: 1782053618:0;git status
-: 1782053628:0;clear
 : 1782053667:0;history  | grep "git"
 : 1782053812:0;history  | grep "git update-index"
 : 1782053819:0;git update-index --assume-unchanged modules/hm/config/zsh/zsh_history
-: 1782053823:0;git status
-: 1782053911:0;git log
-: 1782053923:0;git status
-: 1782053931:0;git add .
-: 1782053934:0;git status
+: 1782054128:0;nvim ~/.claude/CLAUDE.md
+: 1782055520:0;nvim /home/hydenix/.claude/hooks/append-rules-reminder.sh
+: 1782055859:0;printf '{"hook_event_name":"UserPromptSubmit","text":"run the tests"}' |\
+      /home/hydenix/.claude/hooks/append-rules-reminder.sh > /tmp/hook-test-out.json 2>&1; echo "EC=$?"; cat\
+      /tmp/hook-test-out.json
+: 1782055878:0;printf '{"hook_event_name":"UserPromptSubmit","text":"run the tests"}' |\
+      /home/hydenix/.claude/hooks/append-rules-reminder.sh 
+: 1782056895:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -lco
+: 1782056897:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.full.json -bl
+: 1782057263:0;uv run run_optimizer.py -s strategies.momentum_trading 
+: 1782108013:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/btc/active.full.json -bl
+: 1782108381:0;uv run run_live.py -m live
+: 1782108473:0;export TERM=xterm-256color
+: 1782109177:0;make upload\ 
+: 1782109769:0;source /home/hydenix/Workspace/python/strategy_research/.venv/bin/activate
+: 1782109801:0;zeditor .
+: 1782110995:0;i
+: 1782111185:0;git rebase -i HEAD~10
+: 1782112021:0;git checkout test
+: 1782112285:0;cat msg_emulation.txt
+: 1782112448:0;cd hy
+: 1782112714:0;uv --version
+: 1782113341:0;ls dist -lh
+: 1782113355:0;cd dist
+: 1782113360:0;rm nautilus_trader-1.228.0-cp314-cp314-manylinux_2_40_x86_64.whl
+: 1782113407:0;ls .github/workflows/
+: 1782115161:0;rm .github/workflows/ci.yml.bak
+: 1782115421:0;git reset --hard test
+: 1782115677:0;nvim nautilus_trader/common/factories.pyx
+: 1782116558:0;git checkout local_dev
+: 1782116644:0;ls .github/workflows/ -lh
+: 1782116671:0;cat smart_sync.sh
+: 1782116685:0;nvim smart_sync.sh
+: 1782116738:0;make build-wheel
+: 1782116868:0;uv run --no-sync pytest tests/unit_tests/execution/test_emulator_list.py \\
+        -k "mixed_emulation or bracket" \\
+        -n 1 --dist=loadgroup --reruns 0 2>&1 | tail -5
+: 1782116989:0;./smart_sync.sh
+: 1782116993:0;git push -u origin test --force
+: 1782283109:0;nvim cmd
+: 1782287406:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btcarchive/active.full.json -bl -i
+: 1782289036:0;uv run run_backtest.py -s strategies.break5m_1mscalping  -bl 
+: 1782291749:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btcarchive/active.full.json -bl 
+: 1782293368:0;uv run run_backtest.py -s strategies.break5m_1mscalping -bl
+: 1782295751:0;uv run lhs_shap_sampler.py -s strategies.break5m_1mscalping -n 300 -j 12
+: 1782299659:0;uv run run_optimizer.py -s strategies.break5m_1mscalping
+: 1782302000:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/active.full.json -bl
+: 1782307715:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/eth/active.full.json -bl
+: 1782307910:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/bch/active.full.json -bl
+: 1782308084:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/eth/active.full.json -bl
+: 1782308605:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/sol/active.full.json -bl
+: 1782308874:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json
+: 1782309354:0;nvidia-smi 
+: 1782362613:0;cd opencode
+: 1782362626:0;npm install -g @anthropic-ai/claude-code
+: 1782362687:0;cat ~/env/xl.env
+: 1782362695:0;nvim  ~/env/xl.env
+: 1782376308:0;cat .sops.yaml
+: 1782376329:0;cat modules/system/config/shell.nix
+: 1782378862:0;cd hydenix/modules/system/config
+: 1782378870:0;./shell.nix
+: 1782378886:0;nix-shell shell.nix
+: 1782378910:0;sops secrets.yaml
+: 1782386274:0;make upload
+: 1782386455:0;git commit -m "adjust n_jobs to 12, break5m_1mscalping add min quantity limit"
+: 1782388300:0;codegraph init -i
+: 1782393998:0;cd 
+: 1782394000:0;cd .claude
+: 1782401695:0;pyright scripts/download_binance_datav2.py
+: 1782401711:0;pyright --help
+: 1782401738:0;pyright scripts/download_binance_datav2.py --level warning
+: 1782407926:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 1 -m full --keep-cache --checksum 
+: 1782442999:0;ssh eliot@64.83.32.240
+: 1782447121:0;./fix-audio.sh
+: 1782452913:0;git commit -m "add new binance data source"
+: 1782457300:0;git add .config.env
+: 1782457309:0;git add .config.env -f
+: 1782457504:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt klines -s btcusdt -d 200 -m full --keep-cache --checksum 
+: 1782457527:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt klines -s btcusdt -d 200 -m full --keep-cache --checksum -i 1m
+: 1782457614:0;rm /dev/shm/backtest_bars_BTCUSDT-PERP_BINANCE_FUTURES.pkl
+: 1782457618:0;rm /dev/shm/backtest_data_BTCUSDT_PERP_BINANCE_FUTURES_1_MINUTE_LAST_EXTERNAL.pkl 
+: 1782459010:0;uv run scripts/download_binance_datav2.py --help
+: 1782460575:0;sudo systemctl restart clash-verge.service
+: 1782460627:0;sudo systemctl disable clash-verge.service
+: 1782460641:0;sudo systemctl --help
+: 1782460663:0;sudo systemctl stop clash-verge.service
+: 1782460667:0;sudo systemctl status clash-verge.service
+: 1782460673:0;sudo systemctl start clash-verge.service
+: 1782460694:0;sudo nixos-rebuild switch --flake .#hydenix
+: 1782461332:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200 -m full --keep-cache --checksum 
+: 1782461974:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200
+: 1782463058:0;cd hydenix
+: 1782463377:0;lf catalog
+: 1782463906:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 8 -m backward
+: 1782463972:0;cd ../
+: 1782464335:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200 -m full
+: 1782481259:0;ls -lh /home/hydenix/Workspace/python/strategy_research/catalog/data/trade_tick
+: 1782482590:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200 -m full --merge
+: 1782482603:0;free 
+: 1782482618:0;watch -n 2free  -lh
+: 1782482988:0;lf 
+: 1782483052:0;mkdir temp
+: 1782483063:0;mv BTCUSDT-aggTrades-2025-12.zip BTCUSDT-aggTrades-2026-01.zip BTCUSDT-aggTrades-2026-02.zip BTCUSDT-aggTrades-2026-03.zip BTCUSDT-aggTrades-2026-04.zip ~/temp
+: 1782483515:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 60 -m full --merge
+: 1782483519:0;watch -n 2 free  -lh
+: 1782484152:0;ls -lh
+: 1782484186:0;du -lh
+: 1782486629:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 30 -m full --merge
+: 1782486699:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 3 -m full 
+: 1782487165:0;ls catalog/data/trade_tick -lh
+: 1782490222:0;ls catalog/data/trade_tick/AGGTRADES_BTCUSDT-PERP.BINANCE_FUTURES -lh
+: 1782490226:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 3 -m full --merge 
+: 1782491897:0;ty check scripts/download_binance_datav2.py
+: 1782493067:0;cd .cache
+: 1782493071:0;ls -la
+: 1782494063:0;claude --dangerously-skip-permissions --continue 
+: 1782494331:0;uv add pytest-timeout
+: 1782494355:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.dow\
+nload_binance_datav2 --cov-report=term --timeout=15\
+
+: 1782494723:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.download_binance_datav2 --cov-report=term -p no:cov
+: 1782496470:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full 
+: 1782498310:0;git status
+: 1782498553:0;shutdown now
+: 1782542151:0;source ~/env/deepseekv4.env
+: 1782542154:0;claude --dangerously-skip-permissions 
+: 1782543272:0;ty check tests/test_download_binance_datav2.py
+: 1782543281:0;pyright  tests/test_download_binance_datav2.py
+: 1782543414:0;cd ../../
+: 1782544397:0;uv run python  scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
+: 1782544993:0;uv 
+: 1782545005:0;uv sync
+: 1782545007:0;uv sync --extra opt
+: 1782545010:0;uv run  scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
+: 1782545154:0;uv run python -m  scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
+: 1782545182:0;uv run python -m scripts/download_binance_datav2 -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
+: 1782545205:0;uv run python -m scripts.download_binance_datav2 -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
+: 1782545859:0;uv run pytest tests/test_download_binance_datav2.py -x -q --no-header -p no:cov
+: 1782546071:0;rm BTCUSDT-aggTrades-2026-06-23.parquet
+: 1782546359:0;git add .
+: 1782546807:0;rm -rf *
+: 1782552202:0;nix-shell -p ipython
+: 1782552215:0;python
+: 1782552262:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl -i
+: 1782555819:0;codegraph sync
+: 1782555823:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl 
+: 1782558643:0;uv run -m scripts.download_binance_datav2 -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
+: 1782558911:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -lco
+: 1782559347:0;ls /dev/shm/backtest_data_AGGTRADES_BTCUSDT_PERP_BINANCE_FUTURES.pkl -lh
+: 1782559361:0;free  -lh
+: 1782559560:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -lco -i
+: 1782559679:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl
+: 1782560872:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.download_binance_datav2 --cov-report=term --timeout=15
+: 1782566225:0;git log
+: 1782569244:0;opencode
+: 1782569317:0;opencode --help
+: 1782569408:0;opencode 
+: 1782569698:0;bun add -g --ignore-scripts @earendil-works/pi-coding-agent
+: 1782569719:0;pi --help
+: 1782569985:0;pi install npm:pi-hashline-edit
+: 1782569994:0;pi install npm:pi-hashline-readmap
+: 1782570216:0;pi uninstall npm:pi-hashline-edit
+: 1782570230:0;source ~/env/xl.env
+: 1782570789:0;cd .config/opencode
+: 1782571005:0;nvim ~/.pi/agent/models.json
+: 1782571014:0;cd ~/.pi/
+: 1782571310:0;pi install git:https://github.com/hasit/pi-community-themes
+: 1782571450:0;pi uninstall git:https://github.com/hasit/pi-community-themes
+: 1782571458:0;pi install npm:@spences10/pi-themes
+: 1782572145:0;docker start ktransformers
+: 1782572147:0;docker exec -it ktransformers bash
+: 1782572152:0;cat cmd
+: 1782572220:0;GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
+: 1782572503:0;pi install npm:pi-workspace-history
+: 1782572510:0;pi update --extensions
+: 1782572848:0;pi install npm:@plannotator/pi-extension
+: 1782573769:0;echo "123"  --help
+: 1782573775:0;echo "123" > test.txt
+: 1782574242:0;pi install npm:pi-subagents
+: 1782574417:0;pi uninstall npm:@spences10/pi-themes
+: 1782574425:0;pi install npm:@rokiy/pi-ui
+: 1782574482:0;nvim .
+: 1782574949:0;cd na
+: 1782575579:0;clear
+: 1782575580:0;ls
+: 1782575585:0;google-chrome-stable snake.html
+: 1782577643:0;bun install -g @oh-my-pi/pi-coding-agent
+: 1782577689:0;omp
+: 1782577942:0;pi list
+: 1782577955:0;cd .pi
+: 1782577956:0;lf
+: 1782578003:0;cd
+: 1782578005:0;cd anything
+: 1782578006:0;pi
+: 1782578427:0;pi install npm:pi-lens
+: 1782578558:0;zi
+: 1782578567:0;mkdir .pi
+: 1782578570:0;nvim .pi/lsp.json
+: 1782578672:0;pi
+: 1782578704:0;ty
+: 1782578817:0;ty --stdio
+: 1782578844:0;ty
+: 1782578853:0;ty server --stdio
+: 1782578855:0;ty server 
+: 1782578906:0;ty server --stdio
+: 1782578940:0;pi
+: 1782578949:0;pi --continue
+: 1782579029:0;ty --version
+: 1782579144:0;uv tool upgrade ty
+: 1782579229:0;ty --version
+: 1782579232:0;ty --help
+: 1782579238:0;ty server --stdio
+: 1782579365:0;uv tool install ty-daemon
+: 1782579374:0;ty server --stdio
+: 1782579376:0;ty server 
+: 1782579523:0;nvim .pi/lsp.json
+: 1782579528:0;nvim .
+: 1782579549:0;pyright
+: 1782579661:0;pi --continue
+: 1782579788:0;pi uninstall npm:pi-lens
+: 1782579796:0;pi
+: 1782580332:0;pi install npm:pi-powerline-footer
+: 1782580365:0;pi uninstall npm:pi-ui
+: 1782580377:0;pi list
+: 1782580385:0;pi uninstall npm:@rokiy/pi-ui
+: 1782580389:0;clear
+: 1782580391:0;pi
+: 1782580804:0;cd
+: 1782580808:0;cd .pi
+: 1782580809:0;ls
+: 1782580811:0;nvim .
+: 1782580985:0;clear
+: 1782581034:0;shutdown now
+: 1782630928:0;sudo dmesg -T | grep -i -E 'oom[-_]killer|killed'
+: 1782630936:0;journalctl -T -k | grep -i -E 'oom[-_]killer|killed'
+: 1782630954:0;systemctl status systemd-oomd
+: 1782631026:0;free  -lh
+: 1782631123:0;cd hydenix
+: 1782631144:0;nvim .
+: 1782631416:0;git add .

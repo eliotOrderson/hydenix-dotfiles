@@ -68,6 +68,7 @@
        alias top10="ps auxww --sort=-rss | head -n 11 | awk 'NR==1{printf \"%-8s %-10s %-10s %-15s %s\n\", \"USER\", \"PID\", \"%CPU\", \"MEM_USED\", \"COMMAND\"} NR>1{printf \"%-8s %-10s %-10s %-15.2f MB  %s\n\", \$1, \$2, \$3, \$6/1024, \$11}'"
        alias tar-zstd="tar -I 'zstd -T0' -cvf"
        alias untar-zstd="tar -I 'zstd -T0' -vxf"
+       alias ssh="kitty +kitten ssh"
     '';
 
   };

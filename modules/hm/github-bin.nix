@@ -90,9 +90,9 @@ in
 
   uv = mkGitHubBin rec {
     pname = "uv";
-    version = "0.11.18";
+    version = "0.11.21";
     url = "https://releases.astral.sh/github/uv/releases/download/${version}/uv-x86_64-unknown-linux-musl.tar.gz";
-    sha256 = "a095a969fc8357f42e35652e0554525a47a29010ddb814bd82650c2ffa7d6d62";
+    sha256 = "9dadff5b9e7b1d2d011e41852a1cbca713d9d5d88194f2eb6bd240fa4fb0a719";
 
     # CHANGED: 'find -name' searches by basename, so it just needs to be "uv".
     # It will successfully find it inside the extracted uv-x86_64... directory.

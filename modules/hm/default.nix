@@ -44,6 +44,16 @@
       pkgs.defuddle-cli
       pkgs.act # local run github workflow
 
+      # pi-hashline-readmap require cli
+      pkgs.ast-grep
+      pkgs.nushell
+      pkgs.universal-ctags # symbol maps for languages without a dedicated mapper
+      pkgs.difftastic # improves semantic edit summaries
+      # improves some bash-output compression paths
+      pkgs.shellcheck
+      pkgs.yq
+      pkgs.scc
+
       # github release
       github-bin.rtk
       github-bin.uv

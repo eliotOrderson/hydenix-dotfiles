@@ -33,6 +33,7 @@
       pkgs.obsidian
       pkgs.gh # github cli
       pkgs.wireguard-tools
+      pkgs.jetbrains-toolbox
 
       # base cli
       pkgs.unzip

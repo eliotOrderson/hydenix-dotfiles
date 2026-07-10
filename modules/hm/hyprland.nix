@@ -63,7 +63,6 @@
 
 
     $BROWSER = google-chrome-stable
-    $scrPath = ~/.local/share/bin
 
     # windowrule
     windowrulev2 = float,class:^(floatkitty)$
@@ -136,6 +135,12 @@
 
     # autostart on boot start clash ui
     exec-once = sleep 5 && env GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
+
+    # swww wallpaper daemon autostart
+    exec-once = swww-daemon --kill && swww-daemon
+
+    # Set wallpaper on login from HyDE's current wallpaper
+    exec-once = swww img ~/.cache/hyde/wallpapers/swww.png 2>/dev/null || true
   '';
 
 }

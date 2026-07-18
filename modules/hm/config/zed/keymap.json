@@ -12,7 +12,7 @@
 // cs"'     change " to '
 // ds"      delete "
 // zz       align the line to center
-// gl/L     create next/prev cousor
+// gl/L     create next/prev cousor in visual mode
 // gs       open symbol window
 // g.       code action
 // vii       selecting indent-text-object
@@ -29,7 +29,6 @@
       "alt-j": "editor::MoveLineDown",
     },
   },
-
   {
     "context": "vim_mode == normal",
     "bindings": {
@@ -37,7 +36,7 @@
       // "[ d": "editor::GoToPrevDiagnostic",
       // "enter": "editor::NewlineBelow",
 
-      // "s": "vim::PushSneak",
+      "s": "vim::HelixJumpToWord",
       "shift-s": "vim::PushSneakBackward",
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
@@ -48,11 +47,11 @@
       "alt-=": ["workspace::SendKeystrokes", "% l v % % h"],
       "z f": "editor::FoldFunctionBodies",
 
-      "ctrl-[": "editor::Outdent",
-      "ctrl-]": "editor::Indent",
+      // "shift->": "editor::Outdent",
+      // "shift-<": "editor::Indent",
       "ctrl-e": "editor::GoToDefinition",
       "ctrl-q": "pane::GoBack",
-      "ctrl-n": ["editor::SelectNext", { "replace_newest": false }],
+      "alt-n": ["editor::SelectNext", { "replace_newest": false }],
 
       "space d s": "editor::GoToDefinitionSplit",
       "space I": "editor::GoToImplementation",
@@ -74,10 +73,11 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "ctrl-[": "editor::Outdent",
-      "ctrl-]": "editor::Indent",
+      "s": "vim::HelixJumpToWord",
+      "<": "editor::Outdent",
+      ">": "editor::Indent",
       "ctrl-/": "vim::ToggleComments",
-      "ctrl-n": ["editor::SelectNext", { "replace_newest": false }],
+      "alt-n": ["editor::SelectNext", { "replace_newest": false }],
       "ctrl-alt-a": "editor::SelectAllMatches",
 
       "alt-l": ["workspace::SendKeystrokes", "$ h"],
@@ -99,13 +99,7 @@
     },
   },
 
-  // project tree show/hide
-  {
-    "context": "Editor",
-    "bindings": {
-      "alt-e": "project_panel::ToggleFocus",
-    },
-  },
+  // project tree config
   {
     "context": "Editor",
     "bindings": {
@@ -122,6 +116,12 @@
     "context": "ProjectPanel",
     "bindings": {
       "alt-e": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "shift-h": "project_panel::ToggleHideGitIgnore",
     },
   },
 

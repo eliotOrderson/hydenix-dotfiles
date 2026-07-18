@@ -1,0 +1,76 @@
+{
+  "agent": {
+    "default_model": {
+      "model": "gemini-2.5-flash",
+      "provider": "google"
+    },
+    "default_profile": "write",
+    "dock": "right",
+    "play_sound_when_agent_done": true
+  },
+  "agent_servers": {
+    "autohand": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "agent": "default",
+        "effort": "high",
+        "mode": "default",
+        "model": "opus"
+      },
+      "type": "registry"
+    }
+  },
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 22.0,
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "context_servers": {
+  },
+  "edit_predictions": {
+    "provider": "zed"
+  },
+  "extend_comment_on_newline": false,
+  "file_scan_exclusions": [
+    "**/.venv",
+    "**/.zed",
+    "**/.ipynb_checkpoints",
+    ".python-version"
+  ],
+  "git_panel": {
+    "dock": "left"
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ],
+          "command": "prettier"
+        }
+      }
+    }
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "dock": "bottom",
+    "working_directory": "current_project_directory"
+  },
+  "theme": {
+    "dark": "Tokyo Night Storm",
+    "light": "Tokyo Night",
+    "mode": "system"
+  },
+  "ui_font_size": 23,
+  "vim_mode": true
+}

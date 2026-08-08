@@ -1,4 +1,15 @@
 {
+  "auto_install_extensions": {
+    // theme
+    "catppuccin-icons": true,
+    "everforest": true,
+    "material-icon-theme": true,
+    // lsp
+    "html": false,
+    "make": false,
+    "nix": false,
+    "toml": true,
+  },
   "cli_default_open_behavior": "existing_window",
   "agent": {
     "dock": "right",
@@ -8,7 +19,7 @@
   "icon_theme": {
     "mode": "dark",
     "light": "Zed (Default)",
-    "dark": "Material Icon Theme"
+    "dark": "Material Icon Theme",
   },
   "agent_servers": {
     "autohand": {
@@ -16,6 +27,7 @@
     },
     "claude-acp": {
       "default_config_options": {
+        "fast": "off",
         "agent": "default",
         "effort": "max",
         "mode": "auto",
@@ -64,11 +76,6 @@
     "copy_on_select": true,
     "dock": "bottom",
     "working_directory": "current_project_directory",
-  },
-  "theme": {
-    "dark": "Everforest Dark Medium (material)",
-    "light": "Tokyo Night",
-    "mode": "dark",
   },
   "ui_font_size": 23,
   "agent_ui_font_size": 18,

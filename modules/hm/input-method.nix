@@ -12,7 +12,7 @@
 
       (fcitx5-rime.override {
         rimeDataPkgs = [
-          rime-wanxiang
+          pkgs.unstable.rime-wanxiang
         ];
       })
       # voices input

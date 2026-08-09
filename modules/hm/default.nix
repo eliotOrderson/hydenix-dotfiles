@@ -32,6 +32,7 @@
       pkgs.nix-search-cli
       pkgs.obsidian
       pkgs.gh # github cli
+      pkgs.git-lfs
       pkgs.wireguard-tools
       pkgs.jetbrains-toolbox
 
@@ -45,11 +46,6 @@
       pkgs.defuddle-cli
       pkgs.act # local run github workflow
 
-      # pi-hashline-readmap require cli
-      pkgs.ast-grep
-      pkgs.nushell
-      pkgs.universal-ctags # symbol maps for languages without a dedicated mapper
-      pkgs.difftastic # improves semantic edit summaries
       # improves some bash-output compression paths
       pkgs.shellcheck
       pkgs.yq

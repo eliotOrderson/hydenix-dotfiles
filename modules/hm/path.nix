@@ -18,8 +18,8 @@ let
     if [ -d '${src}' ]; then
       while IFS= read -r f; do
         rel="''${f#'${src}'}"
-        mkdir -p '${dst}/$(dirname "$rel")'
-        ln -f "$f" '${dst}/$rel'
+        mkdir -p "${dst}/$(dirname "$rel")"
+        ln -f "$f" "${dst}/$rel"
       done < <(find '${src}' -type f ! -name '*.log')
     fi
   '';

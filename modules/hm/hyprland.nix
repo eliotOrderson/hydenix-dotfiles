@@ -19,7 +19,7 @@
     }
 
     general {
-        layout = scrolling 
+        layout = scrolling
     }
 
     opengl {
@@ -28,7 +28,7 @@
     }
 
     decoration {
-        # 屏幕着色器路径 
+        # 屏幕着色器路径
         screen_shader = ~/.config/hypr/shaders/self_vibrance.frag
 
         rounding = 10
@@ -85,7 +85,7 @@
 
     # mainMod + \ open float kitty terminal on center
     bind = $mainMod,code:51,exec,[centerwindow 1] windows-control -c 'floatkitty' -e "kitty --class floatkitty" -w 66
-    bind = ALT,code:51,exec,[centerwindow 1] windows-control -c 'floatkitty' -e "kitty --class floatkitty" -w 66 
+    bind = ALT,code:51,exec,[centerwindow 1] windows-control -c 'floatkitty' -e "kitty --class floatkitty" -w 66
 
     bind = $mainMod, Return, exec, kitty # launch terminal emulator
     bind = $mainMod, D, exec, pkill -x rofi || rofilaunch.sh d # launch application launcher
@@ -93,10 +93,10 @@
     bind = $mainMod, F, fullscreen
 
     # hide window
-    bind = $mainMod ctrl,u,exec,windows-control h 
+    bind = $mainMod ctrl,u,exec,windows-control h
 
     # show hide window
-    bind = $mainMod ctrl,i,exec,windows-control s 
+    bind = $mainMod ctrl,i,exec,windows-control s
 
     # swap window
     bind = $mainMod shift,l,exec, hyprctl dispatch swapwindow r

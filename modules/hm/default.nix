@@ -25,7 +25,6 @@
       pkgs.google-chrome
       pkgs.yazi
       pkgs.trash-cli
-      pkgs.nodejs
       pkgs.zoxide
       pkgs.direnv
       pkgs.nix-init
@@ -34,7 +33,6 @@
       pkgs.gh # github cli
       pkgs.git-lfs
       pkgs.wireguard-tools
-      pkgs.jetbrains-toolbox
 
       # base cli
       pkgs.unzip
@@ -44,7 +42,6 @@
       pkgs.tree
       pkgs.mdcat
       pkgs.defuddle-cli
-      pkgs.act # local run github workflow
 
       # improves some bash-output compression paths
       pkgs.shellcheck
@@ -60,7 +57,8 @@
 
       # unstable
       pkgs.unstable.zed-editor-fhs
-      pkgs.unstable.opencode
+      pkgs.unstable.nodejs
+      pkgs.unstable.pnpm
 
       # rust dev tools
       # pkgs.cargo

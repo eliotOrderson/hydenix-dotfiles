@@ -27,6 +27,7 @@ in
 {
   home.activation.restoreConfigs = config.lib.dag.entryAfter [ "writeBoundary" ] ''
     ${restoreFile "${cfg}/shaders/self_vibrance.frag" "${home}/.config/hypr/shaders/self_vibrance.frag"}
+    ${restoreFile "${cfg}/npm/npmrc" "${home}/.npmrc"}
     ${restoreDir "${cfg}/zed" "${home}/.config/zed"}
     ${restoreDir "${cfg}/fcitx5" "${home}/.local/share/fcitx5/rime"}
   '';

@@ -1,7 +1,7 @@
 keys:
   - &GigabyteB850 age1xl0yyrfazrsrv6kss0npghrqlt77dx9zma0wjnxjtvmvx6eugp5s2x3ty7
 creation_rules:
-  - path_regex: ^modules/.*/secrets.*\.(yaml|yml)$
+  - path_regex: ^modules/.*/secrets.*\.(yaml|yml|text)$
     key_groups:
       - age:
         - *GigabyteB850

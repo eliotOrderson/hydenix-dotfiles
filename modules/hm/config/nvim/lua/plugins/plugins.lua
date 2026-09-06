@@ -1,4 +1,11 @@
 return {
+
+  {
+    dir = "~/Workspace/deepseek-harness-plugin/dsh-agent-bridge.nvim",
+    config = function()
+      require("dsh_agent_bridge").setup()
+    end,
+  },
   -- remote development
   -- {
   --   "chipsenkbeil/distant.nvim",
@@ -29,12 +36,12 @@ return {
   --     }
   --   end,
   -- },
-  {
-    "aekasitt/tylsp.nvim",
-    config = function()
-      require("tylsp").setup()
-    end,
-  },
+  -- {
+  --   "aekasitt/tylsp.nvim",
+  --   config = function()
+  --     require("tylsp").setup()
+  --   end,
+  -- },
   {
     "saghen/blink.cmp",
     dependencies = {

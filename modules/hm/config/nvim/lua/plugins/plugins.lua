@@ -1,11 +1,11 @@
 return {
 
-  {
-    dir = "~/Workspace/deepseek-harness-plugin/dsh-agent-bridge.nvim",
-    config = function()
-      require("dsh_agent_bridge").setup()
-    end,
-  },
+  -- {
+  --   dir = "~/Workspace/deepseek-harness-plugin/dsh-agent-bridge.nvim",
+  --   config = function()
+  --     require("dsh_agent_bridge").setup()
+  --   end,
+  -- },
   -- remote development
   -- {
   --   "chipsenkbeil/distant.nvim",

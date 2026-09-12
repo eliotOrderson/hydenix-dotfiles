@@ -10,7 +10,7 @@
     inputs.hydenix.inputs.home-manager.nixosModules.home-manager
     inputs.hydenix.nixosModules.default
     ./modules/system # Your custom system modules
-    ./hardware-configuration.nix # Auto-generated hardware config
+    ./hardware-configuration.nix # Auto-generated hardware config (machine-specific!)
 
     # Hardware Configuration - Uncomment lines that match your hardware
     # Run `lshw -short` or `lspci` to identify your hardware
@@ -84,9 +84,46 @@
     # For more configuration options, see: ./docs/options.md
   };
 
-  #networking.nameservers = [ "198.18.0.1" ];
-  #networking.dhcpcd.extraConfig = "nohook resolv.conf";
-  #networking.networkmanager.dns = "none";
+  # NetworkManager hands out the DHCP gateway as the system DNS server. The
+  # TUN core hijacks queries to that address but never answers them (mihomo
+  # quirk with the default-gateway address), so every lookup stalls ~10s and
+  # then falls through to a GFW-poisoned IPv6 answer. Use static resolvers
+  # instead: when TUN is up they are hijack-served by the core (instant
+  # fake-ip, correct per-domain routing); when TUN is off they work as plain
+  # direct DNS.
+  networking.networkmanager.dns = "none";
+  environment.etc."resolv.conf".text = ''
+    nameserver 223.5.5.5
+    nameserver 119.29.29.29
+    options edns0
+  '';
+
+  # crates.io's /api/v1 download endpoint is behind Cloudflare bot-protection
+  # that 403s nix's fetcher (curl's TLS fingerprint), while the CDN host
+  # static.crates.io serves the identical .crate files without the check.
+  # Rewrite the URLs in the generic fetcher so every crate fetch works.
+  nixpkgs.overlays = [
+    (final: prev: {
+      fetchurl =
+        args:
+        let
+          rewrite =
+            u:
+            let
+              m = builtins.match "https://crates.io/api/v1/crates/([^/]+)/([^/]+)/download" u;
+            in
+            if m == null then
+              u
+            else
+              "https://static.crates.io/crates/${builtins.head m}/${builtins.head m}-${builtins.elemAt m 1}.crate";
+        in
+        prev.fetchurl (
+          if args ? urls then args // { urls = map rewrite args.urls; }
+          else if args ? url then args // { url = rewrite args.url; }
+          else args
+        );
+    })
+  ];
   nix = {
     settings.auto-optimise-store = true;
     gc = {
@@ -97,6 +134,7 @@
 
     settings.substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
     ];
   };

@@ -31,6 +31,13 @@
     autoStart = false;
   };
 
+  # The upstream module's service unit omits CAP_NET_BIND_SERVICE from its
+  # bounding set, so the core cannot bind its DNS listener on port 53
+  # ("listen :53: bind: permission denied" in the core log). Merge the missing
+  # capability back in (list values are concatenated by the module system).
+  systemd.services.clash-verge.serviceConfig.CapabilityBoundingSet =
+    [ "CAP_NET_BIND_SERVICE" ];
+
   zramSwap = {
     enable = true;
     algorithm = "zstd";

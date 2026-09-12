@@ -16,7 +16,21 @@ visit the [docs/installation.md](./docs/installation.md) to get started.
 |------|-------------|
 | `flake.nix` | main flake configuration and entry point |
 | `configuration.nix` | nixos system configuration |
-| `hardware-configuration.nix` | hardware-specific settings (auto-generated) |
+| `hardware-configuration.nix` | hardware-specific settings (auto-generated) — **describes ONE machine; regenerate it on any other computer** |
+
+> [!WARNING]
+> `hardware-configuration.nix` records partition UUIDs for a single computer and
+> is not portable. Before building on a new machine (or after reformatting a
+> disk), run:
+>
+> ```bash
+> sudo nixos-generate-config --show-hardware-config > hardware-configuration.nix
+> nix run .#check-fs
+> ```
+>
+> NixOS does not validate device paths at build time, so an outdated file builds
+> successfully and then hangs at boot in stage 1. See
+> [moving your config to a new computer](./docs/installation.md#moving-your-config-to-a-new-computer).
 
 ### documentation
 

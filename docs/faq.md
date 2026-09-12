@@ -19,6 +19,7 @@
     - [what are some example configurations?](#what-are-some-example-configurations)
     - [how do I persist changes on reboot/rebuild/etc?](#how-do-i-persist-changes-on-rebootrebuildetc)
     - [how do I add a new theme?](#how-do-i-add-a-new-theme)
+    - [how do I refresh the theme cache?](#how-do-i-refresh-the-theme-cache)
     - [what is mutable.nix?](#what-is-mutablenix)
     - [why do themes still show after I remove them from `hydenix.hm.theme.themes`?](#why-do-themes-still-show-after-i-remove-them-from-hydenixhmthemethemes)
     - [requesting features](#requesting-features)
@@ -256,6 +257,28 @@ see [home.file options](https://home-manager-options.extranix.com/?query=home.fi
 ### how do I add a new theme?
 
 <!-- TODO: docs: Add a guide on how to add a new theme -->
+
+### how do I refresh the theme cache?
+
+the theme menu (`mod + shift + T`) previews each theme with a cached thumbnail, so
+themes you never switched to show up as blank white tiles until their wallpaper is
+cached.
+
+```bash
+hyde-shell reload                            # rebuild missing caches + re-apply current theme
+~/.local/lib/hyde/swwwallcache.sh -t ""      # rebuild missing caches only
+~/.local/lib/hyde/swwwallcache.sh -f         # force recompute everything
+```
+
+see [troubleshooting](./troubleshooting.md#theme-select-shows-blank-white-tiles)
+for the diagnosis, the single-theme/single-wallpaper variants and a faster way to
+rebuild only the previews.
+
+<div align="right">
+  <a href="#faq">
+    <img src="https://img.shields.io/badge/Back_to_Top-↑-blue" alt="Back to Top" />
+  </a>
+</div>
 
 ### what is mutable.nix?
 

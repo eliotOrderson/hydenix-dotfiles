@@ -7,7 +7,12 @@
 .codegraph/
 
 
-result
+
 *.md
 *.sh
+
+result
+!scripts/check-filesystems.sh
+!scripts/bootstrap-nixos.sh
 graphify-out/
+

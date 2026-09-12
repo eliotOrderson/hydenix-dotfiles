@@ -2,8 +2,6 @@
   # default enabled themes, full list in https://github.com/richen604/hydenix/tree/main/hydenix/sources/themes
   hydenix.hm.theme.active = "";
   hydenix.hm.theme.themes = [
-    # "Catppuccin Mocha"
-    # "Catppuccin Latte"
     "1-Bit"
     "Abyssal-Wave"
     "AbyssGreen"

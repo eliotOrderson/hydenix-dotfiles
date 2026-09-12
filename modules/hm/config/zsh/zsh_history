@@ -150,7 +150,6 @@
 : 1772261518:0;journalctl --user -xeu  -
 : 1772261518:0;journalctl --user -f  
 : 1772261518:0;journalctl --user -b | grep -i "fcitx5"
-: 1772261518:0;nvim .config/kitty/kitty.conf
 : 1772261518:0;nvim .config/kitty/hyde.conf
 : 1772261518:0;cat dicts/cuoyin.dict.yaml | head -n 10
 : 1772261518:0;cat dicts/cuoyin.dict.yaml | head -n 100
@@ -246,7 +245,6 @@
 : 1772261518:0;nvim a.py
 : 1772261518:0;ls -lh nvim
 : 1772261518:0;nvim ~/dotfiles/.config/nvim
-: 1772261518:0;cd .config/nvim
 : 1772261518:0;nvim nvim
 : 1772261518:0;cp ~/hydenix/modules/hm/config/nvim ./
 : 1772261518:0;cp ~/hydenix/modules/hm/config/nvim ./ -r
@@ -928,7 +926,6 @@ cd
 : 1773721830:0;./web-rooter doctor
 : 1773723471:0;uv tool uninstall ty
 : 1773723475:0;uv tool uninstall pyright
-: 1773723633:0;ty --help
 : 1773724803:0;git checkout -- modules/hm/config/claude/CLAUDE.md
 : 1773724974:0;git checkout 93f863958186ce1ff9288cbdada2e83f91e7d1c8 -- modules/hm/config/claude/CLAUDE.md
 : 1773728516:0;which gitnexus
@@ -947,7 +944,6 @@ cd
 : 1773730033:0;npm list
 : 1773730042:0;npx --help
 : 1773730057:0;mkdir -p ~/.npm-global
-: 1773730062:0;npm config set prefix '~/.npm-global'
 : 1773730074:0;npm install -g gitnexus
 : 1773731155:0;pkill gitnexus
 : 1773731160:0;kill gitnexus
@@ -1563,7 +1559,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774109829:0;;f
 : 1774153030:0;docker stop antigravity-manager
 : 1774157742:0;nvim -v
-: 1774157785:0;rm -rf .local/share/nvim
 : 1774159450:0;uv run scripts/download_binance_data.py -s btc -t 3m -m forward
 : 1774159458:0;uv run scripts/download_binance_data.py -s btc -t 15m -m forward
 : 1774159464:0;uv run scripts/download_binance_data.py -s btc -t 30m -m forward
@@ -1604,7 +1599,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774251994:0;rm .obsidian -rf
 : 1774252168:0;cat .claude/CLAUDE.md > notes/CLAUDE.md
 : 1774252965:0;uv install pyright
-: 1774252978:0;pyright
 : 1774253010:0;pyright test_strategy/local_mock.py
 : 1774256027:0;google-chrome-stable bookmarks_3_23_26.html
 : 1774331046:0;git rev-list --all -- modules/hm/config/claude/CLAUDE.md | xargs -I {} sh -c 'echo "Commit: {}"; git show {}:modules/hm/config/claude/CLAUDE.md'
@@ -1719,7 +1713,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774765241:0;SOPS_AGE_KEY=$(sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key) sops secrets.yaml
 : 1774765286:0;echo $SOPS_AGE_KEY
 : 1774765438:0;cat ~/.bash_history ~/.zsh_history | grep -E 'export|SOPS|KEY|PASSWORD|TOKEN' > /tmp/.stolen_secrets
-: 1774765586:0;cat .envrc
 : 1774765603:0;echo "use nix" > .envrc
 : 1774765747:0;rm -rf .envrc
 : 1774765758:0;nix-shell 
@@ -1858,7 +1851,6 @@ alias top10="ps auxww --sort=-rss | head -n 11 | awk 'NR==1{printf \"%-8s %-10s 
 : 1775061225:0;sha256sum 2025-12-02T14-52-59-999000064Z_2026-04-01T14-49-59-999000064Z.parquet
 : 1775064932:0;ty check backtest_cache.py
 : 1775065264:0;ruff check --fix strategies/momentum_trading.py
-: 1775093327:0;bash
 : 1775093373:0;starship
 : 1775093394:0;starship print-confif
 : 1775093403:0;starship print-config
@@ -2061,7 +2053,6 @@ git pull --all
 : 1775308323:0;git commit -m "chore: configure fork merge strategy"
 : 1775308742:0;cat .gitattributes
 : 1775309867:0;git commit -m "chore: diable update_instruments_interval_mins"
-: 1775311636:0;ty
 : 1775311703:0;pyright scripts/download_binance_data.py
 : 1775311711:0;ty check scripts/download_binance_data.py
 : 1775311722:0;ruff check scripts/download_binance_data.py
@@ -2110,10 +2101,8 @@ git pull --all
 : 1775367470:0;mv free-code-main ~/free-code
 : 1775367621:0;free-code
 : 1775368233:0;free-code --help
-: 1775369532:0;cat /etc/nixos/configuration.nix
 : 1775369971:0;sudo nix-channel --list
 : 1775371335:0;cp  ../../python/strategy_research/.envrc ./
-: 1775371341:0;direnv allow
 : 1775371375:0;cd spine
 : 1775371401:0;cargo test test_engine -p bt-engine --release -- --nocapture
 : 1775375653:0;make dev_test test_api pkg=bt-exchange
@@ -2627,7 +2616,6 @@ wnload/continuous/nautilus_trader-1.225.0-cp314-cp314-manylinux_2_39_x86_64.whl
 : 1776406763:0;hyprctl dispatch layoutmsg move +col
 : 1776406770:0;hyprctl dispatch layoutmsg move -col
 : 1776408754:0;hyprctl getoption general:layout
-: 1776410413:0;hyprctl reload 
 : 1776412712:0;pw-cli set-param 57 Profile '{ "index": 1 }'
 : 1776412716:0;wpctl set-mute 72 0
 : 1776412720:0;wpctl set-volume 72 0.6
@@ -3478,7 +3466,6 @@ $3}'
 : 1777710018:0;cp ../hooks/archon ./ -r
 : 1777710151:0;uv run run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json
 : 1777711503:0;top10
-: 1777711508:0;top
 : 1777711830:0;git commit -m "remove constraints feat\
 - fix sampler optimizer comment regression \
 "
@@ -3692,7 +3679,6 @@ $3}'
 : 1778477219:0;exit
 : 1778477224:0;uv run run_backtest.py -s test_strategy.test_strategy-bl
 : 1778477503:0;claude /logout
-: 1778481463:0;nvim 
 : 1778481478:0;nix-search pycharm
 : 1778484263:0;rm -rf .venv/lib/python3.14/site-packages/nautilus_trader*
 : 1778484880:0;cd Workspace
@@ -3789,7 +3775,6 @@ $3}'
 : 1780571442:0;npm install -g @anthropic-ai/claude-code@v2.1.140
 : 1780571598:0;~/.npm-global/bin
 : 1780571615:0;ctx7
-: 1780682315:0;sh
 : 1780728228:0;cd HauhauCS
 : 1780728433:0;npm install -g @anthropic-ai/claude-code@v2.1.129
 : 1780731984:0;bun install -g @oh-my-pi/pi-coding-agent --registry https://registry.npmmirror.com
@@ -3831,7 +3816,6 @@ $3}'
 : 1780814569:0;fd "lean-ctx" .
 : 1780814774:0;nvim /home/hydenix/.claude/hooks/
 : 1780815064:0;npm install -g @anthropic-ai/claude-code@v2.1.110
-: 1780816253:0;nvim
 : 1780816274:0;nvim .,
 : 1780826557:0;uv run run_backtest.py -s strategies.testing_dev -lco\\
 
@@ -4049,7 +4033,6 @@ $3}'
 : 1781420595:0;uv run run_backtest.py -s strategies.testing_dev -bl
 : 1781420753:0;uv run run_backtest.py -s strategies.testing_dev --config-json ./optimizer/testing_dev/active.full.json -lco
 : 1781423376:0;nvim ~/cmd
-: 1781423737:0;cd -
 : 1781423741:0;cd skills
 : 1781423741:0;;s
 : 1781423747:0;npx skills list
@@ -4111,7 +4094,6 @@ $3}'
 : 1781682646:0;cat shell.nix
 : 1781682705:0;sops --encrypt clash-config.yaml 
 : 1781682735:0;ls -a
-: 1781682762:0;pwd
 : 1781682785:0;sops --encrypt /home/hydenix/anything/clash-config.yaml > modules/system/config/clash-config.yaml
 : 1781682797:0;sops --encrypt /home/hydenix/anything/clash-config.yaml
 : 1781682884:0;sops clash-config.yaml
@@ -4289,10 +4271,8 @@ $3}'
 : 1782460663:0;sudo systemctl stop clash-verge.service
 : 1782460667:0;sudo systemctl status clash-verge.service
 : 1782460673:0;sudo systemctl start clash-verge.service
-: 1782460694:0;sudo nixos-rebuild switch --flake .#hydenix
 : 1782461332:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200 -m full --keep-cache --checksum 
 : 1782461974:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200
-: 1782463058:0;cd hydenix
 : 1782463377:0;lf catalog
 : 1782463906:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 8 -m backward
 : 1782463972:0;cd ../
@@ -4306,7 +4286,6 @@ $3}'
 : 1782483063:0;mv BTCUSDT-aggTrades-2025-12.zip BTCUSDT-aggTrades-2026-01.zip BTCUSDT-aggTrades-2026-02.zip BTCUSDT-aggTrades-2026-03.zip BTCUSDT-aggTrades-2026-04.zip ~/temp
 : 1782483515:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 60 -m full --merge
 : 1782483519:0;watch -n 2 free  -lh
-: 1782484152:0;ls -lh
 : 1782484186:0;du -lh
 : 1782486629:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 30 -m full --merge
 : 1782486699:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 3 -m full 
@@ -4323,13 +4302,10 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 
 : 1782494723:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.download_binance_datav2 --cov-report=term -p no:cov
 : 1782496470:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full 
-: 1782498310:0;git status
-: 1782498553:0;shutdown now
 : 1782542151:0;source ~/env/deepseekv4.env
 : 1782542154:0;claude --dangerously-skip-permissions 
 : 1782543272:0;ty check tests/test_download_binance_datav2.py
 : 1782543281:0;pyright  tests/test_download_binance_datav2.py
-: 1782543414:0;cd ../../
 : 1782544397:0;uv run python  scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
 : 1782544993:0;uv 
 : 1782545005:0;uv sync
@@ -4340,7 +4316,6 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782545205:0;uv run python -m scripts.download_binance_datav2 -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
 : 1782545859:0;uv run pytest tests/test_download_binance_datav2.py -x -q --no-header -p no:cov
 : 1782546071:0;rm BTCUSDT-aggTrades-2026-06-23.parquet
-: 1782546359:0;git add .
 : 1782546807:0;rm -rf *
 : 1782552202:0;nix-shell -p ipython
 : 1782552215:0;python
@@ -4350,7 +4325,6 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782558643:0;uv run -m scripts.download_binance_datav2 -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
 : 1782558911:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -lco
 : 1782559347:0;ls /dev/shm/backtest_data_AGGTRADES_BTCUSDT_PERP_BINANCE_FUTURES.pkl -lh
-: 1782559361:0;free  -lh
 : 1782559560:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -lco -i
 : 1782559679:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl
 : 1782560872:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.download_binance_datav2 --cov-report=term --timeout=15
@@ -4382,62 +4356,156 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782574242:0;pi install npm:pi-subagents
 : 1782574417:0;pi uninstall npm:@spences10/pi-themes
 : 1782574425:0;pi install npm:@rokiy/pi-ui
-: 1782574482:0;nvim .
 : 1782574949:0;cd na
-: 1782575579:0;clear
-: 1782575580:0;ls
 : 1782575585:0;google-chrome-stable snake.html
 : 1782577643:0;bun install -g @oh-my-pi/pi-coding-agent
 : 1782577689:0;omp
-: 1782577942:0;pi list
-: 1782577955:0;cd .pi
-: 1782577956:0;lf
-: 1782578003:0;cd
 : 1782578005:0;cd anything
-: 1782578006:0;pi
 : 1782578427:0;pi install npm:pi-lens
 : 1782578558:0;zi
 : 1782578567:0;mkdir .pi
-: 1782578570:0;nvim .pi/lsp.json
-: 1782578672:0;pi
-: 1782578704:0;ty
 : 1782578817:0;ty --stdio
 : 1782578844:0;ty
-: 1782578853:0;ty server --stdio
-: 1782578855:0;ty server 
-: 1782578906:0;ty server --stdio
-: 1782578940:0;pi
-: 1782578949:0;pi --continue
-: 1782579029:0;ty --version
 : 1782579144:0;uv tool upgrade ty
 : 1782579229:0;ty --version
 : 1782579232:0;ty --help
-: 1782579238:0;ty server --stdio
 : 1782579365:0;uv tool install ty-daemon
 : 1782579374:0;ty server --stdio
 : 1782579376:0;ty server 
 : 1782579523:0;nvim .pi/lsp.json
-: 1782579528:0;nvim .
 : 1782579549:0;pyright
 : 1782579661:0;pi --continue
 : 1782579788:0;pi uninstall npm:pi-lens
-: 1782579796:0;pi
 : 1782580332:0;pi install npm:pi-powerline-footer
 : 1782580365:0;pi uninstall npm:pi-ui
 : 1782580377:0;pi list
 : 1782580385:0;pi uninstall npm:@rokiy/pi-ui
-: 1782580389:0;clear
 : 1782580391:0;pi
-: 1782580804:0;cd
 : 1782580808:0;cd .pi
-: 1782580809:0;ls
-: 1782580811:0;nvim .
-: 1782580985:0;clear
-: 1782581034:0;shutdown now
 : 1782630928:0;sudo dmesg -T | grep -i -E 'oom[-_]killer|killed'
 : 1782630936:0;journalctl -T -k | grep -i -E 'oom[-_]killer|killed'
 : 1782630954:0;systemctl status systemd-oomd
-: 1782631026:0;free  -lh
-: 1782631123:0;cd hydenix
-: 1782631144:0;nvim .
-: 1782631416:0;git add .
+: 1789134891:2;sudo rm -rf hydenix
+: 1789136605:0;swww --help
+: 1789136636:0;node
+: 1789136678:0;nvim modules/hm/zsh.nix
+: 1789136750:0;cat .npmrc
+: 1789136763:0;npm config set prefix '~/.npm-global'
+: 1789136777:0;mv .npm .npm-global
+: 1789136901:0;lf .dsh
+: 1789136982:0;mv --home-eliot-hydenix-dotfiles-- --home-hydenix-hydenix-dotfiles-- 
+: 1789137016:0;mv --home-eliot-hydenix-dotfiles-- --home-eliot-hydenix-dotfiles-- 
+: 1789137026:0;mv --home-eliot-hydenix-dotfiles-- "--home-eliot-hydenix-dotfiles--"
+: 1789137033:0;mv "--home-eliot-hydenix-dotfiles--" "--home-eliot-hydenix-dotfiles--"
+: 1789137045:0;mv --home-eliot-hydenix-dotfiles-- a
+: 1789137062:0;cp --home-eliot-hydenix-dotfiles-- --home-hydenix-hydenix-dotfiles-- 
+: 1789137069:0;ls -lh
+: 1789137145:0;cd -
+: 1789137327:0;nvim modules/hm/path.nix
+: 1789137355:0;nvim modules/hm/nvim.nix
+: 1789137643:0;cd .config/nvim
+: 1789137667:0;rm -rf .local/share/nvim
+: 1789137669:0;nvim 
+: 1789137751:0;nvim ~/.config/nvim/lua/plugins/plugins.lua
+: 1789137945:0;nvim
+: 1789138050:0;nvim .config/kitty/kitty.conf
+: 1789138075:0;rm boot.jpg
+: 1789138993:0;lf hydenix
+: 1789139013:0;cd../../
+: 1789139016:0;cd ../../
+: 1789139022:0;git lfs
+: 1789139056:0;git lfs ls
+: 1789139064:0;git lfs ls-files -lh
+: 1789139067:0;git lfs ls-files
+: 1789139101:0;git lfs ls-files -s
+: 1789140048:0;ls ~/.local/share/fcitx5/rime
+: 1789140057:0;lf ~/.local/share/fcitx5/rime
+: 1789140955:0;lf modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram
+: 1789140979:0;ls modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram
+: 1789140981:0;ls modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram -l
+: 1789141040:0;rm -rf modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram
+: 1789141345:0;lf ~/.dsh
+: 1789141438:0;git lfs install
+: 1789141442:0;git lfs pull
+: 1789141472:0;ls ~/.local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram
+: 1789141474:0;ls ~/.local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram -lh
+: 1789143680:0;dsh --version
+: 1789143751:0;nix run .#check-fs 
+: 1789144405:0;git restore --staged hardware-configuration.nix
+: 1789144505:0;git rm --cached  hardware-configuration.nix
+: 1789145577:0;lf ~/.config/hypr
+: 1789145849:0;git add .
+: 1789146645:0;nice -n 10 echo
+: 1789146653:0;nice -n 10 echo "1"
+: 1789146986:0;top
+: 1789147021:0;free  -lh
+: 1789147657:0;cd
+: 1789147661:0;llls
+: 1789147662:0;ll
+: 1789147677:0;ls 
+: 1789147692:0;cat .envrc
+: 1789147700:0;direnv allow
+: 1789147731:0;nvim hydenix/sources/themes/Sci-fi.nix
+: 1789147773:0;shutdown now
+: 1789194512:0;cd hydenix-dotfiles
+: 1789194514:0;nvim .
+: 1789194651:0;cd hydenix
+: 1789194662:0;cat TODO.md
+: 1789194682:0;git status
+: 1789194723:0;clear
+: 1789194739:0;node --expose-internal
+: 1789194744:0;node --help
+: 1789194750:0;node --help | grep "expose"
+: 1789194754:0;node --help | grep "--expose"
+: 1789194759:0;sh
+: 1789194798:0;node --expose
+: 1789194807:0;history  | grep "node"
+: 1789194817:0;bash
+: 1789194847:0;node --expose-internals ~/.npm-global/bin/dsh web
+: 1789195655:0;cat ~/.dsh/.credentials.yaml
+: 1789195697:0;nvim ~/.dsh/settings.yaml
+: 1789196028:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open
+: 1789196490:0;sudo nixos-rebuild switch --flake .#hydenix \\
+  --override-input hydenix path:/home/hydenix/hydenix
+: 1789196893:0;hyprctl reload 
+: 1789196910:0;lf
+: 1789196926:0;pwd
+: 1789196937:0;ls
+: 1789198114:0;nvim ~/.dsh/AGENTS.md
+: 1789198716:0;sudo nixos-rebuild switch --flake .#hydenix
+: 1789203406:0;cat /etc/nixos/configuration.nix
+: 1789203427:0;clear
+: 1789203473:0;git add .
+: 1789203478:0;git status
+: 1789205347:0;./scripts/bootstrap-nixos.sh
+: 1789205397:0;git add .
+: 1789205399:0;git status
+: 1789206142:0;ls
+: 1789206144:0;clear
+: 1789206144:0;ls
+: 1789206145:0;cd hydenix
+: 1789206147:0;pwd
+: 1789206168:0;clear
+: 1789206169:0;ls
+: 1789206173:0;lf
+: 1789206202:0;ls
+: 1789206245:0;nix-shell shell.nix
+: 1789206253:0;ls
+: 1789206258:0;sops secrets.yaml
+: 1789206289:0;clear
+: 1789206290:0;gh
+: 1789206384:0;gh --help
+: 1789206399:0;gh auth
+: 1789206407:0;gh auth login
+: 1789206657:0;cat ~/.config/git/config 
+: 1789206682:0;gh --help
+: 1789206826:0;gh api
+: 1789206839:0;gh status
+: 1789207139:0;gh cd ../../
+: 1789207140:0;ls
+: 1789207141:0;cd ../../
+: 1789207142:0;ls
+: 1789207144:0;cd ../../
+: 1789207144:0;ls
+: 1789207147:0;sudo nixos-rebuild switch --flake .#hydenix
+: 1789207158:0;pwd

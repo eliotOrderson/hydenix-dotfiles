@@ -136,11 +136,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1789207372,
-        "narHash": "sha256-Ll42moM7fsnu/kAR5nE42XN3u2W0VZigmqAahziVP94=",
+        "lastModified": 1789235201,
+        "narHash": "sha256-X8jl3dtekr6amM+5NkvA2vxGcUoh15PMfxdAN5Y4YQw=",
         "owner": "eliotOrderson",
         "repo": "hydenix",
-        "rev": "06520374d11133a60666127c14214e3b6a12e62d",
+        "rev": "186193024afa41f7ad44af165880f5d43c3e9aee",
         "type": "github"
       },
       "original": {

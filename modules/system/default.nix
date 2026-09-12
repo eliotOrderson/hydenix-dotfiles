@@ -5,6 +5,7 @@
     ./services.nix
     ./nix-ld.nix
     ./docker.nix
+    ./check-hardware.nix
   ];
 
   hydenix.hardware.openrgb.GigbyteB850.enable = false;

@@ -52,6 +52,13 @@ sudo nixos-rebuild switch --flake .#hydenix
 > computer](#moving-your-config-to-a-new-computer).
 
 > [!NOTE]
+> `switch`, `boot` and `test` also run this check themselves, through
+> `system.preSwitchChecks`, and abort the switch when a declared device is
+> missing. Running `nix run .#check-fs` first is still worth it: it reports the
+> problem before anything is built, and it also accepts a generation directory
+> (`nix run .#check-fs -- /nix/var/nix/profiles/system/etc/fstab`).
+
+> [!NOTE]
 > if you made mistakes, it will fail here. try following:
 >
 > - read the error carefully, it may be self-explanatory

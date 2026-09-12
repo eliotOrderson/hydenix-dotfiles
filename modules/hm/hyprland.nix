@@ -133,6 +133,11 @@
     # 快速将当前窗口或所有窗口调整至适合屏幕
     bind = $mainMod, Equal, layoutmsg, fit active
 
+    # --- screen shader toggle (vibrance) ---
+    # self_vibrance.frag: intensity + skin-tone aware vibrance (not a uniform saturation boost)
+    # tune VIBRANCE_* in modules/hm/config/shaders/self_vibrance.frag
+    bindd = $mainMod SHIFT, C, Toggle screen shader (vibrance), exec, shader-toggle
+
     # autostart on boot start clash ui
     exec-once = sleep 5 && env GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
 

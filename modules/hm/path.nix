@@ -2,9 +2,15 @@
 
 # Restore repo configs via hard links on every rebuild.
 # Hard links survive apps that reject symlinked config dirs.
+#
+# NOTE: cfg must point at the *mutable working clone*, not a store path.
+# A Nix path literal (e.g. `./config`) is copied into /nix/store, and /nix is a
+# separate mount on this machine, so `ln` would fail with "Invalid cross-device
+# link" — hard links cannot cross filesystems. Keep this path in sync with the
+# checkout location and with modules/hm/nvim.nix.
 let
   home = config.home.homeDirectory;
-  cfg = "${home}/hydenix/modules/hm/config";
+  cfg = "/home/hydenix/hydenix-dotfiles/modules/hm/config";
 
   restoreFile = src: dst: ''
     if [ -e '${src}' ]; then

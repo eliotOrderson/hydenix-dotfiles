@@ -19,7 +19,7 @@
     history = {
       size = 50000;
       save = 50000;
-      path = "$HOME/hydenix/modules/hm/config/zsh/zsh_history";
+      path = "$HOME/hydenix-dotfiles/modules/hm/config/zsh/zsh_history";
       share = true; # Equivalent to SHARE_HISTORY
       extended = true; # Equivalent to EXTENDED_HISTORY
       ignoreDups = true; # Equivalent to HIST_IGNORE_DUPS

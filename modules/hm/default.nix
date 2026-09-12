@@ -74,6 +74,7 @@
 
       # hydenix home-manager options go here
       enable = true;
+      dolphin.enable = true;
       hyprland.hypridle.enable = false;
       lockscreen = {
         enable = false; # enable lockscreen module

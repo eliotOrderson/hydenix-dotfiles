@@ -32,7 +32,7 @@
       pkgs.obsidian
       pkgs.gh # github cli
       pkgs.git-lfs
-      pkgs.wireguard-tools
+      # pkgs.wireguard-tools
 
       # base cli
       pkgs.unzip

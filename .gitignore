@@ -15,4 +15,5 @@ result
 !scripts/check-filesystems.sh
 !scripts/bootstrap-nixos.sh
 graphify-out/
+.dsh-ide-bridge.log
 

@@ -2,7 +2,7 @@
   hydenix.hm.terminals.kitty = {
     enable = true;
     configText = ''
-      #font_family      JetBrainsMono Nerd Font
+      font_family      JetBrainsMono Nerd Font
       font_size        18.0
       bold_font        auto
       italic_font      auto
@@ -32,6 +32,11 @@
       map alt+2 goto_tab 2
       map alt+3 goto_tab 3
       map alt+4  goto_tab 4
+
+      # abandon SIGQUIT
+      map ctrl+\ no_op
+      map ctrl+| no_op
+      map ctrl+shift+\ no_op
 
       # window
       map alt+ctrl+enter new_window_with_cwd

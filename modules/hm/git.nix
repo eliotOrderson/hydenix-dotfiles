@@ -1,8 +1,14 @@
 { pkgs, ... }:
 {
-  hydenix.hm.git.enable = true;
-  hydenix.hm.git.name = "eliot";
-  hydenix.hm.git.email = "eliotorderson@gmail.com";
+  hydenix = {
+    hm = {
+      git = {
+        enable = true;
+        name = "eliot";
+        email = "eliotorderson@gmail.com";
+      };
+    };
+  };
 
   # `programs.git.lfs` writes the same global config that `git lfs install` would:
   #

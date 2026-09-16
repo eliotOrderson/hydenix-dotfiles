@@ -118,9 +118,12 @@
               "https://static.crates.io/crates/${builtins.head m}/${builtins.head m}-${builtins.elemAt m 1}.crate";
         in
         prev.fetchurl (
-          if args ? urls then args // { urls = map rewrite args.urls; }
-          else if args ? url then args // { url = rewrite args.url; }
-          else args
+          if args ? urls then
+            args // { urls = map rewrite args.urls; }
+          else if args ? url then
+            args // { url = rewrite args.url; }
+          else
+            args
         );
     })
   ];

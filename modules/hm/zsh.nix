@@ -36,6 +36,12 @@
 
     configText = ''
        setopt CORRECT
+
+       # 0x1c (ctrl+\) must reach programs that want it (nvim runs in raw mode,
+       # so it sees the byte either way); in cooked mode the tty layer would
+       # turn it into SIGQUIT and kill the foreground command
+       stty quit undef
+
        eval "$(direnv hook zsh)"
        eval "$(zoxide init zsh)"
        export PATH=$PATH:~/.npm-global/bin:~/.bun/bin:~/.cache/.bun/bin

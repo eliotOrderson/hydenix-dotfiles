@@ -33,10 +33,10 @@
       map alt+3 goto_tab 3
       map alt+4  goto_tab 4
 
-      # abandon SIGQUIT
-      map ctrl+\ no_op
-      map ctrl+| no_op
-      map ctrl+shift+\ no_op
+      # ctrl+\ stays unmapped on purpose: kitty must pass the byte through so
+      # nvim, which runs in raw mode, still receives it. The SIGQUIT that kills
+      # shell commands comes from the tty line discipline, not from kitty -
+      # disable it with `stty quit undef`, see zsh.nix
 
       # window
       map alt+ctrl+enter new_window_with_cwd

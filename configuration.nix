@@ -22,21 +22,8 @@ in
     inputs.sops-nix.nixosModules.sops
     ./modules/system # Your custom system modules
 
-    # Hardware Configuration - Uncomment lines that match your hardware
-    # Run `lshw -short` or `lspci` to identify your hardware
-
-    # GPU Configuration (choose one):
-    inputs.nixos-hardware.nixosModules.common-gpu-nvidia # NVIDIA
-    # inputs.nixos-hardware.nixosModules.common-gpu-amd # AMD
-
-    # CPU Configuration (choose one):
-    inputs.nixos-hardware.nixosModules.common-cpu-amd # AMD CPUs
-    # inputs.nixos-hardware.nixosModules.common-cpu-intel # Intel CPUs
-
-    # Additional Hardware Modules - Uncomment based on your system type:
-    # inputs.nixos-hardware.nixosModules.common-hidpi # High-DPI displays
-    # inputs.nixos-hardware.nixosModules.common-pc-laptop # Laptops
-    inputs.nixos-hardware.nixosModules.common-pc-ssd # SSD storage
+    # Hardware modules (GPU/CPU/disk) are per machine and live in hosts/<role>,
+    # otherwise every host inherits one machine's CPU and GPU drivers.
   ];
 
   # If enabling NVIDIA, you will be prompted to configure hardware.nvidia

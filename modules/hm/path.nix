@@ -35,6 +35,7 @@ in
     ${restoreFile "${cfg}/shaders/self_vibrance.frag" "${home}/.config/hypr/shaders/self_vibrance.frag"}
     ${restoreFile "${cfg}/npm/npmrc" "${home}/.npmrc"}
     ${restoreDir "${cfg}/zed" "${home}/.config/zed"}
-    ${restoreDir "${cfg}/fcitx5" "${home}/.local/share/fcitx5/rime"}
+    ${restoreDir "${cfg}/fcitx5/fcitx5" "${home}/.config/fcitx5"}
+    ${restoreDir "${cfg}/fcitx5/rime" "${home}/.local/share/fcitx5/rime"}
   '';
 }

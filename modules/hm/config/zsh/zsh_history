@@ -20,7 +20,6 @@
 : 1772261518:0;nvim modules/system/default.nix 
 : 1772261518:0;sudo ls ../../eliot
 : 1772261518:0;sudo ls ../../eliot -lh
-: 1772261518:0;chown -R hydenix:users ./*
 : 1772261518:0;sudo nixos-generate-config --show-hardware-config >hardware-configuration.nix
 : 1772261518:0;rm hardware-configuration.n
 : 1772261518:0;sudo nixos-generate-config --show-hardware-config 
@@ -52,7 +51,6 @@
 : 1772261518:0;nix-shell run clashtui
 : 1772261518:0;nix-shell  --help
 : 1772261518:0;nix-shell -p clashtui
-: 1772261518:0;pkill clash
 : 1772261518:0;nix-sehll -p clashtui 
 : 1772261518:0;nix-shell -p clashtui 
 : 1772261518:0;clashtui 
@@ -150,6 +148,7 @@
 : 1772261518:0;journalctl --user -xeu  -
 : 1772261518:0;journalctl --user -f  
 : 1772261518:0;journalctl --user -b | grep -i "fcitx5"
+: 1772261518:0;nvim .config/kitty/kitty.conf
 : 1772261518:0;nvim .config/kitty/hyde.conf
 : 1772261518:0;cat dicts/cuoyin.dict.yaml | head -n 10
 : 1772261518:0;cat dicts/cuoyin.dict.yaml | head -n 100
@@ -390,11 +389,9 @@
 : 1772288792:0;npx get-shit-done-cc@latest
 : 1772288792:0;cd ls
 : 1772288792:0;cd Downloads/temp/
-: 1772287997:0;nix-shell -p nodejs
 : 1772288539:0;git commit -m "move nodejs,cargo to top"
 : 1772288588:0;nodejs -V
 : 1772288594:0;node -V
-: 1772288599:0;node --version
 : 1772288814:0;cd Workspace/python/vol-snipe
 : 1772294667:0;rm -rf .deven*
 : 1772294692:0;git commit -m "gsd before commit"
@@ -585,7 +582,6 @@
 : 1773118344:0;git reset --soft 4902f9e5e93e0b918fff0fecd922923be71f692d
 : 1773118356:0;cd ../'
 : 1773118370:0;cp strategy_research strategy_research.bk
-: 1773118377:0;cp strategy_research strategy_research.bk -r
 : 1773118386:0;git reset --hard 4902f9e5e93e0b918fff0fecd922923be71f692d
 : 1773118413:0;git reset --soft 01b451d27c637bb146f3390e0966e7150fd57baa
 : 1773118425:0;git brach -l
@@ -595,7 +591,6 @@
 : 1773122593:0;uv add nautilus-trader>=1.222.0
 : 1773122601:0;uv add "nautilus-trader>=1.222.0"
 : 1773122990:0;cd ../nautilus-trader-cython-stubs/
-: 1773123000:0;cat README.md
 : 1773123220:0;cp ../nautilus-trader-cython-stubs/stubs/* .venv/lib/python3.12/site-packages/nautilus_trader
 : 1773123380:0;cat pyproject.toml
 : 1773123412:0;rm uv.lock
@@ -843,12 +838,10 @@ cd
 : 1773558161:0;ccr code --dangerously-skip-permissions
 : 1773558409:0;nix search nixpkgs opencode
 : 1773558421:0;nix shell -p opencode
-: 1773559073:0;nix-shell -p opencode
 : 1773559862:0;nix run github:anomalyco/opencode
 : 1773560066:0;nix run github:aodhanhayter/opencode-flake
 : 1773562630:0;cd model
 : 1773562637:0;rm model
-: 1773562645:0;cd strategy_research.bk
 : 1773562664:0;rm -rf strategy_research.bk
 : 1773562671:0;git clone https://github.com/abhigyanpatwari/gitnexus.git --depth 1
 : 1773564675:0;z docker-script
@@ -944,6 +937,7 @@ cd
 : 1773730033:0;npm list
 : 1773730042:0;npx --help
 : 1773730057:0;mkdir -p ~/.npm-global
+: 1773730062:0;npm config set prefix '~/.npm-global'
 : 1773730074:0;npm install -g gitnexus
 : 1773731155:0;pkill gitnexus
 : 1773731160:0;kill gitnexus
@@ -1077,7 +1071,6 @@ export ANTHROPIC_API_KEY="sk-no-key-required"
   }'
 : 1773849736:0;export ANTHROPIC_BASE_URL="http://127.0.0.1:8080"\
 export ANTHROPIC_API_KEY=""
-: 1773849746:0;claude
 : 1773849768:0;export ANTHROPIC_BASE_URL="http://127.0.0.1:8080"\
 export ANTHROPIC_API_KEY="123"
 : 1773850472:0;modelscope download --model 'Jackrong/Qwen3.5-9B-Claude-4.6-Opus-Reasoning-Distilled-v2-GGUF' --include '*Q8'
@@ -1087,7 +1080,6 @@ export ANTHROPIC_API_KEY="123"
 : 1773889886:0;ctx7 login
 : 1773890841:0;nvim ~/.claude/agent-memory
 : 1773890869:0;lf ~/.claude/agent-memory
-: 1773891006:0;lf .agents
 : 1773891133:0;nvim /home/hydenix/Workspace/python/strategy_research/.claude/agents
 : 1773898194:0;npx ctx7 skills search /anthropics/skills
 : 1773898258:0;npx ctx7 skills search --help
@@ -1318,10 +1310,7 @@ export ANTHROPIC_API_KEY="123"
 : 1773930923:0;find /nix/store/6vl07qa9k5pq812ldhr3vvghmkwmlvfz-system-path/ -name "config.yaml"
 : 1773930950:0;cd /nix/store/pgin65019hv8ghqnk0xn38xhvxdbfgv3-cli-proxy-api-v6.8.55/etc/cli-proxy-api/
 : 1773930970:0;cli-proxy-api -antigravity-login
-: 1773931506:0;nvim config.yaml
-: 1773931631:0;git clone https://github.com/router-for-me/Cli-Proxy-API-Management-Center.git --depth 1
 : 1773931653:0;rm package-lock.json
-: 1773931657:0;npm install
 : 1773931975:0;whereis cli-proxy-api
 : 1773931981:0;find /nix/ -name "config.yaml"
 : 1773932391:0;ls . -a
@@ -1330,7 +1319,6 @@ export ANTHROPIC_API_KEY="123"
 : 1773932586:0;history 
 : 1773932593:0;cat /nix/store/pgin65019hv8ghqnk0xn38xhvxdbfgv3-cli-proxy-api-v6.8.55/etc/cli-proxy-api/config.yaml
 : 1773933163:0;sudo systemctl status cliproxyapi.service
-: 1773933303:0;:q
 : 1773933326:0;docker exec 22c32188f3f8 -it bash
 : 1773933342:0;docker exec -it 22c32188f3f8 bash
 : 1773933795:0;docker pull calciumion/new-api:latest
@@ -1469,7 +1457,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774021803:0;nix-search nvim
 : 1774022499:0;nix-prefetch-url https://github.com/rtk-ai/rtk/releases/download/v0.28.2/rtk-x86_64-unknown-linux-musl.tar.gz
 : 1774022639:0;nix-search nix-init
-: 1774023658:0;cd .claude/skills
 : 1774068147:0;modelscope download --model 'Tencent-Hunyuan/HY-MT1.5-1.8B-GGUF'
 : 1774068182:0;modelscope download --model 'Tencent-Hunyuan/HY-MT1.5-1.8B-GGUF' --include 'Q6*'
 : 1774068188:0;modelscope download --model 'Tencent-Hunyuan/HY-MT1.5-1.8B-GGUF' --include '*Q6'
@@ -1480,8 +1467,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774077151:0;rm -rf ~/.cc-switch
 : 1774077258:0;cc-switch
 : 1774077379:0;cat ~/env/bytecode_env
-: 1774077538:0;vim .
-: 1774079914:0;nvim ,.
 : 1774092261:0;mcp2cli --session serena --help
 : 1774098838:0;nix-search gcloud
 : 1774099167:0;npm install -g @google/gemini-cli
@@ -1559,6 +1544,7 @@ export ANTHROPIC_API_KEY="123"
 : 1774109829:0;;f
 : 1774153030:0;docker stop antigravity-manager
 : 1774157742:0;nvim -v
+: 1774157785:0;rm -rf .local/share/nvim
 : 1774159450:0;uv run scripts/download_binance_data.py -s btc -t 3m -m forward
 : 1774159458:0;uv run scripts/download_binance_data.py -s btc -t 15m -m forward
 : 1774159464:0;uv run scripts/download_binance_data.py -s btc -t 30m -m forward
@@ -1584,7 +1570,6 @@ export ANTHROPIC_API_KEY="123"
 : 1774192661:0;uv run run_live.py -s strategies.momentum_trading -b 500 -l 10
 : 1774192747:0;uv run run_live.py -s strategies.momentum_trading -b 500 -l 10 --log-level WARNING
 : 1774240949:0;cd workspace
-: 1774240952:0;cd Cli-Proxy-API-Management-Center
 : 1774250022:0;mcp2cli --session-start gitnexus --mcp-stdio "gitnexus mcp"
 : 1774250026:0;mcp2cli --session-start serena --mcp-stdio "uvx --from git+https://github.com/oraios/serena serena start-mcp-server --project-from-cwd --language-backend LSP --transport stdio --open-web-dashboard false"
 : 1774250032:0;mcp2cli --session-start context7 --mcp-stdio "npx -y @upstash/context7-mcp --api-key ctx7sk-ad2fd5a0-8684-4f5c-9b21-e733438aa519"
@@ -1694,9 +1679,7 @@ export ANTHROPIC_API_KEY="123"
 : 1774763777:0;cd .nv
 : 1774763796:0;sops --gelp
 : 1774763939:0;mv nvim /etc/ssh/ssh_host_ed25519_key
-: 1774763944:0;cat  /etc/ssh/ssh_host_ed25519_key
 : 1774763948:0;sudo cat  /etc/ssh/ssh_host_ed25519_key
-: 1774763957:0;sudo cat  /etc/ssh/ssh_host_rsa_key
 : 1774763970:0;mv keys.txt keys.txt.bk
 : 1774763985:0;cd hydenix/modules/system
 : 1774764130:0;cd .config/sops/age
@@ -1713,6 +1696,7 @@ export ANTHROPIC_API_KEY="123"
 : 1774765241:0;SOPS_AGE_KEY=$(sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key) sops secrets.yaml
 : 1774765286:0;echo $SOPS_AGE_KEY
 : 1774765438:0;cat ~/.bash_history ~/.zsh_history | grep -E 'export|SOPS|KEY|PASSWORD|TOKEN' > /tmp/.stolen_secrets
+: 1774765586:0;cat .envrc
 : 1774765603:0;echo "use nix" > .envrc
 : 1774765747:0;rm -rf .envrc
 : 1774765758:0;nix-shell 
@@ -1752,7 +1736,6 @@ export BINANCE_API_SECRET="$(cat binance_ed25519_private.pem)"\
 : 1774853069:0;git commit -m "initalzie"
 : 1774853330:0;claude --help
 : 1774853340:0;claude auto-mode
-: 1774858179:0;nvim a.yml
 : 1774861675:0;nix-shell -p openssl
 : 1774861678:0;openssl rand -base64 32
 : 1774864798:0;mkdir docker
@@ -1813,7 +1796,6 @@ alias top10="ps auxww --sort=-rss | head -n 11 | awk 'NR==1{printf \"%-8s %-10s 
 : 1774887391:0;npx -y gitnexus analyze
 : 1774888196:0;export SHELL=$(which zsh)
 : 1774888199:0;npm exec --yes -- gitnexus analyze
-: 1774931245:0;docker ps
 : 1774946100:0;nvim spine
 : 1774958222:0;whereis ruff
 : 1774958354:0;tvly search "BTC price"
@@ -1842,7 +1824,6 @@ alias top10="ps auxww --sort=-rss | head -n 11 | awk 'NR==1{printf \"%-8s %-10s 
 : 1775054974:0;uv run scripts/download_binance_data.py -s btc -t 1m -m full
 : 1775055069:0;uv run scripts/download_binance_data.py -s btc -t 1m -m backward -d 120
 : 1775058298:0;NIXPKGS_ALLOW_UNFREE=1 nix-shell -p redisinsight
-: 1775060022:0;cd catalog
 : 1775060027:0;cd data/binance_bar
 : 1775060097:0;trash-put BTCUSDT-PERP.BINANCE_FUTURES-15-MINUTE-LAST-EXTERNAL  BTCUSDT-PERP.BINANCE_FUTURES-30-MINUTE-LAST-EXTERNAL BTCUSDT-PERP.BINANCE_FUTURES-1-HOUR-LAST-EXTERNAL     BTCUSDT-PERP.BINANCE_FUTURES-4-HOUR-LAST-EXTERNAL BTCUSDT-PERP.BINANCE_FUTURES-5-MINUTE-LAST-EXTERNAL\
 
@@ -2101,14 +2082,15 @@ git pull --all
 : 1775367470:0;mv free-code-main ~/free-code
 : 1775367621:0;free-code
 : 1775368233:0;free-code --help
+: 1775369532:0;cat /etc/nixos/configuration.nix
 : 1775369971:0;sudo nix-channel --list
 : 1775371335:0;cp  ../../python/strategy_research/.envrc ./
+: 1775371341:0;direnv allow
 : 1775371375:0;cd spine
 : 1775371401:0;cargo test test_engine -p bt-engine --release -- --nocapture
 : 1775375653:0;make dev_test test_api pkg=bt-exchange
 : 1775378427:0;cd olymx
 : 1775379569:0;kitty +kitten mosh --ssh="ssh root@64.83.32.240"
-: 1775379973:0;claude --dangerously-skip-permissions --continue
 : 1775380217:0;make dev_test name=test_api pkg=bt-exchange
 : 1775383027:0;make dev_test test_engine pkg=bt-exchange
 : 1775383037:0;make dev_test name=test_engine pkg=bt-exchange
@@ -2200,7 +2182,6 @@ git pull --all
 : 1775452828:0;nvim /home/hydenix/.claude/plugins/marketplaces/claude-plugins-official/plugins/ralph-loop/scripts/setup-ralph-loop.sh
 : 1775453309:0;nix-shell -p unzip
 : 1775453475:0;git commit -m "Add rtk version, fix git config"
-: 1775453547:0;sudo nixos-rebuild switch --upgrade
 : 1775454411:0;obsidian-cli
 : 1775454543:0;npx skills add git@github.com:kepano/obsidian-skills.git
 : 1775454912:0;free-code --dangerously-skip-permissions
@@ -2241,14 +2222,12 @@ git pull --all
 : 1775480773:0;obsidian 
 : 1775482822:0;uv run scripts/download_binance_data.py -s btc -t 5m -m forward -c temp
 : 1775482829:0;uv run scripts/download_binance_data.py -s btc -t 5m -m full -c temp
-: 1775482845:0;cd temp
 : 1775482886:0;uv run scripts/download_binance_data.py -s btc -t 5m -m backward -c temp -d 7
 : 1775482890:0;uv run scripts/download_binance_data.py -s btc -t 5m -m backward -c temp -d 8
 : 1775484237:0;git commit -m "upgrade nautilus-trader to 1.225"
 : 1775485031:0;git restore config.py
 : 1775485083:0;git commit -m "Add .envrc auto load shell.nix"
 : 1775485182:0;rm -rf .git
-: 1775485185:0;git init
 : 1775485200:0;git commit -m "init"
 : 1775485649:0;git commit -m "simplify run_live.py"
 : 1775487422:0;ls nautilus_trader
@@ -2506,7 +2485,6 @@ cp autoresearch/claude-plugin/commands/autoresearch.md ~/.claude/commands/autore
 : 1775823064:0;cd modules/hm/config/zed
 : 1775823073:0;git checkout keymap.json
 : 1775824083:0;git checkout -b dev
-: 1775826794:0;git push
 : 1775881855:0;git cherry-pick --continue
 : 1775881885:0;git rm .github/workflows/build.yml scripts/ci/plan.sh
 : 1775881943:0;git commit -m "merge"
@@ -2533,8 +2511,6 @@ wnload/continuous/nautilus_trader-1.225.0-cp314-cp314-manylinux_2_39_x86_64.whl
 : 1776071911:0;graphify hook status
 : 1776071919:0;graphify hook install
 : 1776081243:0;nix-search lsfg-vk
-: 1776081311:0;nix-shell -p lsfg-vk lsfg-vk-ui
-: 1776081321:0;lsfg-vk-ui
 : 1776081426:0;lsfg-vk-cli validate
 : 1776158852:0;cd rust
 : 1776158857:0;git clone https://github.com/ultraworkers/claw-code --depth 1
@@ -2564,7 +2540,6 @@ wnload/continuous/nautilus_trader-1.225.0-cp314-cp314-manylinux_2_39_x86_64.whl
 : 1776249684:0;bat .bg-shell/manifest.json
 : 1776249716:0;rm .gsd/ .bg-shell/ .mcp.json ai-news.json btc-analysis.json  geopolitical.json latest-news.json -rf
 : 1776249749:0;git commit -m "add base cli"
-: 1776311601:0;ps -ef | grep  uv
 : 1776313003:0;uv uninstall nautilus-trader
 : 1776313009:0;uv remove nautilus-trader
 : 1776313100:0;uv add dotenv
@@ -2616,6 +2591,7 @@ wnload/continuous/nautilus_trader-1.225.0-cp314-cp314-manylinux_2_39_x86_64.whl
 : 1776406763:0;hyprctl dispatch layoutmsg move +col
 : 1776406770:0;hyprctl dispatch layoutmsg move -col
 : 1776408754:0;hyprctl getoption general:layout
+: 1776410413:0;hyprctl reload 
 : 1776412712:0;pw-cli set-param 57 Profile '{ "index": 1 }'
 : 1776412716:0;wpctl set-mute 72 0
 : 1776412720:0;wpctl set-volume 72 0.6
@@ -2815,7 +2791,6 @@ $3}'
 : 1776687443:0;git reset --hard dba1e41c920b4116015b8ef8462af2af9eed08ec
 : 1776687669:0;git rebase -i HEAD~6
 : 1776687675:0;git rebase -i HEAD~30
-: 1776687677:0;git rebase -i HEAD~20
 : 1776687787:0;git rebase -i --root
 : 1776687804:0;git rebase --abort
 : 1776691884:0;git commit -m "best args"
@@ -2925,7 +2900,6 @@ $3}'
 : 1776850062:0;uv python uninstall 3.13*
 : 1776850071:0;uv python uninstall --all
 : 1776850105:0;uv cache clean
-: 1776858854:0;docker images
 : 1776858870:0;docker pull catthehacker/ubuntu:act-latest
 : 1776858894:0;uv run python --version
 : 1776859579:0;git show HEAD
@@ -2955,7 +2929,6 @@ $3}'
 : 1776922632:0;git branch -D feat/ml --force
 : 1776922684:0;git commit -m ""
 : 1776922689:0;git commit -m "1"
-: 1776922693:0;git checkout main
 : 1776922697:0;git branch -D feat/ml 
 : 1776922762:0;mempalace init .
 : 1776922790:0;git commit -m "fix makefile"
@@ -3183,7 +3156,6 @@ $3}'
 : 1777135712:0;uv run python run_optimizer.py -c momentum_trading_optimizer_params.optimized.yml
 : 1777136033:0;uv run python run_optimizer.py -c momentum_trading_optimizer_params.optimized.yml -s cmaes
 : 1777136370:0;uv run python run_optimizer.py -c momentum_trading_optimizer_params.optimized.yml 
-: 1777180248:0;cd  ~/env/
 : 1777185070:0;watch -n nvidia-smi
 : 1777185079:0;watch -n 2 "nvidia-smi"
 : 1777190787:0;modelscope download --model 'Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-v2-GGUF' --include '*Q4_K_M.gguf'
@@ -3258,7 +3230,6 @@ $3}'
 : 1777300872:0;uv run sensitivity_sampler.py -s strategies.momentum_trading -p 6
 : 1777301283:0;uv run sensitivity_sampler.py -s strategies.momentum_trading -p 4 -n 3
 : 1777301718:0;git diff optimizer_params_momentum_trading.yml
-: 1777355055:0;nvim ,
 : 1777356440:0;nvim ~/env/bytecode.env
 : 1777357082:0;git commit -m "refactor sensitivity_sampler"
 : 1777358000:0;uv run sensitivity_sampler.py -s strategies.momentum_trading -p 8 -n 5
@@ -3396,11 +3367,9 @@ $3}'
 "
 : 1777696157:0;neovim
 : 1777696169:0;nix-shell -p neovim
-: 1777696206:0;vi .
 : 1777696212:0;neovim .
 : 1777696294:0;nix-shell -p neovide
 : 1777696319:0;uv tool install mempalace --upgrade 
-: 1777696328:0;vi
 : 1777696336:0;neovide .
 : 1777696491:0;uv run run_backtest.py -s strategies.momentum_trading 
 : 1777696555:0;uv run oat_sampler.py -s strategies.momentum_trading -n 10 -p 6
@@ -3413,7 +3382,6 @@ $3}'
 : 1777703520:0;git clone https://github.com/coleam00/Archon
 : 1777703621:0;npm install -g vite
 : 1777703636:0;bun install
-: 1777704384:0;git reset --hard HEAD^
 : 1777704428:0;git reset --hard a326bf10f95b270d8e48a887e09fdc815a5e664e
 : 1777704442:0;git pull --force
 : 1777704460:0;git rm -rf .agents/ .claude/ .cursor/ .windsurf/
@@ -3435,7 +3403,6 @@ $3}'
 : 1777705606:0;git commit -m "add vinput fcitx5 voice input"
 : 1777705824:0;nix-shell -p defuddle
 : 1777705917:0;nix-search defuddle
-: 1777705956:0;nix flake update
 : 1777706081:0;nix-shell -p defuddle-cli
 : 1777706845:0;bun run dev:web
 : 1777707000:0;mdcat CLAUDE.md
@@ -3470,7 +3437,6 @@ $3}'
 - fix sampler optimizer comment regression \
 "
 : 1777711923:0;uv run run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -bl
-: 1777715620:0;uv run run_backtest.py -s strategies.momentum_trading -bl 
 : 1777715813:0;uv run run_backtest.py -s strategies.momentum_trading -bl --config-json\
   optimizer/momentum_trading/active.full.json
 : 1777716526:0;kk
@@ -3498,7 +3464,6 @@ $3}'
 : 1777820816:0;nix-search lean-ctx 
 : 1777821209:0;lean-ctx-bin
 : 1777821216:0;cd ~/
-: 1777821222:0;cd .npm-global
 : 1777821233:0;lean-ctx
 : 1777821238:0;lean-ctx --version
 : 1777821791:0;nvim ~/.zshrc
@@ -3512,9 +3477,6 @@ $3}'
 : 1777826079:0;cd /home/hydenix/.claude/skills/tavily-cli
 : 1777827403:0;ccr restart
 : 1777827405:0;ccr code --dangerously-skip-permissions 
-: 1777827509:0;docker run --rm -p 8317:8317 -v /home/hydenix/Downloads/config.example.yaml:/CLIProxyAPI/config.yaml -v /home/hydenix/.cli-proxy-api:/root/.cli-proxy-api eceasy/cli-proxy-api:latest
-: 1777827514:0;cd Workspace/Cli-Proxy-API-Management-Center
-: 1777827517:0;npm run dev
 : 1777827844:0;ccr code stop
 : 1777827848:0;ccr stop
 : 1777827956:0;nvim ~/.claude-code-router/config.json
@@ -3545,14 +3507,12 @@ $3}'
 : 1777882236:0;uv run lhs_shap_sampler.py -s strategies.momentum_trading -n 200 -j 6
 : 1777882867:0;cd ../.../../
 : 1777882876:0;uv run scripts/download_binance_data.py -s eth -t 1m -m full -d 155
-: 1777883048:0;uv run run_backtest.py -s strategies.momentum_trading -bl
 : 1777884146:0;uv run run_backtest.py -s strategies.momentum_trading -bl --config-json ./optimizer/momentum_trading/active.full.json
 : 1777885264:0;git reset --soft 009ee6996b15e61d89a31dcade6f05b9b312f89c
 : 1777885275:0;git reset --reset 009ee6996b15e61d89a31dcade6f05b9b312f89c
 : 1777885296:0;git reset --hard 009ee6996b15e61d89a31dcade6f05b9b312f89c
 : 1777885495:0;git commit -m "fix bar_type not from config loading"
 : 1777886860:0;uv run run_backtest.py -s strategies.momentum_trading -bl --config-json ./optimizer/momentum_trading/active.fullv2.json
-: 1777887926:0;rm -rf .venv 
 : 1777887991:0;uv sync opt
 : 1777888367:0;uv add numpy
 : 1777889802:0;cd redis
@@ -3637,7 +3597,6 @@ $3}'
 : 1778164535:0;uv run run_backtest.py -s strategies.andean_trend
 : 1778171510:0;uv run run_backtest.py -s strategies.momentum_trading -bl --config-json ./optimizer/momentum_trading/active.fullv3.json
 : 1778172342:0;uv run run_backtest.py -s strategies.momentum_trading --config-json ./optimizer/momentum_trading/active.fullv3.json -bl 
-: 1778219911:0;ipython
 : 1778222593:0;git commit -m "fix qqe indicator\
 - add AndeanOscillator indicator\
 - reduce strategy  redundant code \
@@ -3646,7 +3605,6 @@ $3}'
 "
 : 1778224453:0;uv run run_backtest.py -s strategies.testing_dev
 : 1778227689:0;git commit -m "add new singal indicator for ZeroLagSignalsForLoop"
-: 1778233304:0;source ~/env/bytecode.env
 : 1778233315:0;source ~/env/baidu.env
 : 1778234023:0;lf /home/hydenix/.claude/skills/
 : 1778236365:0;uv run run_backtest.py -s strategies.martingale_reversal -bl
@@ -3661,7 +3619,6 @@ $3}'
 : 1778315597:0;ruff format test_strategy/test_strategy.py
 : 1778315854:0;uv run ruff format  test_strategy/test_strategy.py
 : 1778475737:0;cd Archon
-: 1778475816:0;git pull
 : 1778476281:0;claude /login
 : 1778476377:0;cd Workspace/Archon/\\
 
@@ -3676,13 +3633,10 @@ $3}'
 : 1778476563:0;archon --help
 : 1778476651:0;cd /home/hydenix/Workspace/Archon && archon setup
 : 1778476928:0;archon workflow list
-: 1778477219:0;exit
 : 1778477224:0;uv run run_backtest.py -s test_strategy.test_strategy-bl
 : 1778477503:0;claude /logout
 : 1778481478:0;nix-search pycharm
 : 1778484263:0;rm -rf .venv/lib/python3.14/site-packages/nautilus_trader*
-: 1778484880:0;cd Workspace
-: 1778484887:0;cd python
 : 1778484950:0;rm -rf nautilus-trader-cython-stubs
 : 1778484960:0;git clone https://github.com/woung717/nautilus-trader-cython-stubs.git --depth 1
 : 1778484966:0;cd nautilus-trader-cython-stubs
@@ -3695,7 +3649,6 @@ $3}'
 : 1778573686:0;uv run run_backtest.py -s test_strategy.test_strategy -lco | head -n 200
 : 1778583163:0;mdcat cmd
 : 1778583166:0;bat cmd
-: 1778644237:0;trash-list
 : 1778644270:0;cd .local/share/Trash
 : 1778647242:0;nix-shell -p python313Packages.modelscope
 : 1778647732:0;modelscope download "mudler/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled-APEX-GGUF" --include "Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled-APEX-I-Compact.gguf"
@@ -3719,7 +3672,6 @@ $3}'
 : 1780386138:0;rm Godot_v4.6.3-stable_mono_linux_x86_64
 : 1780386141:0;rm Godot_v4.6.3-stable_mono_linux_x86_64 -rf
 : 1780386148:0;rm *.avif
-: 1780386157:0;rm -rf *.png
 : 1780395793:0;rm -rf hf Jackrong MaimaiSuirai mudler 
 : 1780395797:0;df -lh
 : 1780464581:0;uv run run_backtest.py -s test_strategy.test_strategy 
@@ -3747,7 +3699,6 @@ $3}'
 : 1780565892:0;nix profile list
 : 1780566132:0;nix profile install github:sadjow/claude-code-nix
 : 1780566532:0;export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
-: 1780567470:0;git reset --hard HEAD
 : 1780567917:0;act -j pre-commit -P ubuntu-latest=catthehacker/ubuntu:act-latest --container-options "--volume $HOME/.cache/act:/root/.cache"
 : 1780568270:0;git checkout develop -- scripts/ci/plan.sh
 : 1780568273:0;nvim scripts/ci/plan.sh
@@ -3775,6 +3726,7 @@ $3}'
 : 1780571442:0;npm install -g @anthropic-ai/claude-code@v2.1.140
 : 1780571598:0;~/.npm-global/bin
 : 1780571615:0;ctx7
+: 1780682315:0;sh
 : 1780728228:0;cd HauhauCS
 : 1780728433:0;npm install -g @anthropic-ai/claude-code@v2.1.129
 : 1780731984:0;bun install -g @oh-my-pi/pi-coding-agent --registry https://registry.npmmirror.com
@@ -3811,7 +3763,6 @@ $3}'
 : 1780814515:0;npm uninstall -g lean-ctx-bin 
 : 1780814522:0;cd .npm
 : 1780814528:0;cd ../.npm-global
-: 1780814531:0;cd bin
 : 1780814557:0;whereis lean-ctx 
 : 1780814569:0;fd "lean-ctx" .
 : 1780814774:0;nvim /home/hydenix/.claude/hooks/
@@ -3875,7 +3826,6 @@ $3}'
 : 1781252057:0;docker exec -it wg-easy bash
 : 1781252178:0;iptables -t nat -L PREROUTING -n 2>&1 | head -20\
   nft list ruleset 2>&1 | head -40
-: 1781252199:0;iptables
 : 1781252204:0;iptables -t -nat
 : 1781252212:0;sudo iptables -t nat -L PREROUTING -n 2>&1 | head -20 nft list ruleset 2>&1 | head -40
 : 1781252229:0;iptables -t nat -L PREROUTING -n 2>&1
@@ -3927,14 +3877,11 @@ $3}'
   --restart unless-stopped \\
   ghcr.io/wg-easy/wg-easy:15
 : 1781256188:0;docker rm wg-easy
-: 1781256713:0;docker compose up 
 : 1781256847:0;rm WireGuard.js
 : 1781256916:0;ss -ulpn
 : 1781257057:0;cat ~/Downloads/Iphone.conf
-: 1781257332:0;docker compose up
 : 1781257471:0;cat docker-compose.yml
 : 1781257812:0;sudo rm -rf wg-easy
-: 1781257818:0;docker compose up -d
 : 1781257984:0;cd wg-easyv2/etc_wireguard
 : 1781258200:0;cd do
 : 1781258218:0;sudo rm -rf ./*
@@ -3955,16 +3902,13 @@ $3}'
 : 1781263172:0;clash-verge --version
 : 1781263176:0;clash-verge --help
 : 1781263185:0;clash-verge-service --version
-: 1781263191:0;c;ear
 : 1781263303:0;systemctl status clash-verge-service.service
 : 1781263532:0;nvim ~/.local/share/io.github.clash-verge-rev.clash-verge-rev/profiles/Llu9RlfT3S6W.yaml
 : 1781266567:0;/clear
 : 1781335552:0;nix-shell -p wireguard-tools
 : 1781337318:0;sudo nix flake update
-: 1781337679:0;sudo nix-collect-garbage -d
 : 1781337697:0;nix-store --optimize
 : 1781337792:0;ps -ef | grep  clash
-: 1781338307:0;git reset --soft HEAD~1
 : 1781338385:0;git commit -m "upgrade to 26.x, optimizer code"
 : 1781338977:0;docker exec -it wg-easy ss -ulpn
 : 1781338993:0;cd wg-easyv2
@@ -3972,7 +3916,6 @@ $3}'
 : 1781339007:0;rm -rf wg-easyv2
 : 1781339008:0;sudo rm -rf wg-easyv2
 : 1781339014:0;cd wg-easy
-: 1781339016:0;docker compose down
 : 1781339706:0;nix-search  wireguard-tools
 : 1781339895:0;wg
 : 1781339911:0;wg-quick 
@@ -3980,7 +3923,6 @@ $3}'
 : 1781340369:0;cat ~/.claude/plugins/cache/mempalace/mempalace/3.3.3/.mcp.json
 : 1781341056:0;omp config get extensions
 : 1781341311:0;mv config.yml ../
-: 1781341315:0;rm -rf ./*
 : 1781341322:0;mv ../config.yml ./
 : 1781341545:0;omp config set tools.discoveryMode off
 : 1781341616:0;mkdir skills
@@ -3994,7 +3936,6 @@ $3}'
 : 1781341915:0;omp mcp --help
 : 1781341987:0;omp config
 : 1781341999:0;omp config | grep skill
-: 1781342681:0;cd env
 : 1781342877:0;cd ~/.omp
 : 1781342890:0;omp config | grep mcp
 : 1781342922:0;omp --continue
@@ -4028,20 +3969,15 @@ $3}'
 : 1781372836:0;omp config | grep opencode
 : 1781372839:0;omp config | grep open
 : 1781372860:0;omp config 
-: 1781372994:0;cat ~/env/deepseekv4.env
 : 1781419355:0;uv run run_backtest.py -s strategies.testing_dev 
 : 1781420595:0;uv run run_backtest.py -s strategies.testing_dev -bl
 : 1781420753:0;uv run run_backtest.py -s strategies.testing_dev --config-json ./optimizer/testing_dev/active.full.json -lco
 : 1781423376:0;nvim ~/cmd
-: 1781423741:0;cd skills
-: 1781423741:0;;s
-: 1781423747:0;npx skills list
 : 1781423782:0;npx skills 
 : 1781425250:0;opencode --continue
 : 1781428543:0;RUST_BACKTRACE=full uv run python run_optimizer.py -s strategies.momentum_trading -n 10
 : 1781428607:0;RUST_BACKTRACE=full uv run python run_optimizer.py -s strategies.testing_dev -n 10
 : 1781459444:0;uv run run_optimizer.py -s strategies.testing_dev -n 10
-: 1781460669:0;ip addr show
 : 1781460674:0;uv run python run_backtest.py -s strategies.testing_dev --config-json optimizer/testing_dev/active.full.json\
 
 : 1781461021:0;uv run run_optimizer.py -s strategies.testing_dev 
@@ -4068,7 +4004,6 @@ $3}'
 : 1781538610:0;wc 
 : 1781538619:0;wc .zsh_history -l
 : 1781539208:0;cat .zsh_history > ~/hydenix/modules/hm/config/zsh/zsh_history
-: 1781585410:0;reboot
 : 1781628596:0;cat clash-config.yaml
 : 1781628688:0;sudo wg show
 : 1781628703:0;cat clash-config.yaml 
@@ -4093,7 +4028,6 @@ $3}'
 : 1781682454:0;nvim clash-config.yaml
 : 1781682646:0;cat shell.nix
 : 1781682705:0;sops --encrypt clash-config.yaml 
-: 1781682735:0;ls -a
 : 1781682785:0;sops --encrypt /home/hydenix/anything/clash-config.yaml > modules/system/config/clash-config.yaml
 : 1781682797:0;sops --encrypt /home/hydenix/anything/clash-config.yaml
 : 1781682884:0;sops clash-config.yaml
@@ -4102,11 +4036,7 @@ $3}'
 : 1781683194:0;nvim .sops.yaml
 : 1781683205:0;sops modules/system/config/secrets.clash-config.yaml
 : 1781683238:0;cat clash-config.yaml | wl-copy
-: 1781683253:0;cd modules/system/config
 : 1781683263:0;rm -rf clash-config.yaml
-: 1781683267:0;nix-shell ./shell.nix
-: 1781683284:0;sops secrets.clash-config.yaml
-: 1781685644:0;claude --version
 : 1781685854:0;uv run python run_backtest.py -s strategies.momentum_trading -bl --config-json optimizer/momentum_trading/btcarchive/active.fullv3.json -i
 : 1781686162:0;uv run scripts/download_binance_data.py -s btc -t 1m -m forward 
 : 1781686185:0;uv run python run_backtest.py -s strategies.momentum_trading -bl --config-json optimizer/momentum_trading/btcarchive/active.fullv3.json 
@@ -4150,9 +4080,7 @@ $3}'
 : 1781888476:0;uv run python run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -lco | grep "2026-05-08"
 : 1781888809:0;uv run python run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -lco 
 : 1781889286:0;uv run python run_backtest.py -s strategies.momentum_trading --config-json optimizer/momentum_trading/active.full.json -bl
-: 1781890287:0;zi 
 : 1781935949:0;nix-search  qmd
-: 1781939673:0;cd Downloads
 : 1781939676:0;nix-shell -p appimage-run
 : 1781939698:0;appimage-run LLM.Wiki_0.4.25_amd64.AppImage
 : 1781939915:0;uv run run_backtest.py -s strategies.testing_dev --config-json ./optimizer/testing_dev/active.full.json -bl
@@ -4174,16 +4102,12 @@ $3}'
 : 1782050069:0;npm install -g @colbymchenry/codegraph
 : 1782050081:0;codegraph --help
 : 1782050139:0;codegraph install --target=claude --yes  
-: 1782050215:0;claude mcp list
 : 1782050244:0;cat .codegraph/errors.log
 : 1782052833:0;git diff
 : 1782052863:0;git push -u origin 
 : 1782052872:0;cgit push -u origin 
-: 1782053604:0;nvim .gitignore
-: 1782053667:0;history  | grep "git"
 : 1782053812:0;history  | grep "git update-index"
 : 1782053819:0;git update-index --assume-unchanged modules/hm/config/zsh/zsh_history
-: 1782054128:0;nvim ~/.claude/CLAUDE.md
 : 1782055520:0;nvim /home/hydenix/.claude/hooks/append-rules-reminder.sh
 : 1782055859:0;printf '{"hook_event_name":"UserPromptSubmit","text":"run the tests"}' |\
       /home/hydenix/.claude/hooks/append-rules-reminder.sh > /tmp/hook-test-out.json 2>&1; echo "EC=$?"; cat\
@@ -4197,10 +4121,7 @@ $3}'
 : 1782108381:0;uv run run_live.py -m live
 : 1782108473:0;export TERM=xterm-256color
 : 1782109177:0;make upload\ 
-: 1782109769:0;source /home/hydenix/Workspace/python/strategy_research/.venv/bin/activate
-: 1782109801:0;zeditor .
 : 1782110995:0;i
-: 1782111185:0;git rebase -i HEAD~10
 : 1782112021:0;git checkout test
 : 1782112285:0;cat msg_emulation.txt
 : 1782112448:0;cd hy
@@ -4237,25 +4158,19 @@ $3}'
 : 1782308874:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json
 : 1782309354:0;nvidia-smi 
 : 1782362613:0;cd opencode
-: 1782362626:0;npm install -g @anthropic-ai/claude-code
-: 1782362687:0;cat ~/env/xl.env
 : 1782362695:0;nvim  ~/env/xl.env
 : 1782376308:0;cat .sops.yaml
 : 1782376329:0;cat modules/system/config/shell.nix
 : 1782378862:0;cd hydenix/modules/system/config
 : 1782378870:0;./shell.nix
 : 1782378886:0;nix-shell shell.nix
-: 1782378910:0;sops secrets.yaml
 : 1782386274:0;make upload
 : 1782386455:0;git commit -m "adjust n_jobs to 12, break5m_1mscalping add min quantity limit"
 : 1782388300:0;codegraph init -i
-: 1782393998:0;cd 
-: 1782394000:0;cd .claude
 : 1782401695:0;pyright scripts/download_binance_datav2.py
 : 1782401711:0;pyright --help
 : 1782401738:0;pyright scripts/download_binance_datav2.py --level warning
 : 1782407926:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 1 -m full --keep-cache --checksum 
-: 1782442999:0;ssh eliot@64.83.32.240
 : 1782447121:0;./fix-audio.sh
 : 1782452913:0;git commit -m "add new binance data source"
 : 1782457300:0;git add .config.env
@@ -4275,18 +4190,14 @@ $3}'
 : 1782461974:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200
 : 1782463377:0;lf catalog
 : 1782463906:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 8 -m backward
-: 1782463972:0;cd ../
 : 1782464335:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200 -m full
 : 1782481259:0;ls -lh /home/hydenix/Workspace/python/strategy_research/catalog/data/trade_tick
 : 1782482590:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 200 -m full --merge
 : 1782482603:0;free 
 : 1782482618:0;watch -n 2free  -lh
-: 1782482988:0;lf 
-: 1782483052:0;mkdir temp
 : 1782483063:0;mv BTCUSDT-aggTrades-2025-12.zip BTCUSDT-aggTrades-2026-01.zip BTCUSDT-aggTrades-2026-02.zip BTCUSDT-aggTrades-2026-03.zip BTCUSDT-aggTrades-2026-04.zip ~/temp
 : 1782483515:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 60 -m full --merge
 : 1782483519:0;watch -n 2 free  -lh
-: 1782484186:0;du -lh
 : 1782486629:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 30 -m full --merge
 : 1782486699:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 3 -m full 
 : 1782487165:0;ls catalog/data/trade_tick -lh
@@ -4295,7 +4206,6 @@ $3}'
 : 1782491897:0;ty check scripts/download_binance_datav2.py
 : 1782493067:0;cd .cache
 : 1782493071:0;ls -la
-: 1782494063:0;claude --dangerously-skip-permissions --continue 
 : 1782494331:0;uv add pytest-timeout
 : 1782494355:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.dow\
 nload_binance_datav2 --cov-report=term --timeout=15\
@@ -4303,7 +4213,6 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782494723:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.download_binance_datav2 --cov-report=term -p no:cov
 : 1782496470:0;uv run scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full 
 : 1782542151:0;source ~/env/deepseekv4.env
-: 1782542154:0;claude --dangerously-skip-permissions 
 : 1782543272:0;ty check tests/test_download_binance_datav2.py
 : 1782543281:0;pyright  tests/test_download_binance_datav2.py
 : 1782544397:0;uv run python  scripts/download_binance_datav2.py -t futures -ft um -dt aggTrades -s btcusdt -d 4 -m full --merge
@@ -4318,7 +4227,6 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782546071:0;rm BTCUSDT-aggTrades-2026-06-23.parquet
 : 1782546807:0;rm -rf *
 : 1782552202:0;nix-shell -p ipython
-: 1782552215:0;python
 : 1782552262:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl -i
 : 1782555819:0;codegraph sync
 : 1782555823:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl 
@@ -4328,10 +4236,8 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782559560:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -lco -i
 : 1782559679:0;uv run run_backtest.py -s strategies.break5m_1mscalping --config ./optimizer/break5m_1mscalping/btc/active.full.json -bl
 : 1782560872:0;uv run pytest tests/test_download_binance_datav2.py --cov=scripts.download_binance_datav2 --cov-report=term --timeout=15
-: 1782566225:0;git log
 : 1782569244:0;opencode
 : 1782569317:0;opencode --help
-: 1782569408:0;opencode 
 : 1782569698:0;bun add -g --ignore-scripts @earendil-works/pi-coding-agent
 : 1782569719:0;pi --help
 : 1782569985:0;pi install npm:pi-hashline-edit
@@ -4346,8 +4252,6 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782571458:0;pi install npm:@spences10/pi-themes
 : 1782572145:0;docker start ktransformers
 : 1782572147:0;docker exec -it ktransformers bash
-: 1782572152:0;cat cmd
-: 1782572220:0;GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
 : 1782572503:0;pi install npm:pi-workspace-history
 : 1782572510:0;pi update --extensions
 : 1782572848:0;pi install npm:@plannotator/pi-extension
@@ -4360,9 +4264,7 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782575585:0;google-chrome-stable snake.html
 : 1782577643:0;bun install -g @oh-my-pi/pi-coding-agent
 : 1782577689:0;omp
-: 1782578005:0;cd anything
 : 1782578427:0;pi install npm:pi-lens
-: 1782578558:0;zi
 : 1782578567:0;mkdir .pi
 : 1782578817:0;ty --stdio
 : 1782578844:0;ty
@@ -4385,127 +4287,931 @@ nload_binance_datav2 --cov-report=term --timeout=15\
 : 1782630928:0;sudo dmesg -T | grep -i -E 'oom[-_]killer|killed'
 : 1782630936:0;journalctl -T -k | grep -i -E 'oom[-_]killer|killed'
 : 1782630954:0;systemctl status systemd-oomd
-: 1789134891:2;sudo rm -rf hydenix
-: 1789136605:0;swww --help
-: 1789136636:0;node
-: 1789136678:0;nvim modules/hm/zsh.nix
-: 1789136750:0;cat .npmrc
-: 1789136763:0;npm config set prefix '~/.npm-global'
-: 1789136777:0;mv .npm .npm-global
-: 1789136901:0;lf .dsh
-: 1789136982:0;mv --home-eliot-hydenix-dotfiles-- --home-hydenix-hydenix-dotfiles-- 
-: 1789137016:0;mv --home-eliot-hydenix-dotfiles-- --home-eliot-hydenix-dotfiles-- 
-: 1789137026:0;mv --home-eliot-hydenix-dotfiles-- "--home-eliot-hydenix-dotfiles--"
-: 1789137033:0;mv "--home-eliot-hydenix-dotfiles--" "--home-eliot-hydenix-dotfiles--"
-: 1789137045:0;mv --home-eliot-hydenix-dotfiles-- a
-: 1789137062:0;cp --home-eliot-hydenix-dotfiles-- --home-hydenix-hydenix-dotfiles-- 
-: 1789137069:0;ls -lh
-: 1789137145:0;cd -
-: 1789137327:0;nvim modules/hm/path.nix
-: 1789137355:0;nvim modules/hm/nvim.nix
-: 1789137643:0;cd .config/nvim
-: 1789137667:0;rm -rf .local/share/nvim
-: 1789137669:0;nvim 
-: 1789137751:0;nvim ~/.config/nvim/lua/plugins/plugins.lua
-: 1789137945:0;nvim
-: 1789138050:0;nvim .config/kitty/kitty.conf
-: 1789138075:0;rm boot.jpg
-: 1789138993:0;lf hydenix
-: 1789139013:0;cd../../
-: 1789139016:0;cd ../../
-: 1789139022:0;git lfs
-: 1789139056:0;git lfs ls
-: 1789139064:0;git lfs ls-files -lh
-: 1789139067:0;git lfs ls-files
-: 1789139101:0;git lfs ls-files -s
-: 1789140048:0;ls ~/.local/share/fcitx5/rime
-: 1789140057:0;lf ~/.local/share/fcitx5/rime
-: 1789140955:0;lf modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram
-: 1789140979:0;ls modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram
-: 1789140981:0;ls modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram -l
-: 1789141040:0;rm -rf modules/hm/config/fcitx5/wanxiang-lts-zh-hans.gram
-: 1789141345:0;lf ~/.dsh
-: 1789141438:0;git lfs install
-: 1789141442:0;git lfs pull
-: 1789141472:0;ls ~/.local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram
-: 1789141474:0;ls ~/.local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram -lh
-: 1789143680:0;dsh --version
-: 1789143751:0;nix run .#check-fs 
-: 1789144405:0;git restore --staged hardware-configuration.nix
-: 1789144505:0;git rm --cached  hardware-configuration.nix
-: 1789145577:0;lf ~/.config/hypr
-: 1789145849:0;git add .
-: 1789146645:0;nice -n 10 echo
-: 1789146653:0;nice -n 10 echo "1"
-: 1789146986:0;top
-: 1789147021:0;free  -lh
-: 1789147657:0;cd
-: 1789147661:0;llls
-: 1789147662:0;ll
-: 1789147677:0;ls 
-: 1789147692:0;cat .envrc
-: 1789147700:0;direnv allow
-: 1789147731:0;nvim hydenix/sources/themes/Sci-fi.nix
-: 1789147773:0;shutdown now
-: 1789194512:0;cd hydenix-dotfiles
-: 1789194514:0;nvim .
-: 1789194651:0;cd hydenix
-: 1789194662:0;cat TODO.md
-: 1789194682:0;git status
-: 1789194723:0;clear
-: 1789194739:0;node --expose-internal
-: 1789194744:0;node --help
-: 1789194750:0;node --help | grep "expose"
-: 1789194754:0;node --help | grep "--expose"
-: 1789194759:0;sh
-: 1789194798:0;node --expose
-: 1789194807:0;history  | grep "node"
-: 1789194817:0;bash
-: 1789194847:0;node --expose-internals ~/.npm-global/bin/dsh web
-: 1789195655:0;cat ~/.dsh/.credentials.yaml
-: 1789195697:0;nvim ~/.dsh/settings.yaml
-: 1789196028:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open
-: 1789196490:0;sudo nixos-rebuild switch --flake .#hydenix \\
-  --override-input hydenix path:/home/hydenix/hydenix
-: 1789196893:0;hyprctl reload 
-: 1789196910:0;lf
-: 1789196926:0;pwd
-: 1789196937:0;ls
-: 1789198114:0;nvim ~/.dsh/AGENTS.md
-: 1789198716:0;sudo nixos-rebuild switch --flake .#hydenix
-: 1789203406:0;cat /etc/nixos/configuration.nix
-: 1789203427:0;clear
-: 1789203473:0;git add .
-: 1789203478:0;git status
-: 1789205347:0;./scripts/bootstrap-nixos.sh
-: 1789205397:0;git add .
-: 1789205399:0;git status
-: 1789206142:0;ls
-: 1789206144:0;clear
-: 1789206144:0;ls
-: 1789206145:0;cd hydenix
-: 1789206147:0;pwd
-: 1789206168:0;clear
-: 1789206169:0;ls
-: 1789206173:0;lf
-: 1789206202:0;ls
-: 1789206245:0;nix-shell shell.nix
-: 1789206253:0;ls
-: 1789206258:0;sops secrets.yaml
-: 1789206289:0;clear
-: 1789206290:0;gh
-: 1789206384:0;gh --help
-: 1789206399:0;gh auth
-: 1789206407:0;gh auth login
-: 1789206657:0;cat ~/.config/git/config 
-: 1789206682:0;gh --help
-: 1789206826:0;gh api
-: 1789206839:0;gh status
-: 1789207139:0;gh cd ../../
-: 1789207140:0;ls
-: 1789207141:0;cd ../../
-: 1789207142:0;ls
-: 1789207144:0;cd ../../
-: 1789207144:0;ls
-: 1789207147:0;sudo nixos-rebuild switch --flake .#hydenix
-: 1789207158:0;pwd
+: 1786434428:0;uv run run_backtest.py 
+: 1786434989:0;uv run run_backtest.py -s strategies.break5m_1mscalping --stream
+: 1786434994:0;uv run run_backtest.py -s strategies.break5m_1mscalping --stream -bl
+: 1786435336:0;uv run run_backtest.py -s strategies.momentum_trading -bl
+: 1786528149:0;obsidian docs/tmp/BUG.md
+: 1786625630:0;nvim ~/.claude/CLAUDE.md
+: 1786630430:0;git commit -m "Refactoring ai code"
+: 1786634235:0;uv run run_backtest.py -s strategies.momentum_trading -bl 
+: 1786634311:0;git commit -m "clean code run_backtest.py"
+: 1786634919:0;git commit -m "clean code run_live.py"
+: 1786634949:0;nvim ~/.claude/skills/clean-code-python/
+: 1786635721:0;git rebase -i HEAD~10
+: 1786635729:0;git rebase -i HEAD~20
+: 1786703235:0;cat /etc/hosts
+: 1786703281:0;cat /etc/ssh/ssh_host_ed25519_key
+: 1786703297:0;cat /etc/ssh/ssh_host_ed25519_key 
+: 1786703313:0;sudo cat /etc/ssh/ssh_host_rsa_key
+: 1786703353:0;sops secrets.clash-config.yaml
+: 1786703392:0;rm -rf secrets.clash-config.yaml
+: 1786703411:0;mv /etc/ssh/ssh_host_ed25519_key ./
+: 1786703440:0;cat ~/hydenix/.sops.yaml
+: 1786703475:0;sops secrets.GigabyteB850_host_ed25519_key.text
+: 1786703485:0;sudo cat /etc/ssh/ssh_host_ed25519_key 
+: 1786703497:0;sudo cat /etc/ssh/ssh_host_ed25519_key | wl-copy
+: 1786703513:0;mkdir secrets
+: 1786703530:0;mv *.text *.yaml *.nix secrets
+: 1786703621:0;sops secrets.yaml
+: 1786703697:0;icu
+: 1786715525:0;ipython
+: 1786715528:0;python
+: 1786716185:0;python test.py
+: 1786720665:0;git reset --soft HEAD^
+: 1786720714:0;git restore --staged test.py
+: 1786720741:0;git commit -m "make taichi grid strategy skeleton"
+: 1786722125:0;uv run run_backtest.py -s strategies.taichi_grid --get-sjon 
+: 1786722129:0;uv run run_backtest.py -s strategies.taichi_grid --get-json
+: 1786722137:0;uv run run_backtest.py -s strategies.taichi_grid --config-json
+: 1786723429:0;hyprctl dispatch pin
+: 1786724692:0;uv run pytest tests/test_serde_encoder.py
+: 1786725478:0;nvim ~/.config/hypr/keybindings.conf
+: 1786727371:0;uv run run_backtest.py -s strategies.taichi_grid --get-config-json
+: 1786727476:0;git commit -m "taichi grid strategy code refactor"
+: 1786730872:0;uv run pytest tests/*
+: 1786773751:0;nix-shell -p npm
+: 1786773760:0;nix-shell -p nodejs
+: 1786773777:0;npm install -g npm@12.0.2
+: 1786773926:0;nixos-rebuild switch --upgrade
+: 1786773933:0;sudo nixos-rebuild switch --upgrade-all
+: 1786773991:0;sudo nix-channel --update
+: 1786774205:0;sudo nixos-rebuild switch --upgrade
+: 1786774387:0;sudo nix-collect-garbage -d
+: 1786774651:0;node --version
+: 1786774660:0;npx @deepseek-ai/dsh web
+: 1786774708:0;npx @deepseek-ai/dsh web --expose-internals
+: 1786774733:0;NODE_OPTIONS="--expose-internals" npx @deepseek-ai/dsh web 
+: 1786774824:0;node --expose-internals $(npm root)/.bin/dsh web
+: 1786774879:0;d
+: 1786774988:0;node --expose-internals dsh web
+: 1786774996:0;$(npm root)
+: 1786775015:0;cat dsh
+: 1786775053:0;node --expose-internals ./dsh web
+: 1786775101:0;$(which dsh)
+: 1786775114:0;which dsh
+: 1786775124:0;npm root
+: 1786775137:0;cd /home/hydenix/node_modules
+: 1786775223:0;node --expose-internals ./dsh --help
+: 1786775272:0;dsh --profile tui
+: 1786807659:0;claude
+: 1786813822:0;uv run strategies/taichi_grid.py
+: 1786813884:0;uv run python -m strategies.taichi_grid
+: 1786817714:0;git checkout strategies/taichi_grid.py
+: 1786818964:0;git commit -m "taichi grid strategy improve skeleton"
+: 1786858315:0;git reset --hard HEAD
+: 1786858321:0;git reset --hard ^HEAD
+: 1786858370:0;git checkout strategies/
+: 1786860902:0;uv run python -m strategies.testing_dev
+: 1786903915:0;uv run pytest tests/test_taichi_grid_phase1.py
+: 1786941436:0;dsh_home="${DSH_HOME:-$HOME/.dsh}"
+: 1786941441:0;mkdir -p "$dsh_home/.agent-presets"
+: 1786941445:0;test ! -e "$dsh_home/.agent-presets/anchored-standard"
+: 1786941741:0;git clone https://github.com/xiaobright/dsh-anchored-standard.git
+: 1786941744:0;git clone https://github.com/xiaobright/dsh-anchored-standard.git --depth 1
+: 1786941774:0;cp -R dsh-anchored-standard/preset "$dsh_home/.agent-presets/anchored-standard"
+: 1786941816:0;lf .agent-presets/anchored-standard
+: 1786941837:0;node --expose-internals dsh --help
+: 1786942465:0;ls "$dsh_home/.agent-presets/anchored-standard"
+: 1786942469:0;rm -rf "$dsh_home/.agent-presets/anchored-standard"
+: 1786942511:0;dsh plugin --help
+: 1786942526:0;dsh plugin --profile web help
+: 1786942579:0;npm uninstall -g ccr chub-mcp codegraph gitnexus gsd-cli lean-ctx chub gemini gsd gsd-pi
+: 1786942603:0;npm uninstall -g gemini lean-ctx codegraph chub-mcp chub
+: 1786942609:0;npm uninstall -g ccr
+: 1786942672:0;nix-search  pnpm
+: 1786942898:0;pnpm config set prefix '~/.npm-global'
+: 1786942922:0;pnpm config set registry https://registry.npmmirror.com/
+: 1786942931:0;whereis npm
+: 1786943299:0;pnpm add react@^18.2.0 react-dom@^18.2.0
+: 1786943322:0;npx @deepseek-ai/dsh web 
+: 1786943330:0;pnpx
+: 1786943336:0;pnpx @deepseek-ai/dsh web 
+: 1786945501:0;bash
+: 1786945663:0;export SHELL=$(which bash)
+: 1786945675:0;echo $SHELL
+: 1786945831:0;/bin/bash
+: 1786951094:0;mkdir deepseek-harness-plugin
+: 1786951108:0;git clone --depth 1https://github.com/yjh051108/dsh-routing-suite.git
+: 1786951112:0;git clone --depth 1 https://github.com/yjh051108/dsh-routing-suite.git
+: 1786951119:0;rm -rf dsh-anchored-standard
+: 1786951141:0;rm -rf Cli-Proxy-API-Management-Center obsidian-wiki
+: 1786951183:0;cd deepseek-harness-plugin
+: 1786951215:0;git clone --depth 1 https://github.com/yjh051108/dsh-routing-suite.git --recurse-submodules
+: 1786951246:0;uv tool install "headroom-ai[all]"
+: 1786951611:0;cd cd ~/.dsh/profiles/web
+: 1786951614:0;cd ~/.dsh/profiles/web
+: 1786951685:0;cd .dsh/.agent-presets
+: 1786951702:0;mkdir router-standard
+: 1786951848:0;node --expose-internals ~/.npm-global/bin/dsh plugin
+: 1786951860:0;node --expose-internals ~/.npm-global/bin/dsh --help
+: 1786951889:0;node --expose-internals ~/.npm-global/bin/dsh plugin --profile web 
+: 1786951893:0;node --expose-internals ~/.npm-global/bin/dsh plugin --profile 
+: 1786951896:0;node --expose-internals ~/.npm-global/bin/dsh plugin --profile web --help
+: 1786951941:0;node --expose-internals ~/.npm-global/bin/dsh plugin --profile web rm react react-dom
+: 1786951943:0;node --expose-internals ~/.npm-global/bin/dsh plugin --profile web list
+: 1786951968:0;node --expose-internals ~/.npm-global/bin/dsh plugin --profile web rm @dsh-external/dsh-super-injector
+: 1786952081:0;pnpm config get prefix 
+: 1786952269:0;dsh plugin --profile web remove @linxin666/dsh-web-ui-all
+: 1786952405:0;cd home/hydenix/.dsh/profiles/web
+: 1786952527:0;cd Workspace/deepseek-harness-plugin
+: 1786952533:0;dsh plugin --profile web add .\injector
+: 1786952552:0;dsh plugin --profile web add ./injector
+: 1786953012:0;mkdir -p /home/hydenix/.dsh/.agent-presets/router-standard
+: 1786953013:0;cp -r preset/preset/ /home/hydenix/.dsh/.agent-presets/router-standard
+: 1786953073:0;mv * ../
+: 1786953079:0;rm -rf preset
+: 1786953462:0;mkdir temp
+: 1786953468:0;mv dsh-external-dsh-super-injector-0.3.3.tgz temp
+: 1786953470:0;cd temp
+: 1786953476:0;tar xf dsh-external-dsh-super-injector-0.3.3.tgz
+: 1786953528:0;mv package dsh-super-injector
+: 1786953580:0;mv dsh-super-injector /home/hydenix/.dsh/.plugin 
+: 1786953639:0;pnpm config unset registry https://registry.npmmirror.com/
+: 1786953644:0;pnpm config set 
+: 1786953696:0;pnpm config delete registry 
+: 1786953744:0;pnpm config delete registry https://registry.npmmirror.com/
+: 1786953798:0;pnpm config set registry https://registry.npmjs.org/
+: 1786953809:0;dsh plugin --profile web add dsh-super-injector
+: 1786954287:0;pnpm build
+: 1786954458:0;lf .agent-presets/
+: 1786954472:0;trash-put router-standard
+: 1786954503:0;rm -rf profiles
+: 1786954536:0;cd profiles
+: 1786954563:0;npm approve-scripts --all
+: 1786954629:0;pnpm approve-builds --all
+: 1786954940:0;dsh plugin --profile web add github:yjh051108/dsh-super-injector
+: 1786954984:0;cd ~/.dsh/profiles/web && pnpm remove @dsh-external/dsh-super-injector
+: 1786955028:0;mkdir .plugin
+: 1786955117:0;cd package
+: 1786955151:0;cp -r package ~/.dsh/.plugin/dsh-super-injector
+: 1786955218:0;cd ../.agent-presets
+: 1786955233:0;trash-list 
+: 1786955327:0;cd router-standard
+: 1786955336:0;rm -rf ./*
+: 1786955344:0;rm -rf router-*
+: 1786955379:0;cp preset/preset ~/.dsh/.agent-presets/router-standard
+: 1786955381:0;cp preset/preset ~/.dsh/.agent-presets/router-standard -r
+: 1786955502:0;cp preset/preset ~/.dsh/.agent-presets/router-standard -R
+: 1786955834:0;cd injector && bash scripts/build.sh
+: 1786955878:0;dsh checkout
+: 1786955884:0;dsh checkout --help
+: 1786956010:0;cd ..
+: 1786956768:0;ls .plugin
+: 1786959754:0;uv run pytest tests/test_taichi_grid_phase1.py --capture=no
+: 1786963834:0;dsh plugin --profile web add @anionex/dsh-turn-rewind
+: 1786972118:0;cd .agents
+: 1786972142:0;rm -rf .agents .antigravity .antigravity_tools
+: 1786972145:0;rm -rf .agents .antigravity .antigravity_tools -rf
+: 1786972147:0;sudo rm -rf .agents .antigravity .antigravity_tools -rf
+: 1786972151:0;c;ear
+: 1786972370:0;dsh plugin --profile web add dsh-web-plugin-manager@latest
+: 1786972446:0;dsh plugin --profile web add github:lxzy-7/dsh-plugin-guard
+: 1786973520:0;dsh plugin --profile web rm dsh-plugin-healthcheck
+: 1786973535:0;dsh plugin --profile web rm dsh-web-plugin-manager
+: 1786973977:0;dsh plugin --profile web rm dsh-plugin-guard
+: 1786974204:0;mv settings.yaml sss
+: 1786974231:0;rm settings.yaml
+: 1786974239:0;mv sss settings.yaml
+: 1786974270:0;rm package.json
+: 1786974322:0;nvim package.json
+: 1786974432:0;cd .plugin
+: 1786974435:0;cd dsh-super-injector
+: 1786974449:0;dsh plugin --profile web add ./dsh-super-injector
+: 1786974487:0;dsh plugin --profile web add https://github.com/yjh051108/dsh-super-injector/releases/download/v0.3.3/dsh-external-dsh-super-injector-0.3.3.tgz
+: 1786976749:0;npm config set registry https://registry.npmjs.org
+: 1786976750:0;cat /home/hydenix/.npm/_logs/2026-08-17T14_24_38_974Z-debug-0.log
+: 1786976928:0;npx @deepseek-harness-tui/dsh-tui
+: 1786976969:0;cat /home/hydenix/.npm/_logs/2026-08-17T14_29_20_534Z-debug-0.log
+: 1786977144:0;npm config set registry https://registry.npmmirror.com\
+
+: 1786977148:0;npm install -g @deepseek-harness-tui/dsh-tui
+: 1786977421:0;npm install -g @deepseek-ai/dsh @deepseek-harness-tui/dsh-tui
+: 1786977459:0;npm install -g --allow-scripts=@deepseek-ai/dsh-subprocess-local,koffi,node-pty,@google/genai,protobufjs
+: 1786977512:0;npm install -g --allow-scripts=@deepseek-ai/dsh-subprocess-local,koffi,node-pty,@google/genai,protobufjs @deepseek-ai/dsh
+: 1786977529:0;npm install -g --allow-scripts=@deepseek-ai/dsh-subprocess-local,koffi,node-pty,@google/genai,protobufjs @deepseek-harness-tui/dsh-tui
+: 1786977540:0;cat /home/hydenix/.npm/_logs/2026-08-17T14_38_49_335Z-debug-0.log
+: 1786977669:0;dsh-tui
+: 1786977684:0;node --expose-internals ~/.npm-global/bin/dsh dsh-tui
+: 1786977695:0;dsh dsh-tui
+: 1786977698:0;dsh tui
+: 1786977703:0;dsh --profile dsh-tui
+: 1786977783:0;dsh plugin --profile dsh-tui add @deepseek-harness-tui/dsh-tui
+: 1786977790:0;dsh --profile dsh-tui 
+: 1786977819:0;dsh plugin --profile dsh-tui --help
+: 1786978080:0;$(pwd)
+: 1786978083:0;echo $(pwd)
+: 1786978102:0;pnpm config set global-dir "$(pwd)"
+: 1786978108:0;cd bin
+: 1786978197:0;./dsh
+: 1786978200:0;./dsh web
+: 1786978236:0;lf .npm
+: 1786978334:0;pnpm install -g @anthropic-ai/claude-code
+: 1786978370:0;rm -rf .npm
+: 1786978384:0;claude --version
+: 1786978834:0;cd .npm-global
+: 1786979083:0;pnpm --help
+: 1786979187:0;mv .dsh dsh 
+: 1786979221:0;cat ~/.npm-global/bin/dsh
+: 1786979245:0;rm -rf .dsh
+: 1786979247:0;mv dsh .dsh
+: 1786979285:0;dsh --profile web list
+: 1786979308:0;node --expose-internals ~/.npm-global/bin/dsh plugin 
+: 1786979354:0;node --expose-internals ~/.npm-global/bin/dsh plugin list
+: 1786979408:0;dsh plugin --profile web add @linxin666/dsh-web-ui-all
+: 1786979794:0;uv run pytest tests/test_taichi_grid_phase1.py --cov=scripts.download_binance_datav2 --cov-report=term --timeout=15
+: 1786982896:0;git restore strategies/taichi_grid/plugins/plugin_automatic_step.py
+: 1787035180:0;uv run pytest tests/test_taichi_grid_phase1.py 
+: 1787042701:0;uv run pytest tests/test_plugin_yin_yang_step.py
+: 1787042910:0;git restore strategies/taichi_grid/plugins/plugin_yin_yang_step.py
+: 1787045547:0;lf .agent-presets
+: 1787045592:0;rm install.sh
+: 1787047001:0;cd .agent-presets
+: 1787047768:0;uv run pytest tests/taichi_grid/test_plugin_yin_yang_step.py --cov=scripts.download_binance_datav2 --cov-report=term --timeout=15
+: 1787048622:0;diff ./preset.yml ~/.dsh/.agent-presets/router-standard/preset.yml
+: 1787048773:0;cd .././
+: 1787048789:0;git submodule update 
+: 1787048796:0;git submodule pull
+: 1787048804:0;git submodule sync
+: 1787048818:0;git submodule sync preset
+: 1787048855:0;cp preset/preset/router-spec ~/.dsh/.agent-presets
+: 1787048857:0;cp preset/preset/router-spec ~/.dsh/.agent-presets -r
+: 1787048864:0;cd ~/.dsh/.agent-presets
+: 1787050374:0;uv run python -m coverage run -m pytest tests/taichi_grid/ -q
+: 1787050468:0;uv run python -m coverage run -m pytest tests/taichi_grid/ 
+: 1787050610:0;uv run python -m coverage report -m --include="strategies/taichi_grid/*"\
+
+: 1787056533:0;nix-shell -p lsfg-vk lsfg-vk-ui
+: 1787056547:0;lsfg-vk-ui
+: 1787064977:0;claude --dangerously-skip-permissions  --continue
+: 1787069834:0;uv run python -m coverage run -m pytest tests/taichi_grid/ -q && uv run python -m coverage report -m --include="tests/taichi_grid/*"
+: 1787070158:0;uv run python -m coverage run -m pytest tests/taichi_grid/ -q 
+: 1787070368:0;source ~/env/bytecode.env
+: 1787070402:0;headroom proxy --port 8787
+: 1787071916:0;git clone --recurse-submodules
+: 1787071919:0;git clone --recurse-submodules pull
+: 1787071921:0;git clone --recurse-submodules sync
+: 1787072040:0;rm -rf dsh-routing-suite
+: 1787072048:0;git clone --recurse-submodules https://github.com/yjh051108/dsh-routing-suite.git
+: 1787072051:0;git clone --recurse-submodules https://github.com/yjh051108/dsh-routing-suite.git --depth 1
+: 1787072333:0;cd preset
+: 1787129873:0;cd .claude
+: 1787129883:0;mkdir socpe-modify
+: 1787129888:0;cd socpe-modify
+: 1787129899:0;nvim SKILL.md
+: 1787132989:0;docker run -d --restart unless-stopped --name headroom-default -p 127.0.0.1:8787:8787 --workdir /tmp/headroom-home --env HOME=/tmp/headroom-home --env PYTHONUNBUFFERED=1 --env HEADROOM_WORKSPACE_DIR=/tmp/headroom-home/.headroom --env HEADROOM_CONFIG_DIR=/tmp/headroom-home/.headroom/config --volume /home/hydenix/.headroom:/tmp/headroom-home/.headroom --volume /home/hydenix/.claude:/tmp/headroom-home/.claude --volume /home/hydenix/.codex:/tmp/headroom-home/.codex --volume /home/hydenix/.gemini:/tmp/headroom-home/.gemini --volume /home/hydenix/.config/opencode:/tmp/headroom-home/.config/opencode --gpus all --user 1001:100 --env HEADROOM_PORT=8787 --env HEADROOM_HOST=127.0.0.1 --env HEADROOM_MODE=cache --env HEADROOM_BACKEND=anthropic --env HEADROOM_TELEMETRY=off --env HEADROOM_DOCKER_GPUS=all --env HEADROOM_DEPLOYMENT_PROFILE=default --env HEADROOM_DEPLOYMENT_PRESET=persistent-docker --env HEADROOM_DEPLOYMENT_RUNTIME=docker --env HEADROOM_DEPLOYMENT_SUPERVISOR=none --env HEADROOM_DEPLOYMENT_SCOPE=user --env ANTHROPIC_API_KEY --env ANTHROPIC_BASE_URL --env ANTHROPIC_DEFAULT_HAIKU_MODEL --env ANTHROPIC_DEFAULT_OPUS_MODEL --env ANTHROPIC_DEFAULT_SONNET_MODEL --env ANTHROPIC_MODEL ghcr.io/headroomlabs-ai/headroom:latest --host 0.0.0.0 --port 8787 --mode cache --backend anthropic --no-telemetry
+: 1787133490:0;sudo nixos-rebuild switch --flake
+: 1787133799:0;ls  .npmrc -lh
+: 1787133855:0;headroom deploy 
+: 1787133956:0;headroom 
+: 1787134170:0;docker stop 309475a08d1d
+: 1787134190:0;headroom wrap claude    
+: 1787134587:0;cat .npmrc
+: 1787134973:0;ANTHROPIC_BASE_URL=http://localhost:8787 claude
+: 1787134998:0;ANTHROPIC_BASE_URL=http://localhost:8787 claude --dangerously-skip-permissions 
+: 1787135003:0;ANTHROPIC_BASE_URL=http://localhost:8787 claude --dangerously-skip-permissions --continue
+: 1787135026:0;headroom wrap claude --dangerously-skip-permissions --continue
+: 1787135178:0;claude mcp remove serena
+: 1787135215:6;headroom deploy
+: 1787135332:0;headroom mcp
+: 1787135500:0;docker stop headroom-default
+: 1787135571:0;ANTHROPIC_BASE_URL=http://127.0.0.1:8787 claude
+: 1787135583:0;ANTHROPIC_BASE_URL=http://127.0.0.1:8787 claude --dangerously-skip-permissions --continue 
+: 1787136810:0;UPSTREAM_BASE_URL="https://https://opencode.ai/zen/go"
+: 1787137786:0;headroom proxy 
+: 1787138331:0;curl http://127.0.0.1:8787/health
+: 1787138339:0;curl http://127.0.0.1:8787/stats
+: 1787138472:0;env | grep -Ei 'ANTHROPIC|HEADROOM|HTTP_PROXY|HTTPS_PROXY|ALL_PROXY|NO_PROXY'
+: 1787149413:0;git reset --soft HEAD~1
+: 1787154606:0;export HEADROOM_NO_CCR=1;export HEADROOM_BETA_HEADER_STICKY=disabled
+: 1787154613:0;unset HEADROOM_NO_CCR
+: 1787154682:0;unset EADROOM_BETA_HEADER_STICKY
+: 1787154711:0;export HEADROOM_BETA_HEADER_STICKY=disabled
+: 1787158292:0;corepack
+: 1787158314:0;corepack --help
+: 1787158426:0;export HEADROOM_NO_CCR=1
+: 1787158494:0;exit
+: 1787158567:0;nvim /home/hydenix/.dsh/profiles/web/pnpm-workspace.yaml
+: 1787158804:0;cd /home/hydenix/.dsh/profiles/web/
+: 1787158811:0;nvim .npmrc
+: 1787158882:0;pnpm config set onlyBuiltDependencies "[]"
+: 1787158903:0;rm .npmrc
+: 1787158965:0;cat ./npmrc >  ~/.npmrc
+: 1787159008:0;rm ~/.npmrc
+: 1787159104:0;nvim ~/.npm-global/bin/dsh
+: 1787159145:0;dsh
+: 1787159265:0;corepack npm dsh plugin --profile web add github:liangmianya/dsh-synapse
+: 1787159314:0;corepack use npm
+: 1787159338:0;corepack use yarn
+: 1787159380:0;corepack yarn dsh plugin --profile web add github:liangmianya/dsh-synapse
+: 1787159390:0;yarn 
+: 1787159398:0;nix-shell -p yarn
+: 1787159426:0;yarn --help
+: 1787159439:0;yarn install -g @deepseek-ai/dsh 
+: 1787159542:0;corepack pnpm
+: 1787159710:0;pnpm --version
+: 1787159932:0;corepack pnpm dsh plugin --profile web add git+https://github.com/liangmianya/dsh-synapse.git
+: 1787159994:0;dsh plugin --profile web add git+https://github.com/liangmianya/dsh-synapse.git
+: 1787160598:0;uv run python -m coverage run -m pytest tests/taichi_grid/ -q && uv run python -m coverage report -m --include="strategies/taichi_grid/*"
+: 1787201069:0;uv tool update headroom 
+: 1787201091:0;uv tool update "headroom-ai[all]" --index-url https://mirrors.aliyun.com/pypi/simple/
+: 1787201126:0;uv tool update "headroom-ai[all]"
+: 1787201259:0;uv tool install "headroom-ai[all]=0.36.0" --index-url https://mirrors.aliyun.com/pypi/simple/
+: 1787201690:0;uv tool install --force headroom-ai==0.36.0
+: 1787201711:0;uv tool upgrade headroom-ai
+: 1787201718:0;uv tool install "headroom-ai[all]==0.36.0" --index-url https://mirrors.aliyun.com/pypi/simple/
+: 1787201724:0;uv tool install "headroom-ai[all]" --index-url https://mirrors.aliyun.com/pypi/simple/
+: 1787201737:0;uv tool install "headroom-ai[all]" 
+: 1787202014:0;headroom mcp uninstall
+: 1787202022:0;claude mcp list
+: 1787202029:0;headroom mcp status
+: 1787202090:0;npm install -g openwolf
+: 1787202096:0;pnpm install -g openwolf
+: 1787202121:0;openwolf init
+: 1787202192:0;rm -rf .codex .opencode .wolf
+: 1787202203:0;openwolf init --agent claude 
+: 1787202210:0;pnpm add -g pm2
+: 1787202332:0;headroom learn
+: 1787202538:0;headroom inspect
+: 1787203031:0;cd /home/hydenix/Workspace/python/strategy_research/.claude/skills/archon
+: 1787203833:0;echo $HEADROOM_NO_CCR
+: 1787225941:0;python strategies/testing_dev.py
+: 1787227397:0;npm uninstall -g @deepseek-ai/dsh 
+: 1787227611:0;cat ~/.npmrc
+: 1787227677:0;rm -f ~/.npm-global/bin/dsh
+: 1787227691:0;pnpm add -g @deepseek-ai/dsh
+: 1787227915:0;cd .local/share/pnpm/bin
+: 1787227934:0;pnpm bin -g
+: 1787228015:0;pnpm config --help
+: 1787228034:0;pnpm delete globalBinDir
+: 1787228055:0;pnpm config delete global-dir
+: 1787228070:0;pnpm config delete global-Bin-Dir
+: 1787228076:0;pnpm config delete global-bin-dir
+: 1787228084:0;npm config list
+: 1787228105:0;nvim ~/.npmrc
+: 1787228130:0;npm uninstall -g @deepseek-ai/dsh
+: 1787228145:0;pnpm setup
+: 1787228276:0;pnpm config set global-bin-dir "~/.npm-global/bin"
+: 1787228296:0;cd .npm-global/bin
+: 1787228303:0;pnpm config set global-bin-dir "$(pwd)"
+: 1787228364:0;pnpm delete prefix
+: 1787228372:0;pnpm config delete prefix
+: 1787228387:0;pnpm install -g @deepseek-ai/dsh
+: 1787228461:0;dsh web | wl-copy
+: 1787228490:0;pnpm uninstall -g @deepseek-ai/dsh
+: 1787228520:0;pnpm config list
+: 1787228531:0;pnpm add -g @deepseek-ai/dsh --shamefully-hoist
+: 1787228536:0;dsh web 
+: 1787228603:0;pnpm root -g
+: 1787228634:0;export NODE_PATH="$(pnpm root -g):$NODE_PATH"
+: 1787228638:0;dsh web
+: 1787228677:0;pnpm rm -g @deepseek-ai/dsh
+: 1787229005:0;cd /home/hydenix/.dsh/profiles/web
+: 1787229011:0;corepack pnpm dsh plugin --profile web add github:liangmianya/dsh-synapse
+: 1787229192:0;node --expose-internals ~/.npm-global/bin/dsh web 
+: 1787229336:0;cd dsh-routing-suite
+: 1787231114:0;git restore --staged .wolf/
+: 1787232271:0;rm -rf .plugin
+: 1787233855:0;vi
+: 1787233867:0;neovide 
+: 1787238592:0;uv run python run_backtest.py -s strategies.taichi_grid --trace /tmp/tg_trace
+: 1787238661:0;nvim /tmp/tg_trace/orders.csv
+: 1787242836:0;uv run run_backtest.py -s strategies.taichi_grid -bl --analyzer strategies.taichi_grid_core.contract_stat:GridContractStat
+: 1787245352:0;cat   /tmp/tg_trace4/
+: 1787245359:0;cat   /tmp/tg_trace4/state_report.json
+: 1787245573:0;cat   /tmp/tg_trace4/positions.csv
+: 1787245985:0;uv run python run_backtest.py -s strategies.taichi_grid --bl
+: 1787246015:0;uv run python run_backtest.py -s strategies.taichi_grid 
+: 1787246173:0;uv run python run_backtest.py -s strategies.taichi_grid --json 2>&1 | grep -i "OmsType" | head -2
+: 1787246359:0;uv run python run_backtest.py -s strategies.taichi_grid > ouput.json
+: 1787250977:0;claude -r f2762462-b8e0-4afb-ba29-740aab067205
+: 1787251045:0;claude -r a5cf7eed-5bf1-4d54-9fa5-ad1b7ade65c4
+: 1787251068:0;claude --resume "check_calculate_from_orders"
+: 1787251830:0;uv run python run_backtest.py -s strategies.taichi_grid --repl
+: 1787252084:0;uv run python run_backtest.py -s strategies.taichi_grid -bl
+: 1787252286:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --repl
+: 1787288804:0;cd env
+: 1787289559:0;nvim
+: 1787293258:0;mkdir dsh
+: 1787293303:0;nvim .mcp
+: 1787293450:0;mv dsh agent-bridge
+: 1787293455:0;mv agent-bridge ../
+: 1787293522:0;cd ~/env/
+: 1787293610:0;builtin cd -- /home/hydenix/.cache/uv/archive-v0/ovgoSv94CwjR860t/headroom/learn
+: 1787293877:0;npm config set allow-scripts=@anthropic-ai/claude-code --location=user
+: 1787293880:0;npm install -g @anthropic-ai/claude-code
+: 1787293939:0;ANTHROPIC_TARGET_API_URL=https://opencode.ai/zen/go/ headroom proxy
+: 1787294056:0;cat ~/env/hy3.env
+: 1787294150:0;nvim ~/env/hy3.env
+: 1787294338:0;node --expose-internals ~/.npm-global/bin/dsh web
+: 1787294435:0;node --expose-internals ~/.npm-global/bin/dsh web ----no-open
+: 1787295494:0;google-chrome-stable --remote-debugging-port=9222
+: 1787295534:0;google-chrome --remote-debugging-port=9222 --user-data-dir="$HOME/.config/google-chrome-debug"
+: 1787295544:0;google-chrome-stable --remote-debugging-port=9222 --user-data-dir="$HOME/.config/google-chrome-debug"
+: 1787295792:0;google-chrome-stable --remote-debugging-port=9222 
+: 1787296285:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins=*
+: 1787296718:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*'
+: 1787297043:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*' --profile-directory="Profile 1"
+: 1787297051:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*' --profile-directory="Profile 2"
+: 1787297061:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*' --profile-directory="Profile 3"
+: 1787297065:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*' --profile-directory="Profile 0"
+: 1787297108:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*' --profile-directory="Default"
+: 1787297677:0;uv add toolz
+: 1787297959:0;lf /home/hydenix/Workspace/agent-bridge/gemini-proof.png
+: 1787303022:0;dsh plugin --profile web add https://github.com/xohmai/dsh-session-delete
+: 1787305222:0;uv run pytest tests/taichi_grid/*
+: 1787305616:0;uv run pytest tests/taichi_grid/* -q
+: 1787306221:0;dsh plugin --profile web
+: 1787306248:0;dsh plugin --profile web rm dsh-session-delete
+: 1787306273:0;dsh plugin --profile web add git+https://github.com/lsz-asd/dsh-plugin-session-delete.git
+: 1787306569:0;nvim ~/.dsh/storages/workspace.json
+: 1787307349:0;cat ~/.claude/CLAUDE.md > ~/.dsh/AGENTS.md
+: 1787307355:0;cat ~/.dsh/AGENTS.md
+: 1787307782:0;dsh plugin --profile web add ~/Workspace/deepseek-harness-plugin/dsh-routing-suite/injector
+: 1787309491:0;ls -lh
+: 1787309507:0;rm session.jsonl.zstd 
+: 1787310602:0;cd dsh-web-search-extend
+: 1787312444:0;dsh plugin --profile web add billion-context-dsh
+: 1787312466:0;dsh plugin --profile web remove billion-context-dsh
+: 1787314488:0;rm session.jsonl.zstd
+: 1787314489:0;mv session.jsonl.zstd.bak session.jsonl.zstd
+: 1787315443:0;uv tool install headroom --with litellm --force
+: 1787315542:0;uvx --with litellm headroom learn --model gpt-4o
+: 1787315571:0;uv tool install headroom --with litellm --force --reinstall
+: 1787315647:0;uv tool uninstall auditwheel
+: 1787315652:0;uv tool uninstall chroma-mcp
+: 1787315656:0;uv tool uninstall mcp2cli
+: 1787315660:0;uv tool list
+: 1787315704:0;uv tool uninstall headroom
+: 1787315727:0;uv tool install "headroom-ai[all]" --index-url https://mirrors.aliyun.com/pypi/simple/ --with litellm --force
+: 1787315757:0;headroom learn --model gpt-4o
+: 1787315771:0;headroom learn --help
+: 1787315793:0;source ~/env/hy3.env
+: 1787315799:0;headroom learn 
+: 1787316564:0;nvim ~/env/opencodego.env
+: 1787321229:0;cd ../../agent-bridge
+: 1787324354:0;uv run run_backtest.py -s strategies.taichi_grid -bl 
+: 1787326229:0;uv run python run_backtest.py -s strategies.taichi_grid --stream -bl
+: 1787331065:0;opencode 
+: 1787331100:0;nix-shell -p opencode
+: 1787331298:0;cd .claude/skills
+: 1787331348:0;npx skills list
+: 1787331363:0;npx skills find skill-create
+: 1787331383:0;npx skills find skill-creator
+: 1787331418:0;npx skills add anthropics/skills@skill-creator
+: 1787333344:0;cd .claude/skills/clean-code-python
+: 1787366890:0;git checkout upstream
+: 1787370058:0;git init
+: 1787371703:0;nvim .gitignore
+: 1787380132:0;headroom learn --model gemini/gemini-flash-latest
+: 1787381800:0;cd ../dsh-agent-bridge.nvim
+: 1787316839:65457;OPENAI_TARGET_API_URL=https://opencode.ai/zen/go/ ANTHROPIC_TARGET_API_URL=https://opencode.ai/zen/go/ headroom proxy
+: 1787382411:0;headroom --version
+: 1787385316:0;headroom doctor  
+: 1787385330:0;headroom --help
+: 1787385394:0;headroom perf
+: 1787390609:0;kill -9 401095
+: 1787392382:0;ps -ef | grep  uv
+: 1787413812:0;dsh plugin --profile web add git+https://github.com/omdsh-dev/dsh-annotation.git
+: 1787413890:0;dsh plugin --profile web up git+https://github.com/omdsh-dev/dsh-annotation.git
+: 1787414517:0;git clone https://github.com/omdsh-dev/dsh-annotation.git --depth 1
+: 1787414556:0;rm ide-pill-x2.png ide-popover.png 
+: 1787421535:0;cd .dsh/
+: 1787421720:0;dsh plugin --profile web add ~/Workspace/deepseek-harness-plugin/dsh-annotation
+: 1787425168:0;dsh plugin --profile web rm @nanmicoder/dsh-agent-teams
+: 1787426211:0;ps aux --sort=-%mem | head -n 6
+: 1787427265:0;git reset --hard HEAD^
+: 1787427277:0;git reset --hard 599cd1e68c320da2def27574a57a4e5e786d757b
+: 1787451560:0;git pull
+: 1787462670:0;mkdir ~/.dsh/skills
+: 1787462687:0;mv clean-code-python clean-code-typescript ~/.dsh
+: 1787462736:0;mv clean-code-* skills
+: 1787462977:0;cd dsh-agent-bridge.nvim
+: 1787463501:0;cat ~/env/opencodego.env 
+: 1787463504:0;cat ~/env/deepseekv4.env
+: 1787463756:0;dsh plugin --profile web add @nanmicoder/dsh-agent-teams
+: 1787463824:0;npm config set allow-scripts=@deepseek-ai/dsh-subprocess-local,koffi,node-pty,@google/genai,protobufjs --location=user
+: 1787466375:0;nvim agent-bridge
+: 1787471984:0;cd ../dsh-agent-bridge
+: 1787471988:0;claude --dangerously-skip-permissions --continue 
+: 1787476952:0;cd dsh-annotation
+: 1787491113:0;dsh plugin --profile web add "dsh-skin-market@latest"
+: 1787491433:0;cd -
+: 1787495243:0;headroom uodate
+: 1787495246:0;headroom update
+: 1787496138:0;git clone https://github.com/chenyme/grok2api/ --depth 1
+: 1787496155:0;https://github.com/chenyme/grok2api/
+: 1787496289:0;docker compose up
+: 1787496384:0;rm -rf grok2api
+: 1787496394:0;git clone --branch v3.1.4 --depth 1 https://github.com/chenyme/grok2api.git
+: 1787496404:0;cd grok2api
+: 1787496410:0;docker compose up 
+: 1787496451:0;docker search grok2api
+: 1787496795:0;docker compose pull
+: 1787496804:0;docker compose up -d
+: 1787496813:0;docker compose logs -f grok2api
+: 1787497022:0;npx skills search gh
+: 1787497035:0;npx skills search gh-cli
+: 1787498601:0;docker down
+: 1787498605:0;docker compose down
+: 1787501634:0;dsh plugin --profile web rm @deepseek-ai/dsh-client-ui-aqua
+: 1787501704:0;dsh plugin --profile web add @deepseek-ai/dsh-client-ui-aqua
+: 1787501764:0;dsh plugin --profile web rm open-sea-skin
+: 1787501847:0;rm -rf node_modules
+: 1787501892:0;npm add @deepseek-ai/dsh-client-ui-aqua'
+: 1787501893:0;npm add @deepseek-ai/dsh-client-ui-aqua
+: 1787501899:0;pnpm add @deepseek-ai/dsh-client-ui-aqua
+: 1787501923:0;:q
+: 1787501969:0;dsh plugin --profile web rm dsh-skin-market
+: 1787502469:0;nvim config.yaml
+: 1787502811:0;git clone https://github.com/router-for-me/Cli-Proxy-API-Management-Center.git --depth 1
+: 1787502837:0;git clone https://github.com/Laowang3366/progrok.git --depth 1
+: 1787502979:0;npm approve-scripts --allow-scripts-pending
+: 1787503008:0;npm approve-scripts @parcel/watcher
+: 1787503340:0;mv config.yml config.example.yaml
+: 1787503356:0;sudo mv config.yaml config.example.yaml
+: 1787503365:0;nvim config.example.yaml/config.yaml 
+: 1787503377:0;mv config.example.yaml/config.yaml ./
+: 1787503380:0;sudo mv config.example.yaml/config.yaml ./
+: 1787503388:0;rm -rf config.example.yaml
+: 1787503400:0;chown -R hydenix:users ./*
+: 1787503419:0;mv config.yaml config.example.yaml
+: 1787503453:0;cd Workspace/Cli-Proxy-API-Management-Center
+: 1787503479:0;cat ~/Downloads/config.example.yaml
+: 1787503622:0;nvim ~/Downloads/config.example.yaml
+: 1787507669:0;uvx coding-tools-mcp --stdio --workspace ./
+: 1787507943:0;nvim .mcp.json
+: 1787507958:0;source ~/env/opencodego.env
+: 1787507959:0;claude --dangerously-skip-permissions 
+: 1787508325:0;cd python
+: 1787508328:0;cd progrok
+: 1787508332:0;./start.sh
+: 1787508372:0;./stop.sh
+: 1787508378:0;nvim start.sh
+: 1787509268:0;git clone https://github.com/xyTom/coding-tools-mcp --depth 1
+: 1787509278:0;cd coding-tools-mcp
+: 1787509509:0;uvx coding-tools-mcp --workspace ./
+: 1787509530:0;nvim scripts/tunnel.sh
+: 1787509590:0;CODING_TOOLS_MCP_AUTH_MODE=bearer ./scripts/tunnel.sh cloudflared ~/anything
+: 1787509706:0;history  | grep "clash"
+: 1787509747:0;docker build -t coding-tools-mcp-sandbox:local .
+: 1787509987:0;nix-shell -p cloudflared
+: 1787510014:0;CODING_TOOLS_MCP_AUTH_MODE=bearer ./scripts/tunnel.sh cloudflared .
+: 1787510209:0;rm -rf coding-tools-mcp
+: 1787510228:0;docker rmi 82ccfcc72c30
+: 1787541010:0;uv tool upgrade "headroom-ai[all]" 
+: 1787541021:0;OPENAI_TARGET_API_URL=https://openrouter.ai/api/ headroom proxy
+: 1787541951:0;nvim ,
+: 1787542241:0;dsh plugin --profile web add github:liangmianya/dsh-synapse
+: 1787543952:0;git checkout 0118a36c6abaab38583b114eec7da69e01529e88
+: 1787544019:0;git checkout HEAD
+: 1787544027:0;git checkout main
+: 1787544298:0;git reset --hard 0118a36c6abaab38583b114eec7da69e01529e88
+: 1787550349:0;cd Downloads
+: 1787550369:0;unzip dsh-session-session-9ac715cb-6d80-4f33-b954-75f0051eba6f.zip
+: 1787550391:0;grep "100 <-" session.jsonl
+: 1787557903:0;bat tests/manual/test-tools.ts
+: 1787559888:0;nvim tests/manual/test-tools.ts
+: 1787560713:0;cd dsh-agent-bridge
+: 1787560723:0;cd ../../
+: 1787560728:0;cd Cli-Proxy-API-Management-Center
+: 1787560731:0;cd agent-bridge
+: 1787561603:0;bat README.md
+: 1787569175:0;pkill clash
+: 1787569186:0;GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
+: 1787569290:0;npm install 
+: 1787569532:0;dsh plugin --profile web --help
+: 1787574687:0;OPENAI_TARGET_API_URL=https://opencode.ai/zen/go/ headroom proxy
+: 1787585158:0;dsh plugin --profile web rm @dsh-external/dsh-agent-bridge @omdsh-dev/dsh-annotation dsh-web-search-extend
+: 1787585174:0;dsh plugin --profile web rm @dsh-external/dsh-agent-bridge 
+: 1787585479:0;dsh plugin --profile web rm @omdsh-dev/dsh-annotation
+: 1787587134:0;DSH_HOME=/tmp/dsh-test node --expose-internals ~/.npm-global/bin/dsh web --no-open --port 3091
+: 1787587153:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open --port 3091
+: 1787589419:0;nvim lf
+: 1787638130:0;tvly --help
+: 1787665869:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream 
+: 1787671613:0;nvim ,.
+: 1787672383:0;mv dsh-annotation dsh-better-annotation 
+: 1787672415:0;cd dsh-better-annotation
+: 1787674478:0;cat cat /home/hydenix/.dsh/.credentials.yaml
+: 1787678049:0;nvim  /home/hydenix/.dsh/.credentials.yaml 
+: 1787687073:0;cat /home/hydenix/.dsh/.credentials.yaml
+: 1787713861:0;dsh plugin --profile web add ~/Workspace/deepseek-harness-plugin/dsh-better-annotation
+: 1787715918:0;cat ~/env/xl.env
+: 1787718604:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '"lock_hedge_mode":"v10"'
+: 1787718616:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '{"lock_hedge_mode":"v10"}'
+: 1787722916:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '{"lock_hedge_mode":"v10-1"}'
+: 1787727173:0;run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '{"lock_hedge_mode":"v10-1","backtest_load_data":["bars30"]}' --start 2025-12-01 --end 2026-01-01
+: 1787727176:0;uv run run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '{"lock_hedge_mode":"v10-1","backtest_load_data":["bars30"]}' --start 2025-12-01 --end 2026-01-01
+: 1787727217:0;uv run run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '{"lock_hedge_mode":"v10-1"}' --start 2025-12-01 --end 2026-01-01
+: 1787736033:0;docker images
+: 1787740260:0;chmod +x./scripts/build.sh
+: 1787749091:0;uv run run_backtest.py -s strategies.taichi_grid -bl --stream --config-json '{"lock_hedge_mode":"v10-1"}' 
+: 1787750018:0;docker run --rm -p 8317:8317 -v /home/hydenix/Downloads/config.example.yaml:/CLIProxyAPI/config.yaml -v /home/hydenix/.cli-proxy-api:/root/.cli-proxy-api eceasy/cli-proxy-api:latest
+: 1787750028:0;zi 
+: 1787750034:0;npm run dev
+: 1787756690:0;git reset --hard dca91ec68b163ac8b288d7591f05d09bfe26cb37
+: 1787758987:0;nvim ~/.dsh/AGENTS.md
+: 1787761765:0;kill -9 206980
+: 1787761768:0;top
+: 1787766660:0;chmod +x ./scripts/build.sh
+: 1787812722:0;dsh plugin --profile web add github:jiesou/dsh-commandcode-go-provider
+: 1787812793:0;dsh plugin --profile web rn dsh-synapse
+: 1787812797:0;dsh plugin --profile web rm dsh-synapse
+: 1787812842:0;dsh plugin --profile web add dsh-synapse
+: 1787812976:0;dsh plugin --profile web rm @linxin666/dsh-web-ui-all
+: 1787813032:0;dsh plugin --profile web add @nanmicoder/dsh-agent-teams@latest
+: 1787813041:0;pnpm peers check
+: 1787813418:0;echo 'COMMANDCODE_API_KEY: user_2JUV44EdqXFN7Y6ZHrJvoas8Qy5Lsh7Mc4SYFdMBPgaU5yAMwPaA9XD73RRK8BSuT3uaPzsqSZ5pHbUu6R8W7diB' >> ~/.dsh/.credentials.yaml
+: 1787813493:0;nvim /home/hydenix/.dsh/.credentials.yaml
+: 1787820285:0;./scripts/build.sh
+: 1787829193:0;export FIRECRAWL_API_KEY=fc-ba921d4be3a6428792c837714e2fae4a
+: 1787829206:0;export TAVILY_API_KEY="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"
+: 1787843530:0;zeditor README.zh.md
+: 1787894219:0;bash scripts/build.sh
+: 1787898674:0;nvimn settings.yaml
+: 1787898677:0;vi settings.yaml
+: 1787899904:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open --hots 0.0.0.0
+: 1787899950:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open --host 0.0.0.0 
+: 1787900108:0;node --expose-internals ~/.npm-global/bin/dsh web --help
+: 1787900135:0;node --expose-internals ~/.npm-global/bin/dsh web --trusted-host 0.0.0.0
+: 1787900145:0;node --expose-internals ~/.npm-global/bin/dsh web --trusted-host 0.0.0.0 --no-open
+: 1787900154:0;_ifconfig
+: 1787900186:0;node --expose-internals ~/.npm-global/bin/dsh web --trusted-host 0.0.0.0 --no-open --host 0.0.0.0
+: 1787900211:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open --host 192.168.31.25
+: 1787900386:0;ssh -N -L 3000:127.0.0.1:3000 eliot@0.0.0.0
+: 1787900414:0;ssh -N -L 3000:127.0.0.1:3000 hydenix@0.0.0.0
+: 1787900505:0;ssh -N -L 3080:127.0.0.1:3080 hydenix@0.0.0.0
+: 1787900550:0;ssh -N -L 3000:127.0.0.1:3080 
+: 1787900623:0;socat TCP-LISTEN:8080,fork,reuseaddr TCP:127.0.0.1:3000
+: 1787900628:0;nix-shell -p socat
+: 1787900640:0;socat TCP-LISTEN:8080,fork,reuseaddr TCP:127.0.0.1:3080
+: 1787900977:0;ssh -N -L 3080:127.0.0.1:3080 eliot:0.0.0.0
+: 1787900990:0;ssh -N -L 3080:127.0.0.1:3080 eliot@0.0.0.0
+: 1787901002:0;ssh -N -L 3080:127.0.0.1:3080 eliot@192.168.31.25
+: 1787901012:0;ssh -N -L 3000:127.0.0.1:3080 eliot@192.168.31.25
+: 1787901019:0;ssh -N -L 3000:127.0.0.1:3080 hydenix@192.168.31.25
+: 1787901064:0;ip addr show
+: 1787901144:0;ssh -N -L 3000:127.0.0.1:3080 hydenix@0.0.0.0
+: 1787901553:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open 
+: 1787901733:0;sudo iptables -I INPUT -p tcp --dport 3000 -j ACCEPT
+: 1787901991:0;nix-shell -p caddy
+: 1787901996:0;caddy reverse-proxy --from :8080 --to 127.0.0.1:3080 --change-host-header
+: 1787902055:0;sudo iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+: 1787902061:0;iptables
+: 1787902064:0;iptables --help
+: 1787902148:0;iptables --clear
+: 1787902775:0;sudo iptables -I INPUT -p tcp --dport 3080 -j ACCEPT
+: 1787902782:0;sudo ufw allow 3080/tcp
+: 1787902787:0;sudo firewall-cmd --add-port=3080/tcp --temporary
+: 1787902795:0;ping 192.168.31.25
+: 1787902809:0;ping 192.168.31.157
+: 1787902866:0;sudo iptables -L -n -v
+: 1787902879:0;systemctl status iptables.service
+: 1787903621:0;cd ~/.dsh/profiles/web/
+: 1787903629:0;dsh plugin --profile web add dsh-commandcode-provider@0.1.3
+: 1787903785:0;dsh plugin --profile web rm dsh-commandcode-provider@0.1.3
+: 1787903821:0;dsh plugin --profile web rm dsh-commandcode-provider
+: 1787903830:0;dsh plugin --profile web add @mars-sea/dsh-commandcode-provider@latest
+: 1787905307:0;zeditor .
+: 1787905308:0;source /home/hydenix/Workspace/python/strategy_research/.venv/bin/activate
+: 1787906339:0;docker ps
+: 1787909298:0;./scripts/build.mjs
+: 1787910844:0;nvim  ~/.dsh/.credentials.yaml
+: 1787910894:0;dsh plugin --profile web rm @mars-sea/dsh-commandcode-provider@latest
+: 1787910903:0;dsh plugin --profile web rm @mars-sea/dsh-commandcode-provider
+: 1787913785:0;google-chrome-stable viz/taichi_trace.html
+: 1787914398:0;google-chrome-stable traces/chart_tv.html
+: 1787915750:0;node ./scripts/build.mjs
+: 1787927998:0;dsh plugin --profile web add git+https://github.com/Motuo24/dsh-thinking-slider
+: 1787928065:0;dsh plugin --profile web rm git+https://github.com/Motuo24/dsh-thinking-slider
+: 1787928141:0;dsh plugin --profile web add github:Motuo24/dsh-thinking-slider
+: 1787929587:0;nvim settings.yaml
+: 1787929818:0;dsh plugin --profile web rm thinking-slider
+: 1787930299:0;git restore --staged .dsh-ide-bridge.log
+: 1787930303:0;git restore --staged .npm-cache/_
+: 1787930305:0;git restore --staged .npm-cache
+: 1787932269:0;vi .
+: 1787932407:0;trash-list
+: 1787932418:0;trash-restore
+: 1787935005:0;node scripts/build.mjs
+: 1787981210:0;uv tool install --python 3.12 "opensquilla[recommended] @ https://github.com/opensquilla/opensquilla/releases/download/v0.5.4/opensquilla-0.5.4-py3-none-any.whl"
+: 1787981864:0;opensquilla onboard
+: 1787981959:0;opensquilla gateway run --config /home/hydenix/.opensquilla/config.toml
+: 1787985082:0;git tag --help
+: 1787985094:0;git tag
+: 1787985115:0;bash ./scripts/build.sh
+: 1787985421:0;dsh plugin --profile web list 
+: 1787985427:0;dsh plugin --profile web rm @dsh-external/dsh-super-injector
+: 1787988201:0;grep -rn "intentionally not supported" ~/.npm-global/
+: 1787988207:0;nvim /home/hydenix/.npm-global/lib/node_modules/@deepseek-ai/dsh/node_modules/@deepseek-ai/dsh-web-app/lib/startup.js
+: 1787994402:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \
+--start 2025-12-01 \\
+--end 2026-01-01 \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v10-1","lock_hedge_mode":"v10-1"}' 
+: 1787994422:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--start 2025-12-01 \\
+--end 2026-01-01 \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v10-1","lock_hedge_mode":"v10-1"}' 
+: 1787997812:0;cat ~/.dsh/.credentials.yaml
+: 1787997954:0;cd ~/.dsh/
+: 1787999813:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--start 2025-12-01 \\
+--end 2025-12-15 \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v10-1","lock_hedge_mode":"v10-1"}' 
+: 1788000320:0;nvim ~/.dsh/profiles/web/cordis.patch.yml
+: 1788008683:0;cd anything
+: 1788008716:0;cd ~/.dsh/skills/python-patterns/
+: 1788009992:0;cd skills
+: 1788013125:0;pkill nvim
+: 1788014630:0;watch -n1 'stat -c %y ~/.dsh/ide/nvim-*.lock'
+: 1788015026:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--start 2025-12-01 \\
+--end 2025-12-15 \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v10-1","lock_hedge_mode":"v10-1"}' --trace trace
+: 1788015349:0;cd traces
+: 1788015354:0;mv trace traces
+: 1788015362:0;rm -rf traces
+: 1788015601:0;uv run scripts/plot_taichi_trace.py traces/v6 -o chart.html
+: 1788017306:0;google-chrome-stable chart.html
+: 1788018183:0;cat ~/.dsh/settings.yaml
+: 1788019547:0;mkdir architecture-design-review
+: 1788019630:0;cd architecture-design-review
+: 1788019650:0;nvim history_chat.md
+: 1788023188:0;git addd .
+: 1788062978:0;lf ~/.dsh/ide/
+: 1788065339:0;google-chrome-stable traces/chart.html
+: 1788066805:0;uv run scripts/plot_taichi_trace.py traces/v6 -o traces/chart.html
+: 1788068016:0;npx skills add https://github.com/tradingview/lightweight-charts
+: 1788068069:0;lf .agents
+: 1788068177:0;lf .agents/
+: 1788068194:0;mv lightweight-charts /home/hydenix/Workspace/python/strategy_research/.agents
+: 1788068392:0;mv lightweight-charts ~/.agents
+: 1788068401:0;mv lightweight-charts skills
+: 1788068731:0;nvim skills/lightweight-charts
+: 1788071572:0;ps -ef | grep  nvim
+: 1788074720:0;git commit -m "trace jsonl to csv"
+: 1788074787:0;rm traces/chart.html
+: 1788075381:0;node scripts/build.mjs 
+: 1788094494:0;nvim ~/.dsh/settings.yaml
+: 1788100753:0;git rm --cached .tmp_viz/
+: 1788100758:0;git rm --cached .tmp_viz/ -r
+: 1788100772:0;git rm --cached .tmp_lwc
+: 1788100801:0;git restore --staged .tmp_lwc ens3 
+: 1788103572:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--start 2025-12-01 \\
+--end 2025-12-15 \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v10-1","lock_hedge_mode":"v10-1"}' --trace traces
+: 1788105974:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--start 2025-12-01 \\
+--end 2025-12-15 \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v10","lock_hedge_mode":"v10"}' --trace traces
+: 1788108981:0;dsh plugin --profile web add github:HaoyueQin/dsh-better-reasoning-effort
+: 1788109016:0;dsh plugin --profile web add github:HaoyueQin/dsh-better-reasoning-effort#0.3.1
+: 1788109044:0;cat README.md
+: 1788109102:0;dsh plugin --profile web add dsh-better-reasoning-effort
+: 1788109124:0;dsh plugin --profile web rm @mr.robot/dsh-web-search-extend
+: 1788109844:0;dsh plugin --profile web rm dsh-better-reasoning-effort
+: 1788110075:0;dsh plugin --profile web add @hytime/dsh-thinking-effort
+: 1788159838:0;cd mcs
+: 1788159857:0;mv find-docs ~/.dsh/skills
+: 1788159858:0;;s
+: 1788159876:0;nvim AGENTS.md
+: 1788162562:0;pnpm install update
+: 1788162645:0;pnpm update
+: 1788162657:0;pnpm clean --lockfile
+: 1788162762:0;npm install
+: 1788162766:0;pnpm install
+: 1788162806:0;dsh plugin --profile web list
+: 1788162839:0;dsh plugin --profile web rm @linxin666/dsh-web-all
+: 1788162882:0;dsh plugin --profile web add @linxin666/dsh-web-all@0.3.5
+: 1788659043:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' \\
+--config '{"name":"v9","lock_hedge_mode":"v9"}' \\
+--config '{"name":"v10","lock_hedge_mode":"v10"}' \\
+--config '{"name":"v10-1","lock_hedge_mode":"v10-1"}' \\
+--trace traces\
+\
+
+: 1788660244:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--config '{"name":"v6","lock_hedge_mode":"v6"}' 
+: 1788660322:0;free  -lh
+: 1788660396:0;lf catalog/
+: 1788660486:0;du -lh data 
+: 1788660527:0;rm -rf ETHUSDT-PERP.BINANCE_FUTURES
+: 1788661236:0;uv run python run_backtest.py -s strategies.taichi_grid -bl --stream \\
+--config '{"name":"10-1","lock_hedge_mode":"v10-1"}' 
+: 1788661692:0;rm -rf strategy_research.bk 
+: 1788662961:0;cp strategy_research strategy_research.bk -r
+: 1788662976:0;rm -rf .venv 
+: 1788662978:0;cd catalog
+: 1788662983:0;rm -rf cache _download_cache
+: 1788663000:0;rm -rf data/bar_openstamp_backup data/trade_tick/ETHUSDT-PERP.BINANCE_FUTURES
+: 1788663004:0;du -lh
+: 1788664096:0;cd .config/nvim
+: 1788664581:0;cd modules/system/config
+: 1788664583:0;cd secrets
+: 1788664606:0;nix-shell -p sops
+: 1788664625:0;nix-shell ./shell.nix
+: 1788664654:0;sops secrets.clash-config.text
+: 1788664739:0;cat a.txt
+: 1788665087:0;nvim a.txt
+: 1788665098:0;nvim a.yml
+: 1788674038:0;rm -rf *.png
+: 1788674050:0;rm coldboot-modsearch-home.yml a.yml snapshot1.md thinking-effort-loaded.json
+: 1788674101:0;cp strategy_research.bk /run/media/hydenix/WinPe -r
+: 1788674116:0;cd strategy_research.bk
+: 1788681532:0;npm install -g @deepseek-ai/dsh 
+: 1788681550:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open --host 0.0.0.0
+: 1788681735:0;cd web.bk
+: 1788681737:0;cat package.json
+: 1788681752:0;dsh plugin --profile web add @linxin666/dsh-web-all
+: 1788681917:0;pnpm approve-builds
+: 1788682050:0;rm -rf web 
+: 1788682053:0;mv web.bk web
+: 1788682123:0;npm install -g @deepseek-ai/dsh@0.1.1-rc.2
+: 1788682189:0;npm install -g @deepseek-ai/dsh@0.1.0-rc.8
+: 1788682282:0;mv web web.bk
+: 1788682344:0;dsh plugin --profile web add github:eliotOrderson/dsh-web-search-extend#v0.2.0
+: 1788682891:0;cd hydenix
+: 1788683095:0;vim .
+: 1788683103:0;cd .dsh/profiles/web
+: 1788683547:0;pwd
+: 1788684194:0;google-chrome-stable --remote-debugging-port=9222 --remote-allow-origins='*' --user-data-dir=$HOME/.chrome-debug
+: 1788684357:0;npm install -g @deepseek-ai/dsh
+: 1788684541:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open --port 4444
+: 1788684694:0;rm -rf web
+: 1788684776:0;dsh plugin --profile web add ~/Workspace/deepseek-harness-plugin/dsh-web-search-extend
+: 1788684825:0;nvim 
+: 1788684886:0;git log
+: 1788686449:0;dsh plugin --profile web add ~/Workspace/deepseek-harness-plugin/dsh-agent-bridge
+: 1788686470:0;cd web
+: 1788686904:0;cp ~/.dsh/.credentials.yaml ./
+: 1788686908:0;cat .credentials.yaml
+: 1788686994:0;cp ~/Workspace/deepseek-harness-plugin/ ./deepseek-harness-plugin -rf
+: 1788687017:0;cp ~/Workspace/deepseek-harness-plugin/ ./deepseek-harness-plugin -r
+: 1788687037:0;lf deepseek-harness-plugin
+: 1788687075:0;lf 
+: 1788687959:0;git push
+: 1788688135:0;cp ~/Workspace/deepseek-harness-plugin ./ -r
+: 1788688139:0;cp ~/Workspace/deepseek-harness-plugin ./ -rf
+: 1788688157:0;shutdown now
+: 1789912373:0;cat cmd
+: 1789912381:0;cat thinking-effort-loaded.json
+: 1789912384:0;rm thinking-effort-loaded.json
+: 1789912994:0;git clone --depth 1 https://github.com/eliotOrderson/hydenix-dotfiles.git
+: 1789913088:0;cat ~/hydenix/modules/hm/config/zsh/zsh_history > modules/hm/config/zsh/zsh_history
+: 1789913803:0;mv deepseek-harness-plugin dsh-plugins
+: 1789914515:0;ssh -g -N -L 0.0.0.0:3000:127.0.0.1:3080 hydenix@127.0.0.1
+: 1789914522:0;ssh eliot@64.83.32.240
+: 1789914572:0;ssh hydenix:192.168.31.245
+: 1789914884:0;s
+: 1789914889:0;cd Workspace/dsh-plugins
+: 1789915576:0;;ls
+: 1789915577:0;nix flake update
+: 1789916150:0;git add .
+: 1789916176:0;sudo nixos-rebuild switch --flake .#hydenix
+: 1789916485:0;zi
+: 1789916743:0;history  | grep "git"
+: 1789916769:0;reboot
+: 1789916910:0;git update-index --no-skip-worktree modules/hm/config/zsh/zsh_history
+: 1789916912:0;git status
+: 1789916952:0;rsync -avh hydenix@192.168.31.245:~/.dsh dsh
+: 1789917091:0;cd hydenix-dotfiles
+: 1789917093:0;nvim .
+: 1789917100:0;cd 
+: 1789917105:0;cd .config/fcitx
+: 1789917152:0;cp -r ~/.config/fcitx5 modules/hm/config/fcitx5 
+: 1789917436:0;cat .dsh/.credentials.yaml 
+: 1789917467:0;cd dsh
+: 1789917468:0;ls -a
+: 1789917484:0;cat dsh/.dsh/.credentials.yaml
+: 1789917503:0;rm -rf .dsh 
+: 1789917512:0;mv dsh/.dsh ./
+: 1789917516:0;rm dsh -rf
+: 1789917575:0;ssh hydenix@192.168.31.245
+: 1789917601:0;rsync -avh hydenix@192.168.31.245:~/Workspace/dsh-plugins
+: 1789917605:0;cd Workspace
+: 1789917627:0;cd ../
+: 1789917633:0;rm -rf dsh-plugins
+: 1789917640:0;rsync -avh hydenix@192.168.31.245:~/Workspace/dsh-plugins ./
+: 1789917862:0;cd dsh-plugins
+: 1789917936:0;cd dsh plugin --profile web install
+: 1789917966:0;cd
+: 1789917995:0;clear
+: 1789918009:0;dsh plugin --profile web add ~/Workspace/dsh-plugins/dsh-agent-bridge
+: 1789918060:0;dsh --version
+: 1789918073:0;dsh plugin --profile web update
+: 1789918227:0;node --expose-internals ~/.npm-global/bin/dsh web --no-open
+: 1789918258:0;cd .dsh
+: 1789918259:0;ls
+: 1789918260:0;lf
+: 1789918437:0;ls
+: 1789918439:0;git status
+: 1789918446:0;git add .

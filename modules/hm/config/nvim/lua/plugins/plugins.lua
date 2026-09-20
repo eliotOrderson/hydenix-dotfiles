@@ -1,6 +1,6 @@
 return {
   {
-    dir = "~/workspace/dsh-plugins/dsh-agent-bridge.nvim",
+    dir = "~/Workspace/dsh-plugins/dsh-agent-bridge.nvim",
     config = function()
       require("dsh_agent_bridge").setup()
     end,

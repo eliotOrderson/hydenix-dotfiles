@@ -33,33 +33,43 @@
     let
       system = "x86_64-linux";
       appPkgs = inputs.nixpkgs.legacyPackages.${system};
-      hydenixConfig = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
+
+      # Every machine evaluates the same configuration.nix; the attribute name
+      # selects the host directory (hostname + hardware-configuration.nix) that
+      # goes with it. Nothing tracked differs between the machines' checkouts,
+      # so both can pull the same history without merging each other's hardware.
+      mkHost =
+        role:
+        inputs.nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs role;
+          };
+          modules = [
+            ./hosts/${role}
+            #  using pkg.unsatable on home manger or system
+            {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  unstable = import nixpkgs-unstable {
+                    inherit (prev.stdenv.hostPlatform) system;
+                    config.allowUnfree = true;
+                  };
+                })
+              ];
+            }
+          ];
         };
-        modules = [
-          ./configuration.nix
-          #  using pkg.unsatable on home manger or system
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = import nixpkgs-unstable {
-                  inherit (prev.stdenv.hostPlatform) system;
-                  config.allowUnfree = true;
-                };
-              })
-            ];
-          }
-        ];
+      hostConfigs = {
+        desktop = mkHost "desktop";
+        laptop = mkHost "laptop";
       };
       vmConfig = inputs.hydenix.lib.vmConfig {
         inherit inputs;
-        nixosConfiguration = hydenixConfig;
+        nixosConfiguration = hostConfigs.desktop;
       };
     in
     {
-      nixosConfigurations.hydenix = hydenixConfig;
-      nixosConfigurations.default = hydenixConfig;
+      nixosConfigurations = hostConfigs;
       packages."${system}".vm = vmConfig.config.system.build.vm;
 
       # Verify that the filesystems this configuration declares actually exist on
@@ -73,8 +83,8 @@
       apps."${system}".check-fs = {
         type = "app";
         program = "${appPkgs.writeShellScript "check-fs" ''
-          exec ${appPkgs.bash}/bin/bash ${./scripts/check-filesystems.sh} \
-            "''${1:-${./hardware-configuration.nix}}"
+          export CHECK_FS_HOSTS=${./hosts}
+          exec ${appPkgs.bash}/bin/bash ${./scripts/check-filesystems.sh} "$@"
         ''}";
       };
     };

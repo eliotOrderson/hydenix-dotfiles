@@ -25,18 +25,23 @@
 
   programs.clash-verge = {
     enable = true;
-    package = pkgs.clash-verge-rev;
+    package = pkgs.unstable.clash-verge-rev.overrideAttrs (oldAttrs: {
+      nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.makeWrapper ];
+      postFixup = (oldAttrs.postFixup or "") + ''
+        wrapProgram $out/bin/clash-verge \
+          --set WEBKIT_DISABLE_COMPOSITING_MODE 1 \
+          --set WEBKIT_DISABLE_DMABUF_RENDERER 1
+      '';
+    });
     serviceMode = true;
     tunMode = true;
-    autoStart = false;
+    autoStart = true;
   };
-
   # The upstream module's service unit omits CAP_NET_BIND_SERVICE from its
   # bounding set, so the core cannot bind its DNS listener on port 53
   # ("listen :53: bind: permission denied" in the core log). Merge the missing
   # capability back in (list values are concatenated by the module system).
-  systemd.services.clash-verge.serviceConfig.CapabilityBoundingSet =
-    [ "CAP_NET_BIND_SERVICE" ];
+  systemd.services.clash-verge.serviceConfig.CapabilityBoundingSet = [ "CAP_NET_BIND_SERVICE" ];
 
   zramSwap = {
     enable = true;

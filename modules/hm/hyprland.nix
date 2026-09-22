@@ -138,9 +138,6 @@
     # tune VIBRANCE_* in modules/hm/config/shaders/self_vibrance.frag
     bindd = $mainMod SHIFT, C, Toggle screen shader (vibrance), exec, shader-toggle
 
-    # autostart on boot start clash ui
-    exec-once = sleep 5 && env GDK_BACKEND=x11 WEBKIT_DISABLE_DMABUF_RENDERER=1 WEBKIT_DISABLE_COMPOSITION_MODE=1 clash-verge
-
     # swww wallpaper daemon autostart
     exec-once = swww-daemon --kill && swww-daemon
 

@@ -25,7 +25,7 @@
 
   programs.clash-verge = {
     enable = true;
-    package = pkgs.unstable.clash-verge-rev.overrideAttrs (oldAttrs: {
+    package = pkgs.clash-verge-rev.overrideAttrs (oldAttrs: {
       nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.makeWrapper ];
       postFixup = (oldAttrs.postFixup or "") + ''
         wrapProgram $out/bin/clash-verge \

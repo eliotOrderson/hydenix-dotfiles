@@ -12,6 +12,18 @@ let
   # host and merges cleanly over git. "desktop" serves the LAN cache and builds
   # for the others; "laptop" substitutes from it and sends its builds there.
   isServer = role == "desktop";
+
+  # Everything that identifies the desktop on the LAN. The same address ends up
+  # in the substituter URL, the build machine, the known_hosts entry and the
+  # cache listener, so declaring it once keeps those four from drifting apart.
+  lanCache = {
+    host = "192.168.31.25";
+    port = 5000;
+    # Public half of the key services.nix-serve signs exported paths with.
+    publicKey = "hydenix-lan-cache:IRGysUzotiMc6pfsd6JlOc7Zm21U1HRB3c94i5yc8L8=";
+    # The desktop's SSH host key, which the clients have to know in advance.
+    sshPublicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB5M1h2IkraDVqZ4SxkaCnDnvkcL0+7PVKtQCVyREZBE";
+  };
 in
 {
   imports = [
@@ -135,11 +147,17 @@ in
       auto-optimise-store = true;
       # On the client the LAN cache has to come first, otherwise a hit on the
       # desktop's store loses to a slower download from the internet mirrors.
-      substituters = lib.optionals (!isServer) [ "http://192.168.31.25:5000" ] ++ [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
-        "https://cache.nixos.org"
-      ];
+      substituters =
+        lib.optionals (!isServer) [ "http://${lanCache.host}:${toString lanCache.port}" ]
+        ++ [
+          "https://mirrors.ustc.edu.cn/nix-channels/store"
+          "https://mirror.sjtu.edu.cn/nix-channels/store"
+          "https://cache.nixos.org"
+        ];
+      # The mirrors above can accept the connection and then stop sending data;
+      # the 300s default leaves nix sitting on a dead transfer instead of
+      # falling through to the next substituter.
+      stalled-download-timeout = 15;
     }
     // lib.optionalAttrs isServer {
       # The client's remote builds connect as this user and have to be allowed
@@ -147,9 +165,7 @@ in
       trusted-users = [ "hydenix" ];
     }
     // lib.optionalAttrs (!isServer) {
-      trusted-public-keys = [
-        "hydenix-lan-cache:IRGysUzotiMc6pfsd6JlOc7Zm21U1HRB3c94i5yc8L8="
-      ];
+      trusted-public-keys = [ lanCache.publicKey ];
       # Drop the LAN cache fast when the desktop is off, so substitutions do not
       # stall on a connect timeout before falling back to the internet caches.
       connect-timeout = 1;
@@ -167,7 +183,7 @@ in
     distributedBuilds = !isServer;
     buildMachines = lib.optionals (!isServer) [
       {
-        hostName = "192.168.31.25";
+        hostName = lanCache.host;
         sshUser = "hydenix";
         system = "x86_64-linux";
         maxJobs = 8;
@@ -184,8 +200,7 @@ in
   # The nix-daemon runs as root and connects to the builder non-interactively,
   # so it cannot prompt to accept the desktop's host key.
   programs.ssh.knownHosts = lib.mkIf (!isServer) {
-    "192.168.31.25".publicKey =
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB5M1h2IkraDVqZ4SxkaCnDnvkcL0+7PVKtQCVyREZBE";
+    "${lanCache.host}".publicKey = lanCache.sshPublicKey;
   };
 
   # The cache signing key is committed encrypted and decrypted with this host's
@@ -205,7 +220,7 @@ in
     enable = true;
     package = pkgs.nix-serve-ng;
     secretKeyFile = config.sops.secrets.nix_serve_secret_key.path;
-    port = 5000;
+    inherit (lanCache) port;
     openFirewall = true;
   };
   boot.loader.systemd-boot.configurationLimit = 10;

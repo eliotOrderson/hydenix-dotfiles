@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services = {
     envfs.enable = true;
@@ -18,6 +18,10 @@
   };
 
   networking.firewall = {
+    # Keep every listener on this host reachable from the LAN: the previous
+    # allow-list omitted dsh web on 3080, and the host also serves the LAN nix
+    # cache and build results on ports that change with each service.
+    enable = lib.mkForce false;
     trustedInterfaces = [
       "Mihomo"
     ];

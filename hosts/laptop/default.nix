@@ -22,4 +22,7 @@
 
   # Voice input is only wanted on the desktop; the module defaults to enabled.
   home-manager.users.hydenix.hydenix.hm.inputMethod.voiceInput.enable = false;
+
+  # Godot is only wanted on the desktop; the module defaults to enabled.
+  home-manager.users.hydenix.hydenix.hm.opt_packages.godot.enable = false;
 }

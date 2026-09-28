@@ -14,6 +14,7 @@
     ./xdg.nix
     ./path.nix # manage config file hard link
     ./git.nix
+    ./opt_packages.nix
   ];
 
   # home-manager options go here
@@ -42,6 +43,7 @@
       pkgs.tree
       pkgs.mdcat
       pkgs.defuddle-cli
+      pkgs.nodejs
 
       # improves some bash-output compression paths
       pkgs.shellcheck
@@ -56,7 +58,6 @@
 
       # unstable
       pkgs.unstable.zed-editor-fhs
-      pkgs.unstable.nodejs
       pkgs.unstable.pnpm
 
       # rust dev tools

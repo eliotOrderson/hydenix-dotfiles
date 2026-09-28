@@ -11,6 +11,7 @@
       window_padding_width 4
       background_opacity 0.8
       confirm_os_window_close 0
+      clipboard_control write-primary write-clipboard
 
       # Mouse
       # cursor_blink_interval 0
@@ -23,6 +24,7 @@
       tab_powerline_style             angled
       tab_bar_min_tabs                2
       tab_bar_align                   left
+
 
       ######## Keyboard Shortcuts #######
       # tab

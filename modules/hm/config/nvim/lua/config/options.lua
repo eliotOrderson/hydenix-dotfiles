@@ -1,8 +1,18 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+vim.opt.clipboard = ""
 
-vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = nil
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Yank to OSC 52",
+  callback = function()
+    if vim.v.event.operator == "y" then
+      require("vim.ui.clipboard.osc52").copy("+")(vim.v.event.regcontents)
+    end
+  end,
+})
 if vim.g.neovide then
   vim.g.snacks_animate = true
   vim.o.guifont = "JetBrainsMono Nerd Font:h18"

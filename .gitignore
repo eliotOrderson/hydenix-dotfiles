@@ -17,3 +17,7 @@ result
 graphify-out/
 .dsh-ide-bridge.log
 
+# fcitx5 regenerates this keyboard-layout cache at runtime; the config dir is
+# a symlink into the repo, so leaving it tracked makes the tree permanently dirty.
+modules/hm/config/fcitx5/fcitx5/conf/cached_layouts
+

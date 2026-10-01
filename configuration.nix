@@ -54,6 +54,13 @@ in
     #   };
   };
 
+  # node-llama-cpp (qmd's backend) looks for libvulkan.so.1 only in FHS paths,
+  # $PATH and $LD_LIBRARY_PATH, and NixOS keeps the loader in the store. Set it
+  # session-wide so every process gets it, not just zsh: /etc/set-environment
+  # covers login shells, /etc/pam/environment covers the SDDM session. Applies
+  # from the next login, not from the rebuild itself.
+  environment.sessionVariables.LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib";
+
   # Home Manager Configuration - manages user-specific configurations (dotfiles, themes, etc.)
   home-manager = {
     useGlobalPkgs = true;

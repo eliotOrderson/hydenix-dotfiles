@@ -33,6 +33,7 @@
       pkgs.obsidian
       pkgs.gh # github cli
       pkgs.git-lfs
+      pkgs.tokei
       # pkgs.wireguard-tools
 
       # base cli

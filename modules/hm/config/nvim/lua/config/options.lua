@@ -22,6 +22,8 @@ end
 vim.opt.exrc = true
 vim.opt.secure = true  -- 安全模式，避免执行危险命令
 
+vim.opt.viewoptions = "folds" -- mkview/loadview keep fold state only, not cursor or cwd
+
 vim.opt_local.swapfile = false
 vim.opt_local.redrawtime = 2000
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces

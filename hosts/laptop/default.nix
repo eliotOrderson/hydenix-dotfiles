@@ -1,5 +1,10 @@
 # This machine evaluates configuration.nix as the LAN cache and build client.
-{ inputs, config, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../configuration.nix
@@ -25,4 +30,18 @@
 
   # Godot is only wanted on the desktop; the module defaults to enabled.
   home-manager.users.hydenix.hydenix.hm.packages.godot.enable = false;
+
+  home-manager.users.hydenix.home.packages = [
+    (pkgs.writeShellScriptBin "touchpad-toggle" (
+      builtins.readFile ../../modules/hm/scripts/touchpad-toggle.sh
+    ))
+  ];
+
+  # Super+M toggles the touchpad; Shift+Super+M resets the marker file when the
+  # toggle state has drifted from the compositor.
+  home-manager.users.hydenix.hydenix.hm.hyprland.extraConfig = ''
+    bind = $mainMod, M, exec, touchpad-toggle
+    bind = $mainMod SHIFT, M, exec, touchpad-toggle reset
+    exec-once = touchpad-toggle reset
+  '';
 }

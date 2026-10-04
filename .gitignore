@@ -14,6 +14,7 @@
 result
 !scripts/check-filesystems.sh
 !scripts/bootstrap-nixos.sh
+!modules/hm/scripts/touchpad-toggle.sh
 graphify-out/
 .dsh-ide-bridge.log
 
